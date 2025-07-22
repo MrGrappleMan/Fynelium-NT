@@ -16,7 +16,14 @@ set svcopt="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disable
 set toggleshow="%seperator% ^& echo Options: ^& echo X.Return ^& echo 1.Disable ^& echo 2.Enable ^& choice /C 12X /N"
 color 07
 powercfg -h on
-::If you doubt the line below this, reddit.com/r/computers/s/Pa11pjBory
+sc start "Dnscache">nul & sc config "Dnscache" start=auto>nul
+sc start "svsvc">nul & sc config "svsvc" start=auto>nul
+sc start "Winmgmt">nul & sc config "Winmgmt" start=auto>nul
+sc start "whesvc">nul & sc config "whesvc" start=auto>nul
+sc start "WebClient">nul & sc config "WebClient" start=auto>nul
+sc start "W32Time">nul & sc config "W32Time" start=auto>nul
+sc start "WlanSvc">nul & sc config "WlanSvc" start=auto>nul
+sc start "dot3svc">nul & sc config "dot3svc" start=auto>nul
 sc start "SysMain">nul & sc config "SysMain" start=auto>nul
 sc stop "WSearch">nul & sc config "WSearch" start=disabled>nul
 powercfg.exe -import "!cd!\JustPerformance.pow">nul
@@ -32,7 +39,7 @@ echo 	\____/  \____/ /____/ \__/ __  /_/ /  _ \_  ___/_  /_ _  __ \_  ___/_  __ 
 echo 	                           _  ____//  __/  /   _  __/ / /_/ /  /   _  / / / / / /_/ /_  / / / /__ /  __/
 echo 	                           /_/     \___//_/    /_/    \____//_/    /_/ /_/ /_/\__,_/ /_/ /_/\___/ \___/
 %seperator%
-echo Hello %username%! I not responsible for any data loss, malfunctioning or any kind of damage done to your device.
+echo Hello %username%! I am not responsible for any data loss, malfunctioning or any kind of damage done to your device.
 echo YOU have chosen to do this modification.
 echo BEFORE YOU PROCEED, see the script on GitHub so that you can debug your system easily.
 echo Exit only by using the provided option for removal of cache and and other optimizations.
