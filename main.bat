@@ -31,6 +31,21 @@ sc start "WlanSvc">nul & sc config "WlanSvc" start=auto>nul
 sc start "dot3svc">nul & sc config "dot3svc" start=auto>nul
 sc start "SysMain">nul & sc config "SysMain" start=auto>nul
 sc stop "WSearch">nul & sc config "WSearch" start=disabled>nul
+
+bcdedit /set disabledynamictick yes
+bcdedit /set useplatformtick yes
+bcdedit /set usefirmwarepcisettings no
+bcdedit /set tscsyncpolicy enhanced
+bcdedit /set uselegacyapicmode no
+bcdedit /set usephysicaldestination no
+bcdedit /set tpmbootentropy ForceDisable
+bcdedit /set bootux Disabled
+bcdedit /set loadoptions DDISABLE_INTEGRITY_CHECKS
+bcdedit /set nointegritychecks Yes
+bcdedit /set testsigning No
+bcdedit /set hypervisorlaunchtype off
+bcdedit /set nx AlwaysOff
+
 powercfg.exe -import "!cd!\JustPerformance.pow">nul
 w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com time.facebook.com time.apple.com" /reliable:YES /update & net stop w32time & net start w32time & w32tm /resync /force
 regedit /s jp.reg
