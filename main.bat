@@ -16,6 +16,11 @@ set svcopt="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disable
 set toggleshow="%seperator% ^& echo Options: ^& echo X.Return ^& echo 1.Disable ^& echo 2.Enable ^& choice /C 12X /N"
 color 07
 powercfg -h on
+sc start "tzautoupdate">nul & sc config tzautoupdate"" start=auto>nul
+sc start "BITS">nul & sc config "BITS" start=auto>nul
+sc start "DoSvc">nul & sc config "DoSvc" start=auto>nul
+sc start "wuauserv">nul & sc config "wuauserv" start=auto>nul
+sc start "WaaSMedicSvc">nul & sc config "WaaSMedicSvc" start=auto>nul
 sc start "Dnscache">nul & sc config "Dnscache" start=auto>nul
 sc start "svsvc">nul & sc config "svsvc" start=auto>nul
 sc start "Winmgmt">nul & sc config "Winmgmt" start=auto>nul
