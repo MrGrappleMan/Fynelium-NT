@@ -116,6 +116,8 @@ Windows Registry Editor Version 5.00
 "ShowSuperHidden"=dword:00000001
 "IconsOnly"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
+"LastActiveClick"=dword:00000001
+"DisallowShaking"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "SystemResponsiveness"=dword:00000000
@@ -123,9 +125,6 @@ Windows Registry Editor Version 5.00
 ; --------------------------------------------
 ; Networking Options
 ; --------------------------------------------
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
-"LargeSystemCache"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER]
 "explorer.exe"=dword:00000255
@@ -157,6 +156,9 @@ Windows Registry Editor Version 5.00
 ; --------------------------------------------
 ; System Tweaks
 ; --------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"LargeSystemCache"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
@@ -227,5 +229,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
