@@ -1,91 +1,121 @@
 Windows Registry Editor Version 5.00
 ; Registry Tweaks
 ; --------------------------------------------
-; Graphical
+; UX Effects
 ; --------------------------------------------
 
-[HKCU\Software\Microsoft\Windows\Themes\Personalize]
-"AppsUseLightTheme"=dword:00000000
-"SystemUsesLightTheme"=dword:00000000
+; [HKEY_CURRENT_USER\Software\Microsoft\Windows\Themes\Personalize]
+; "AppsUseLightTheme"=dword:00000000
+; "SystemUsesLightTheme"=dword:00000000
 
-[HKCU\Control Panel\Desktop]
+[HKEY_CURRENT_USER\Control Panel\Desktop]
 "UserPreferencesMask"=hex:90,12,03,80,10,00,00,00
 "MenuShowDelay"="0"
 "MinAnimate"="0"
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:00000003
 ;0 = Auto set by Windows
 ;1 = Best appearance
 ;2 = Best performance
 ;3 = Custom
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ControlAnimations]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ControlAnimations]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\CursorShadow]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\CursorShadow]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DragFullWindows]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DragFullWindows]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DropShadow]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DropShadow]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMAeroPeekEnabled]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMAeroPeekEnabled]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMEnabled]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMEnabled]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMSaveThumbnailEnabled]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMSaveThumbnailEnabled]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewAlphaSelect]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewAlphaSelect]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewShadow]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewShadow]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\Themes]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\Themes]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ThumbnailsOrIcon]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ThumbnailsOrIcon]
 "DefaultApplied"=dword:00000001
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation]
 "DefaultApplied"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
-"LongPathsEnabled"=dword:00000001
-"HiberbootEnabled"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"RotatingLockScreenOverlayEnabled"=dword:00000000
 
-[HKCU\Control Panel\Desktop\WindowMetrics]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAnimations"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"DisableAcrylicBackgroundOnLogon"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableFirstLogonAnimation"=dword:00000000
+
+; --------------------------------------------
+; UX Productivity
+; --------------------------------------------
+
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"MouseHoverTime"="0"
+
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "MinAnimate"="0"
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"RotatingLockScreenOverlayEnabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed]
+"CursorUpdateInterval"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"AutoCheckSelect"=dword:00000001
+"UseCompactMode"=dword:00000001
+"HideFileExt"=dword:00000000
+"ShowPreviewHandlers"=dword:00000001
+"ShowSuperHidden"=dword:00000001
+"IconsOnly"=dword:00000000
+"ShowTaskViewButton"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"SystemResponsiveness"=dword:00000000
 
 ; --------------------------------------------
 ; Networking Options
@@ -115,69 +145,31 @@ Windows Registry Editor Version 5.00
 "MaxUserPort"=dword:00065534
 "GlobalMaxTcpWindowSize"=dword:00065535
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSMQ\Parameters]
-"TCPNoDelay"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"NetworkThrottlingIndex"=dword:ffffffff
+
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSMQ\Parameters]
+; "TCPNoDelay"=dword:00000001
 
 ; --------------------------------------------
-; Other System Tweaks
+; System Tweaks
 ; --------------------------------------------
 
-[HKCU\Control Panel\Mouse]
-"MouseHoverTime"="0"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"LongPathsEnabled"=dword:00000001
+"HiberbootEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "VerboseStatus"=dword:00000001
-"EnableFirstLogonAnimation"=dword:00000000
 
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
 "StartupDelayInMSec"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
-"SystemResponsiveness"=dword:00000000
-"NetworkThrottlingIndex"=dword:ffffffff
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
 "EnablePrefetcher"=dword:00000003
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
-"Affinity"=dword:ffffffff
-"Background Only"="True"
-"BackgroundPriority"=dword:00000018
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000012
-"Priority"=dword:00000008
-"Scheduling Category"="High"
-"SFIO Priority"="High"
-"Latency Sensitive"="True"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
-"Affinity"=dword:ffffffff
-"Background Only"="False"
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000012
-"Priority"=dword:00000006
-"Scheduling Category"="High"
-"SFIO Priority"="High"
-"Latency Sensitive"="True"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed]
-"CursorUpdateInterval"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "IoPageLockLimit"=dword:00000000
-
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"AutoCheckSelect"=dword:00000001
-"UseCompactMode"=dword:00000001
-"HideFileExt"=dword:00000000
-"ShowPreviewHandlers"=dword:00000001
-"ShowSuperHidden"=dword:00000001
-"TaskbarAnimations"=dword:00000000
-"IconsOnly"=dword:00000000
-"ShowTaskViewButton"=dword:00000000
-
-[HKCU\Software\Microsoft\Windows\CurrentVersion\Search]
-"SearchboxTaskbarMode"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
 "EnablePrefetcher"=dword:00000003
@@ -192,12 +184,29 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "DisableSoftLanding"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
-"DisableAcrylicBackgroundOnLogon"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
 "DisplayParameters"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
+"Affinity"=dword:ffffffff
+"Background Only"="True"
+"BackgroundPriority"=dword:00000018
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000012
+"Priority"=dword:00000008
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+"Latency Sensitive"="False"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
+"Affinity"=dword:ffffffff
+"Background Only"="False"
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000012
+"Priority"=dword:00000006
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+"Latency Sensitive"="True"
 
 [HKEY_CLASSES_ROOT\*\shell\runas]
 @="Take Ownership"
@@ -214,3 +223,4 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
