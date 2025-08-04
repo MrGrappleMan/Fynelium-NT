@@ -48,9 +48,9 @@ bcdedit /set testsigning No
 bcdedit /set hypervisorlaunchtype off
 bcdedit /set nx AlwaysOff
 
-powercfg.exe -import "!cd!\JustPerformance.pow">nul
-w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com time.facebook.com time.apple.com" /reliable:YES /update & net stop w32time & net start w32time & w32tm /resync /force
-regedit /s jp.reg
+powercfg.exe -import "!cd!\powerplan.pow">nul
+w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com time.facebook.com time.apple.com pool.ntp.org" /reliable:YES /update & net stop w32time & net start w32time & w32tm /resync /force
+regedit /s registry.reg
 :home
 cls
 echo 	_________             _____                                                                             
@@ -87,7 +87,7 @@ goto home
 )
 if !el!==2 (
 	echo Name: Printing(Spooler, Fax)
-        echo Disable if you do not use a printer. This considers virtual printers as well.
+        echo Disable if you do not use a printer or a virtual print service.
 	echo Manages print jobs sent from the computer to the printer or print server.
 	echo It can store multiple print jobs in the print queue or buffer retrieved by the printer or print server.
 	!toggleshow!
@@ -175,3 +175,4 @@ net start wuauserv>nul
 
 exit
 endlocal
+
