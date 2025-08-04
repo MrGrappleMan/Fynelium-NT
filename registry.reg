@@ -99,6 +99,9 @@ Windows Registry Editor Version 5.00
 ; UX Productivity
 ; --------------------------------------------
 
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsCopilot]
+"TurnOffWindowsCopilot"=dword:00000000
+
 [HKEY_CURRENT_USER\Control Panel\Mouse]
 "MouseHoverTime"="0"
 
@@ -205,6 +208,13 @@ Windows Registry Editor Version 5.00
 "Latency Sensitive"="True"
 
 ; --------------------------------------------
+; Telemetry
+; --------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000003
+
+; --------------------------------------------
 ; Debugging and SysAdmins
 ; --------------------------------------------
 
@@ -229,6 +239,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
