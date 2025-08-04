@@ -41,7 +41,7 @@ bcdedit /set bootstatuspolicy DisplayAllFailures
 bcdedit /set quietboot off
 bcdedit /set sos on
 bcdedit /set nocrashautoreboot off
-bcdedit /set bootuxdisabled on
+bcdedit /set bootuxdisabled off
 bcdedit /set maxproc yes
 bcdedit /set onecpu no
 bcdedit /set disabledynamictick no
@@ -179,5 +179,6 @@ net start wuauserv>nul
 
 exit
 endlocal
+
 
 
