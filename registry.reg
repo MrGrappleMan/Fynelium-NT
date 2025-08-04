@@ -114,6 +114,7 @@ Windows Registry Editor Version 5.00
 "CursorUpdateInterval"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowCopilotButton"=dword:00000001
 "AutoCheckSelect"=dword:00000001
 "UseCompactMode"=dword:00000001
 "HideFileExt"=dword:00000000
@@ -241,6 +242,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
