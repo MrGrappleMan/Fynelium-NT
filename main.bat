@@ -13,7 +13,7 @@ exit
 )
 set seperator=echo _____________________________________________________________________________________________________________________________________________________________________________________________
 set svcopt="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disabled) ^& if !el!==2 (sc start "!svcnme!" ^& sc config "!svcnme!" start=auto)"
-set toggleshow="%seperator% ^& echo Options: ^& echo X.Return ^& echo 1.Disable ^& echo 2.Enable ^& choice /C 12X /N"
+set toggleshow="%seperator% ^& echo Options: ^& echo X. Return to main menu ^& echo 1. Disable ^& echo 2. Enable ^& choice /C 12X /N"
 color 07
 powercfg -h on
 sc start "UsoSvc">nul & sc config "UsoSvc" start=auto>nul
@@ -34,59 +34,62 @@ sc start "dot3svc">nul & sc config "dot3svc" start=auto>nul
 sc start "SysMain">nul & sc config "SysMain" start=auto>nul
 sc stop "WSearch">nul & sc config "WSearch" start=disabled>nul
 
-bcdedit /set disabledynamictick yes
-bcdedit /set useplatformtick yes
-bcdedit /set usefirmwarepcisettings no
-bcdedit /set tscsyncpolicy enhanced
-bcdedit /set uselegacyapicmode no
-bcdedit /set usephysicaldestination no
-bcdedit /set tpmbootentropy ForceDisable
-bcdedit /set bootux Disabled
-bcdedit /set loadoptions DDISABLE_INTEGRITY_CHECKS
-bcdedit /set nointegritychecks Yes
-bcdedit /set testsigning No
-bcdedit /set hypervisorlaunchtype off
-bcdedit /set nx AlwaysOff
+:: For all:
+bcdedit /set bootlog yes
+bcdedit /set bootmenupolicy Standard
+bcdedit /set bootstatuspolicy DisplayAllFailures
+bcdedit /set quietboot off
+bcdedit /set sos on
+bcdedit /set nocrashautoreboot off
+bcdedit /set bootuxdisabled on
+bcdedit /set maxproc yes
+bcdedit /set onecpu no
+bcdedit /set disabledynamictick no
+bcdedit /set usefirmwarepcisettings yes
+bcdedit /set nointegritychecks off
+bcdedit /set groupaware on
+bcdedit /set maxgroup on
+bcdedit /set onecpu off
+bcdedit /set vsmlaunchtype Auto
+bcdedit /set nx Optin
+
+:: Unstable or compatibility issues:
+:: bcdedit /set forcelegacyplatform no
+:: bcdedit /set nolowmem off
+:: bcdedit /set x2apicpolicy enable
+:: bcdedit /set useplatformtick yes
+:: bcdedit /set tscsyncpolicy enhanced
+:: bcdedit /set uselegacyapicmode no
+:: bcdedit /set usephysicaldestination no
+:: bcdedit /set tpmbootentropy default
+:: bcdedit /set testsigning No
+:: bcdedit /set hypervisorlaunchtype on
 
 powercfg.exe -import "!cd!\powerplan.pow">nul
 w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com time.facebook.com time.apple.com pool.ntp.org" /reliable:YES /update & net stop w32time & net start w32time & w32tm /resync /force
 regedit /s registry.reg
 :home
 cls
-echo 	_________             _____                                                                             
-echo 	______  /___  __________  /_                                                                            
-echo 	___ _  /_  / / /_  ___/  __/_______            ________                                                 
-echo 	/ /_/ / / /_/ /_(__  )/ /_ ___  __ \______________  __/___________________ _________ __________________ 
-echo 	\____/  \____/ /____/ \__/ __  /_/ /  _ \_  ___/_  /_ _  __ \_  ___/_  __ `__ \  __ `/_  __ \  ___/  _ \
-echo 	                           _  ____//  __/  /   _  __/ / /_/ /  /   _  / / / / / /_/ /_  / / / /__ /  __/
-echo 	                           /_/     \___//_/    /_/    \____//_/    /_/ /_/ /_/\__,_/ /_/ /_/\___/ \___/
+echo  ________   ___    ___  ________       _______       ___           ___      ___  ___      _____ ______      
+echo |\  _____\ |\  \  /  /||\   ___  \    |\  ___ \     |\  \         |\  \    |\  \|\  \    |\   _ \  _   \    
+echo \ \  \__/  \ \  \/  / /\ \  \\ \  \   \ \   __/|    \ \  \        \ \  \   \ \  \\\  \   \ \  \\\__\ \  \   
+echo  \ \   __\  \ \    / /  \ \  \\ \  \   \ \  \_|/__   \ \  \        \ \  \   \ \  \\\  \   \ \  \\|__| \  \  
+echo   \ \  \_|   \/  /  /    \ \  \\ \  \   \ \  \_|\ \   \ \  \____    \ \  \   \ \  \\\  \   \ \  \    \ \  \ 
+echo    \ \__\  __/  / /       \ \__\\ \__\   \ \_______\   \ \_______\   \ \__\   \ \_______\   \ \__\    \ \__\
+echo     \|__| |\___/ /         \|__| \|__|    \|_______|    \|_______|    \|__|    \|_______|    \|__|     \|__|
+echo           \|___|/
 %seperator%
 echo Hello %username%! I am not responsible for any data loss, malfunctioning or any kind of damage done to your device.
-echo YOU have chosen to do this modification.
-echo BEFORE YOU PROCEED, see the script on GitHub so that you can debug your system easily.
-echo Exit only by using the provided option for removal of cache and and other optimizations.
-echo Consider rebooting after exiting for all changes to take effect.
+echo YOU have chosen to do this modification. Save your work before proceeding. After tweaking, please reboot manually.
 %seperator%
 echo Options:
-echo X.Exit
-echo 1.Recommended Browser Flags
-echo 2.Printing (Spooler, Fax)
-echo 3.Windows Image Acquisition (StiSvc)
-echo 4.Blutooth (BTAGService, bthserv)
-echo 5.Remote Desktop (SessionEnv, TermService, UmRdpService, RemoteRegistry)
-echo 6.System accuracy(HPET and Dynamic Ticks)
-echo 7.Hypervisor
-choice /C 123456789X /N
+echo X. Exit
+echo 1. Start
+choice /C 1X /N
 cls
+
 if !el!==1 (
-type chromium.txt
-type firefox.txt
-echo Press any key to return...
-pause>nul
-goto home
-)
-if !el!==2 (
-	echo Name: Printing(Spooler, Fax)
+	echo Name: Printing
         echo Disable if you do not use a printer or a virtual print service.
 	echo Manages print jobs sent from the computer to the printer or print server.
 	echo It can store multiple print jobs in the print queue or buffer retrieved by the printer or print server.
@@ -95,18 +98,16 @@ if !el!==2 (
 	!svcopt!
 	set svcnme=Fax
 	!svcopt!
-	goto home
-)
-if !el!==3 (
-	echo Name: Windows Image Acquisition(StiSvc)
+	cls
+
+	echo Name: Windows Image Acquisition
 	echo Waits until you press the button on your scanner and then manages the process of getting the image where it needs to go.
 	echo This also affects communication with cameras and Android PTP that you connect directly to your computer, so be aware of that if you need this function.
 	!toggleshow!
 	set svcnme=StiSvc
 	!svcopt!
-	goto home
-)
-if !el!==4 (
+	cls
+
 	echo Name: Blutooth(BTAGService, bthserv)
         echo Disable if you do not use bluetooth
 	echo BTAGService: Service supporting the audio gateway role of the Bluetooth Handsfree Profile.
@@ -118,9 +119,8 @@ if !el!==4 (
 	!svcopt!
 	set svcnme=bthserv
 	!svcopt!
-	goto home
-)
-if !el!==5 (
+	cls
+
 	echo Name: Remote Access(SessionEnv, TermService, UmRdpService, RemoteRegistry)
 	echo These services make remote control of your computer possible.
 	echo If you don't use the remote desktop functionality of Windows, disable all these services.
@@ -138,29 +138,33 @@ if !el!==5 (
 	!svcopt!
         set svcnme=RemoteRegistry
 	!svcopt!
-	goto home
-)
-if !el!==6 (
-	echo Name: System accuracy(HPET and Dynamic Ticks)
+	cls
+
+	echo Name: System accuracy(HPET)
 	echo Type: Program
 	echo This command forces the kernel timer to constantly poll for interrupts instead of wait for them.
-	echo Dynamic tick was implemented as a power saving feature for laptops but hurts desktop performance.
 	echo You should not change this
 	!toggleshow!
-	if !el!==1 (bcdedit /set disabledynamictick no & bcdedit /set useplatformclock true)
-	if !el!==2 (bcdedit /set disabledynamictick yes & bcdedit /deletevalue useplatformclock)
-	goto home
+	if !el!==1 (bcdedit /set useplatformclock true)
+	if !el!==2 (bcdedit /deletevalue useplatformclock)
+        cls
+
+        echo Please open your web browser and change your flags accordingly
+        %seperator%
+        For Chrome/Edge/Brave or other Chromium based browsers,
+	type chromium.txt
+	%seperator%
+	For Firefox/Zen/Tor or other Gecko based browsers,
+	type firefox.txt
+	%seperator%
+	echo Spam any key 5 times to exit...
+	pause>nul
+	pause>nul
+	pause>nul
+	pause>nul
+	pause>nul
 )
-if !el!==7 (
-	echo Name: Hypervisor(using bcdedit)
-	echo Type: Program
-	echo Used for VMs, Emulators and Subsystems.
-	echo Disable if not in use.
-	!toggleshow!
-	if !el!==1 (bcdedit /set hypervisorlaunchtype off)
-	if !el!==2 (bcdedit /set hypervisorlaunchtype on)
-	goto home
-)
+
 net stop wuauserv>nul
 del /F /S /Q %windir%\SoftwareDistribution\Download\*>nul
 del /F /S /Q %tmp%\*>nul
@@ -170,9 +174,10 @@ ipconfig /flushdns>nul
 ipconfig /registerdns>nul
 ipconfig /release>nul
 ipconfig /renew>nul
-wuauclt.exe /updatenow
+wuauclt.exe /updatenow>nul
 net start wuauserv>nul
 
 exit
 endlocal
+
 
