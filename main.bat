@@ -66,7 +66,7 @@ bcdedit /set nx Optin
 :: bcdedit /set hypervisorlaunchtype on
 
 powercfg.exe -import "!cd!\powerplan.pow">nul
-w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com time.facebook.com time.apple.com pool.ntp.org" /reliable:YES /update & net stop w32time & net start w32time & w32tm /resync /force
+w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com pool.ntp.org time.facebook.com time.apple.com time.aws.com" /reliable:YES /update & net stop w32time & net start w32time & w32tm /resync /force
 regedit /s registry.reg
 :home
 cls
@@ -179,6 +179,7 @@ net start wuauserv>nul
 
 exit
 endlocal
+
 
 
 
