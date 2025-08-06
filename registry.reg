@@ -224,6 +224,13 @@ Windows Registry Editor Version 5.00
 "NoAutoRebootWithLoggedOnUsers"=dword:00000001
 "ScheduledInstallEveryWeek"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"ManagePreviewBuilds"=-
+"ManagePreviewBuildsPolicyValue"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds]
+"AllowBuildPreview"=dword:00000001
+
 ; --------------------------------------------
 ; Debugging and SysAdmins
 ; --------------------------------------------
@@ -252,6 +259,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
