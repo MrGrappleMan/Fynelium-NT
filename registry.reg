@@ -211,15 +211,24 @@ Windows Registry Editor Version 5.00
 "Latency Sensitive"="True"
 
 ; --------------------------------------------
-; Telemetry
+; Telemetry and Updates
 ; --------------------------------------------
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
 "AllowTelemetry"=dword:00000003
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:00000000
+"ScheduledInstallDay"=dword:00000000
+"NoAutoRebootWithLoggedOnUsers"=dword:00000001
+"ScheduledInstallEveryWeek"=dword:00000001
+
 ; --------------------------------------------
 ; Debugging and SysAdmins
 ; --------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Sudo]
+"Enabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
 "DisplayParameters"=dword:00000001
@@ -242,6 +251,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
