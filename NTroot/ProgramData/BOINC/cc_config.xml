@@ -9,11 +9,10 @@
 	<abort_jobs_on_exit>0</abort_jobs_on_exit>
 	<allow_multiple_clients>0</allow_multiple_clients>
 	<allow_remote_gui_rpc>1</allow_remote_gui_rpc>
-	<device_name>a</device_name>
 	<disallow_attach>0</disallow_attach>
 	<dont_check_file_sizes>0</dont_check_file_sizes>
 	<dont_contact_ref_site>0</dont_contact_ref_site>
-	<dont_suspend_nci>0</dont_suspend_nci>
+	<dont_suspend_nci>1</dont_suspend_nci>
 	<dont_use_vbox>0</dont_use_vbox>
 	<exit_before_start>0</exit_before_start>
 	<exit_when_idle>0</exit_when_idle>
