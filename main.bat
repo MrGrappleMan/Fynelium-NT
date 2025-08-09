@@ -30,17 +30,37 @@ cls
 	echo Manages print jobs sent from the computer to the printer or print server
 	echo It can store multiple print jobs in the print queue or buffer retrieved by the printer or print server
 	!userask!
+    set svcnme=PrintNotify
+  	!svcset!
 	set svcnme=Spooler
 	!svcset!
 	set svcnme=Fax
 	!svcset!
+	set svcnme=PrintWorkflowUserSvc
+	!svcset!
 	cls
 
-	echo Name: Windows Image Acquisition
+	echo Name: Camera and Image Scanners
+	echo TLDR: Disable if you do not use image scanners or connect cameras
+	echo.
 	echo Waits until you press the button on your scanner and then manages the process of getting the image where it needs to go
 	echo This also affects communication with cameras and Android PTP that you connect directly to your computer, so be aware of that if you need this function
 	!userask!
 	set svcnme=StiSvc
+	!svcset!
+	set svcnme=FrameServer
+	!svcset!
+	set svcnme=WiaRpc
+    !svcset!
+	cls
+
+	echo Name: Xbox
+	echo TLDR: Disable if you do not use anything related to Xbox
+	echo.
+	!userask!
+	set svcnme=XblAuthManager
+	!svcset!
+	set svcnme=GameSave
 	!svcset!
 	cls
 
@@ -50,6 +70,8 @@ cls
 	echo Stopping this service causes paired Bluetooth devices to fail to operate
 	echo It prevent new devices from being discovered or paired
 	echo Yet it can also serve as a safety measure from attacks like KNOB or BLUFFS
+	!userask!
+	set svcnme=BluetoothUserService
 	!userask!
 	set svcnme=BTAGService
 	!svcset!
@@ -106,6 +128,15 @@ net start wuauserv>nul
 :: Toggle Tweaks:
 powercfg -h off
 
+SensrSvc
+SensorService
+NetTcpPortSharing
+wisvc
+WpnUserService
+WpnService
+UserDataSvc
+UnistoreSvc
+UevAgentService
 sc start "UsoSvc">nul & sc config "UsoSvc" start=auto>nul
 sc start "InstallServicec">nul & sc config "InstallService" start=auto>nul
 sc start "DiagTrack">nul & sc config "DiagTrack" start=auto>nul
@@ -164,6 +195,7 @@ regedit /s registry.reg
 
 exit
 endlocal
+
 
 
 
