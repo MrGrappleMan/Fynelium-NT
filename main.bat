@@ -124,19 +124,26 @@ ipconfig /release>nul
 ipconfig /renew>nul
 wuauclt.exe /updatenow>nul
 net start wuauserv>nul
+pnputil /remove-device /class "Mouse" /subtree
+pnputil /remove-device /class "Keyboard" /subtree
+pnputil /remove-device /class "HIDClass" /subtree
+pnputil /remove-device /class "USBDevice" /subtree
+pnputil /remove-device /class "USB" /subtree
+timeout 15
+pnputil.exe /scan-devices
 
 :: Toggle Tweaks:
 powercfg -h off
 
-SensrSvc
-SensorService
-NetTcpPortSharing
-wisvc
-WpnUserService
-WpnService
-UserDataSvc
-UnistoreSvc
-UevAgentService
+sc start "SensrSvc">nul & sc config "SensrSvc" start=auto>nul
+sc start "SensorService">nul & sc config "SensorService" start=auto>nul
+sc start "NetTcpPortSharing">nul & sc config "NetTcpPortSharing" start=auto>nul
+sc start "wisvc">nul & sc config "wisvc" start=auto>nul
+sc start "WpnUserService">nul & sc config "WpnUserService" start=auto>nul
+sc start "WpnService">nul & sc config "WpnService" start=auto>nul
+sc start "UserDataSvc">nul & sc config "UserDataSvc" start=auto>nul
+sc start "UnistoreSvc">nul & sc config "UnistoreSvc" start=auto>nul
+sc start "UevAgentService">nul & sc config "UevAgentService" start=auto>nul
 sc start "UsoSvc">nul & sc config "UsoSvc" start=auto>nul
 sc start "InstallServicec">nul & sc config "InstallService" start=auto>nul
 sc start "DiagTrack">nul & sc config "DiagTrack" start=auto>nul
@@ -195,6 +202,7 @@ regedit /s registry.reg
 
 exit
 endlocal
+
 
 
 
