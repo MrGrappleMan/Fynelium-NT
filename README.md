@@ -1,4 +1,6 @@
-Make Windows have better performance and functionality with a productive environment
+Make Windows have better performance and functionality with a productive environment.
+I only mainatin this for users who want to have a better device experience,
+but are unable to switch away from Windows to Bazzite
 
 I am not responsible for any data loss, malfunctioning or any kind of damage done to your device
 YOU have chosen to do this modification. Save all your work and make any backups
@@ -14,4 +16,5 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance
 No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
