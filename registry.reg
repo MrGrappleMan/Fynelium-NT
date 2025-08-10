@@ -133,7 +133,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "AlwaysOn"=dword:00000001
-"NetworkThrottlingIndex"=dword:ffffffff
+"NetworkThrottlingIndex"=dword:fffffff
 "NoLazyMode"=dword:00000001
 "SystemResponsiveness"=dword:00000000
 
@@ -196,7 +196,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "EnableFirstLogonAnimation"=dword:00000000
-"VerboseStatus"=dword:00000001
+"VerboseStatus"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "HiberbootEnabled"=dword:00000000
