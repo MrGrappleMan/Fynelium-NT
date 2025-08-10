@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <cc_config>
 	<log_flags>
-	<task>0</task>
-	<file_xfer>0</file_xfer>
+		<task>0</task>
+		<file_xfer>0</file_xfer>
     	<sched_ops>0</sched_ops>
     </log_flags>
     <options>
@@ -32,10 +32,10 @@
 	<os_random_only>0</os_random_only>
 	<process_priority>0</process_priority>
 	<process_priority_special>0</process_priority_special>
-	<rec_half_life_days>360</rec_half_life_days>
+	<rec_half_life_days>365</rec_half_life_days>
 	<report_results_immediately>1</report_results_immediately>
 	<run_apps_manually>0</run_apps_manually>
-	<save_stats_days>5</save_stats_days>
+	<save_stats_days>90</save_stats_days>
 	<skip_cpu_benchmarks>0</skip_cpu_benchmarks>
 	<suppress_net_info>0</suppress_net_info>
 	<use_all_gpus>1</use_all_gpus>
