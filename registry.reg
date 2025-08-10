@@ -183,6 +183,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "ManagePreviewBuilds"=-
 "ManagePreviewBuildsPolicyValue"=-
+"SmartActiveHoursState"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "NoAutoRebootWithLoggedOnUsers"=dword:00000001
@@ -234,3 +235,12 @@ Windows Registry Editor Version 5.00
 "TcpMaxDupAcks"=dword:00000002
 "TcpTimedWaitDelay"=dword:00000020
 "TcpWindowSize"=dword:000016d0
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
+"IsExpedited"=dword:00000000
+"AllowAutoWindowsUpdateDownloadOverMeteredNetwork"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
+"DODownloadMode"=dword:00000003
+"DOMaxBackgroundDownloadBandwidth"=dword:00000000
+"DOMaxForegroundDownloadBandwidth"=dword:00000000
