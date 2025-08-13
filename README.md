@@ -1,9 +1,9 @@
-# Make Windows Better
+# ProductiWinty - Enhance your Windows productivity and performance
 
 ## 1. Better performance
 1. Avoid virtual memory at all costs
 2. No useless animations
-3. Exclusive Tweaks for Gaming and some level of High Performance Computing
+3. Exclusive Tweaks for lightweight High Performance Computing and Gaming
 
 ## 2. A Utilitarian and Productive environment
 1. No animations that slow down your user experience
@@ -11,6 +11,9 @@
 3. Make UI responsive with priority over background processes
 4. Ricing != being unproductive, if you do not rice all the time. Preincluded Window Manager.
 5. Restart-based updates do not take place during active hours
+6. Abstraction of unnecessary information and suggestions
+7. Smooth scrolling for no sudden movements
+8. UI Text anti-ali
 
 ## 3. Automatic Management of all sorts
 1. Updates handled automatically giving you the latest ones
@@ -18,14 +21,14 @@
 3. Windows' engine modifies UEFI setup utility settings for optimal performance
 4. Drive trimming or defragmentation
 
-This is for users who want to have a better device experience,
-but are unable to switch away from Windows 11 to an Atomic Linux distribution.
+This side-project is for users who want to have a better device experience,
+but are unable to switch away from Windows 11 to Linux. Plug, [Fynelium](https://https://github.com/MrGrappleMan/Fynelium/)
 
 It is not responsible for any data loss, malfunctioning or any kind of damage done to your device.
 YOU have chosen to do this modification. Save all your work and make any backups.
 Leaving your device idle when the main procedure starts is recommended.
 
-You will be asked a series of generic questions. Respond accoringly.
+You will be asked a series of generic questions. Respond to them accoringly.
 Run this in Windows Terminal( Admin ) with Powershell to start:
 
 ```
@@ -66,6 +69,7 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
 
