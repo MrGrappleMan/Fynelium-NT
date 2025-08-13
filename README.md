@@ -25,7 +25,8 @@ It is not responsible for any data loss, malfunctioning or any kind of damage do
 YOU have chosen to do this modification. Save all your work and make any backups.
 Leaving your device idle when the main procedure starts is recommended.
 
-Run this in Powershell to start:
+You will be asked a series of generic questions. Respond accoringly.
+Run this in Windows Terminal( Admin ) with Powershell to start:
 
 ```
 winget install Git.Git
@@ -35,14 +36,19 @@ curl https://github.com/MrGrappleMan/Fynelium-NT/
 ```
 
 Pre-included Applications:
+General-
 BOINC ( help with contributing to science )
 Docker ( For BOINC and development )
 Tor Snowflake Proxy ( help users access the unrestricted internet )
-Cursor ( don't get left behind in the AI revolution )
 Edge Canary ( the default one is removed, so you can simply use this...or uninstall it :( )
 Energy Star X ( further boost foreground app performance with EcoQOS API )
+Free Download Manager ( a necessity for faster downloads and passive lightweight torrenting )
 
-Pre-included Bloat:
+Development and Pentesting-
+Cursor ( don't get left behind in the AI revolution )
+Github Desktop ( why not?  )
+
+Pre-included Bloat ( because ye ) :
 Uprock
 Pawns.App
 Honeygain
@@ -58,6 +64,7 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
 
