@@ -161,7 +161,7 @@ sc start "W32Time">nul & sc config "W32Time" start=auto>nul
 sc start "WlanSvc">nul & sc config "WlanSvc" start=auto>nul
 sc start "dot3svc">nul & sc config "dot3svc" start=auto>nul
 sc start "SysMain">nul & sc config "SysMain" start=auto>nul
-sc stop "WSearch">nul & sc config "WSearch" start=disabled>nul
+sc start "WSearch">nul & sc config "WSearch" start=auto>nul
 
 bcdedit /set bootlog yes
 bcdedit /set bootmenupolicy Standard
@@ -173,7 +173,7 @@ bcdedit /set bootuxdisabled off
 bcdedit /set maxproc yes
 bcdedit /set onecpu no
 bcdedit /set disabledynamictick no
-bcdedit /set usefirmwarepcisettings yes
+bcdedit /set usefirmwarepcisettings no
 bcdedit /set nointegritychecks off
 bcdedit /set groupaware on
 bcdedit /set maxgroup on
@@ -202,6 +202,7 @@ regedit /s registry.reg
 
 exit
 endlocal
+
 
 
 
