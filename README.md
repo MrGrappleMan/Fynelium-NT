@@ -40,12 +40,11 @@ Pre-included Applications:
 |:---:|:---:|
 | BOINC | Help with contributing to science with idle power |
 | Docker | For BOINC and containerization |
-General-
-Tor Snowflake Proxy ( help users access the unrestricted internet )
-Edge ( the default one is removed, so you can simply use this...or uninstall it )
-Energy Star X ( Make system focus on foreground apps rather than background services with EcoQOS API )
-Free Download Manager ( a necessity for faster downloads and passive lightweight torrenting )
-Speedtest, by Ookla ( fast.com but without overhead )
+| Tor Snowflake Proxy | Help people worldwide access the unrestricted internet and prevent censorship with idle internet |
+| Edge | Truly the best brower for everyday usage and productivity |
+| Energy Star X | System bias for Foreground apps > Background services ( powered by EcoQOS API ) |
+| Free Download Manager |  Faster downloads and passive lightweight torrenting |
+| Speedtest, by Ookla | Test internet speed without browser overhead, with convenience OR just go to [fast.com](https://fast.com) |
 
 Development and Pentesting-
 Cursor ( don't get left behind in the AI revolution )
@@ -67,6 +66,7 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
 
