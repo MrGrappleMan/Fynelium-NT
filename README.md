@@ -28,6 +28,9 @@ Leaving your device idle when the main procedure starts is recommended.
 Run this in Powershell to start:
 
 ```
+winget install Git.Git
+mkdir  C:\Windows\Temp\Fynelium-NT\
+cd C:\Windows\Temp\Fynelium-NT\
 curl https://github.com/MrGrappleMan/Fynelium-NT/
 ```
 
@@ -55,5 +58,6 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
