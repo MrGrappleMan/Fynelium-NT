@@ -36,13 +36,11 @@ curl https://github.com/MrGrappleMan/Fynelium-NT/
 ```
 
 Pre-included Applications:
-| Left | Center | Right |
-|:---:|:---:|:---:|
-| Item A | Value 1 | 100 |
-| Item B | Value 2 | 25 |
+| App Name | Description |
+|:---:|:---:|
+| BOINC | Help with contributing to science with idle power |
+| Docker | For BOINC and containerization |
 General-
-BOINC ( help with contributing to science )
-Docker ( For BOINC and development )
 Tor Snowflake Proxy ( help users access the unrestricted internet )
 Edge ( the default one is removed, so you can simply use this...or uninstall it )
 Energy Star X ( Make system focus on foreground apps rather than background services with EcoQOS API )
@@ -69,6 +67,7 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
 
