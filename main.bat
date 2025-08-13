@@ -13,7 +13,7 @@ exit
 )
 set seperator=echo _____________________________________________________________________________________________________________________________________________________________________________________________
 set svcset="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disabled) ^& if !el!==2 (sc start "!svcnme!" ^& sc config "!svcnme!" start=auto)"
-set userask="echo Options: ^& echo X. Skip ^& echo 1. Disable ^& echo 2. Enable ^& choice /C 12X /N"
+set userask="echo Options: ^& echo X. Skip ^& echo 1. No ^& echo 2. Yes ^& choice /C 12X /N"
 color 07
 
 cls
@@ -24,9 +24,9 @@ echo PRESS ANY KEY TO START
 pause>nul
 cls
 
-	echo Name: Printing or Fax
-    echo TLDR: Disable if you do not use a printer, fax or a virtual print service.
+	echo Do you use a printer, fax or a virtual print service?
 	echo.
+	echo Service(s) Name: PrintNotify Soppler
 	echo Manages print jobs sent from the computer to the printer or print server
 	echo It can store multiple print jobs in the print queue or buffer retrieved by the printer or print server
 	!userask!
@@ -40,9 +40,9 @@ cls
 	!svcset!
 	cls
 
-	echo Name: Camera and Image Scanners
-	echo TLDR: Disable if you do not use image scanners or connect cameras
+	echo Do you use image scanners, Android PTP or connect cameras?
 	echo.
+	echo Service(s) Name: StiSvc FrameServer WiaRpc
 	echo Waits until you press the button on your scanner and then manages the process of getting the image where it needs to go
 	echo This also affects communication with cameras and Android PTP that you connect directly to your computer, so be aware of that if you need this function
 	!userask!
@@ -54,8 +54,7 @@ cls
     !svcset!
 	cls
 
-	echo Name: Xbox
-	echo TLDR: Disable if you do not use anything related to Xbox
+	echo Do you use anything related to Xbox?
 	echo.
 	!userask!
 	set svcnme=XblAuthManager
@@ -64,8 +63,7 @@ cls
 	!svcset!
 	cls
 
-	echo Name: Blutooth
-    echo TLDR: Disable if you do not use Bluetooth
+	echo Do you use Bluetooth? This even considers for Nearby Share
 	echo.
 	echo Stopping this service causes paired Bluetooth devices to fail to operate
 	echo It prevent new devices from being discovered or paired
@@ -79,8 +77,7 @@ cls
 	!svcset!
 	cls
 
-	echo Name: Remote Access
-	echo TLDR: Disable if you don't use remote desktop or remotely manage your device
+	echo Do you use remote desktop or remotely manage your device?
 	echo.
 	echo These services make remote control of your computer possible.
 	echo However, Microsoft Support could use this to fix issues.
@@ -98,13 +95,17 @@ cls
 	!svcset!
 	cls
 
-	echo Name: Virtualization or Containerization
-	echo TLDR: Enable if you use Docker, VirtualBox, Hyper-V, WSL, VMware, Bluestacks, or any other virtualization or emulation software
+	echo Name: Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Bluestacks, or any other virtualization, containerization or emulation software?
 	echo.
 	!userask!
 	if !el!==1 (bcdedit /set hypervisorlaunchtype off)
 	if !el!==2 (bcdedit /set hypervisorlaunchtype on)
     cls
+
+echo The main process has started. Keep this window open and check back after every 10-15 minutes.
+echo For the time-being, avoid modifying your system files or installing or using software that does that.
+echo Do not do important work or programs that keep progress via save-files on your disk.
+echo Device will restart automatically within a 2 minutes once done.
 
 ::Trigger Tweaks OR Repairs
 sfc /scannow
@@ -202,6 +203,7 @@ regedit /s registry.reg
 
 exit
 endlocal
+
 
 
 
