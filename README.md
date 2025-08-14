@@ -29,13 +29,12 @@ YOU have chosen to do this modification. Save all your work and make any backups
 Leaving your device idle when the main procedure starts is recommended.
 
 You will be asked a series of generic questions. Respond to them accoringly.
-Run this in Windows Terminal( Admin ) with Powershell to start:
+Run this in a permission elevated CMD window
+To do that, press Win+R, clear out anythin in the text field, type CMD and hit enter. Paste the text below into the window.
 
 ```
-winget install Git.Git
-mkdir  C:\Windows\Temp\Fynelium-NT\
-cd C:\Windows\Temp\Fynelium-NT\
-curl https://github.com/MrGrappleMan/Fynelium-NT/
+curl -o %windir%\Temp\Fynelium-NT\main.bat https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/refs/heads/main/main.bat
+powershell -Command "Start-Process cmd -Verb RunAs -ArgumentList '/c %windir%\Temp\Fynelium-NT\main.bat'"
 ```
 
 Pre-included Applications:
@@ -69,6 +68,7 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
 
