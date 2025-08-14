@@ -13,7 +13,10 @@ pause>nul
 exit
 )
 
-cd C:\Windows\Temp\Fynelium-NT\
+winget install Git.Git
+rmdir /s /q %windir%\Temp\Fynelium-NT\>nul
+mkdir %windir%\Temp\Fynelium-NT\
+cd %windir%\Temp\Fynelium-NT\
 set arch=%PROCESSOR_ARCHITECTURE%
 set seperator=echo _____________________________________________________________________________________________________________________________________________________________________________________________
 set svcset="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disabled) ^& if !el!==2 (sc start "!svcnme!" ^& sc config "!svcnme!" start=auto)"
@@ -116,9 +119,9 @@ dism /Online /ScanHealth
 dism /Online /Cleanup-Image /RestoreHealth
 
 net stop wuauserv>nul
-del /F /S /Q %windir%\SoftwareDistribution\Download\*>nul
-del /F /S /Q %tmp%\*>nul
-del /F /S /Q %windir%\Prefetch\*>nul
+rmdir /s /q %windir%\SoftwareDistribution\Download\>nul
+rmdir /s /q %tmp%\>nul
+rmdir /s /q %windir%\Prefetch\>nul
 ipconfig /flushdns>nul
 ipconfig /registerdns>nul
 ipconfig /release>nul
@@ -215,7 +218,7 @@ IF "%PROCESSOR_ARCHITECTURE%"=="ARM64" (
 ) ELSE (
     ECHO %PROCESSOR_ARCHITECTURE% is unsupported
 )
-curl -L "https://central.github.com/deployments/desktop/desktop/latest/win32?format=msi&env=beta" -o GitHubDesktopSetup.exe
+curl -L "https://central.github.com/deployments/desktop/desktop/latest/win32?format=msi&env=beta" -o GitHubDesktopSetup.msi
 curl -o GoogleDriveSetup.exe https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe
 
 BOINCSetup.exe
@@ -235,10 +238,11 @@ pause>nul
 pause>nul
 pause>nul
 
-del /F /S /Q %windir%\Temp\*>nul
+rmdir /s /q %windir%\Temp\>nul
 
 exit
 endlocal
+
 
 
 
