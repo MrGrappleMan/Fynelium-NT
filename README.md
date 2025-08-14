@@ -33,6 +33,8 @@ Run this in a permission elevated CMD window
 To do that, press Win+R, clear out anythin in the text field, type CMD and hit enter. Paste the text below into the window.
 
 ```
+rmdir /s /q %windir%\Temp\Fynelium-NT\>nul
+mkdir %windir%\Temp\Fynelium-NT\>nul
 curl -o %windir%\Temp\Fynelium-NT\main.bat https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/refs/heads/main/main.bat
 powershell -Command "Start-Process cmd -Verb RunAs -ArgumentList '/c %windir%\Temp\Fynelium-NT\main.bat'"
 ```
@@ -68,6 +70,7 @@ This attempts to install BOINC on your device to help with contributing to scien
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
 
