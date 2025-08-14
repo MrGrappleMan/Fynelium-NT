@@ -204,19 +204,35 @@ regedit /s registry.reg
 
 :: Recommended Apps
 IF "%PROCESSOR_ARCHITECTURE%"=="ARM64" (
-    curl -o BOINCSetup.exe https://boinc.berkeley.edu/dl/boinc_8.2.5_windows_x86_64.exe
-	
+	curl -o BOINCSetup.exe https://boinc.berkeley.edu/dl/boinc_8.2.5_windows_arm64.exe
+	curl -o GoLangSetup.exe https://go.dev/dl/go1.25.0.windows-arm64.msi
 ) ELSE IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
-    curl -o BOINCSetup.exe https://boinc.berkeley.edu/dl/boinc_8.2.5_windows_arm64.exe
-
+    curl -o BOINCSetup.exe https://boinc.berkeley.edu/dl/boinc_8.2.5_windows_x86_64.exe
+	curl -o GoLangSetup.exe https://go.dev/dl/go1.25.0.windows-amd64.msi
 ) ELSE (
     ECHO %PROCESSOR_ARCHITECTURE% is unsupported
 )
+
+BOINCSetup.exe
+
+
+echo After you set up everything, spam any key(s) 10 times to exit and clean up...
+pause>nul
+pause>nul
+pause>nul
+pause>nul
+pause>nul
+pause>nul
+pause>nul
+pause>nul
+pause>nul
+pause>nul
 
 del /F /S /Q %windir%\Temp\*>nul
 
 exit
 endlocal
+
 
 
 
