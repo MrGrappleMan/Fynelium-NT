@@ -209,14 +209,19 @@ IF "%PROCESSOR_ARCHITECTURE%"=="ARM64" (
 ) ELSE IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
     curl -o BOINCSetup.exe https://boinc.berkeley.edu/dl/boinc_8.2.5_windows_x86_64.exe
 	curl -o GoLangSetup.exe https://go.dev/dl/go1.25.0.windows-amd64.msi
+	curl -o FDMSetup.exe https://files2.freedownloadmanager.org/6/latest/fdm_x64_setup.exe
+
+	FDMSetup.exe
 ) ELSE (
     ECHO %PROCESSOR_ARCHITECTURE% is unsupported
 )
+curl -o GoogleDriveSetup.exe https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe
 
 BOINCSetup.exe
+GoLangSetup.exe
+GoogleDriveSetup.exe
 
-
-echo After you set up everything, spam any key(s) 10 times to exit and clean up...
+echo After you set up everything, spam any key(s) 10 times to clean up and reboot...
 pause>nul
 pause>nul
 pause>nul
@@ -232,6 +237,7 @@ del /F /S /Q %windir%\Temp\*>nul
 
 exit
 endlocal
+
 
 
 
