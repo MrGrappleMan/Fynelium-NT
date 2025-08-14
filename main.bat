@@ -14,6 +14,7 @@ exit
 )
 
 cd C:\Windows\Temp\Fynelium-NT\
+set arch=%PROCESSOR_ARCHITECTURE%
 set seperator=echo _____________________________________________________________________________________________________________________________________________________________________________________________
 set svcset="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disabled) ^& if !el!==2 (sc start "!svcnme!" ^& sc config "!svcnme!" start=auto)"
 set userask="echo Options: ^& echo X. Skip ^& echo 1. No ^& echo 2. Yes ^& choice /C 12X /N"
@@ -117,7 +118,6 @@ dism /Online /Cleanup-Image /RestoreHealth
 net stop wuauserv>nul
 del /F /S /Q %windir%\SoftwareDistribution\Download\*>nul
 del /F /S /Q %tmp%\*>nul
-del /F /S /Q %windir%\Temp\*>nul
 del /F /S /Q %windir%\Prefetch\*>nul
 ipconfig /flushdns>nul
 ipconfig /registerdns>nul
@@ -199,11 +199,25 @@ w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.window
 
 regedit /s registry.reg
 
-:: Power plan. idk if this works, last tried it in 2022
+:: Power plan. idk if this works, last tried it in 2022, did not work across PCs
 :: powercfg.exe -import "!cd!\powerplan.pow">nul
+
+:: Recommended Apps
+IF "%PROCESSOR_ARCHITECTURE%"=="ARM64" (
+    curl -o BOINCSetup.exe https://boinc.berkeley.edu/dl/boinc_8.2.5_windows_x86_64.exe
+	
+) ELSE IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
+    curl -o BOINCSetup.exe https://boinc.berkeley.edu/dl/boinc_8.2.5_windows_arm64.exe
+
+) ELSE (
+    ECHO %PROCESSOR_ARCHITECTURE% is unsupported
+)
+
+del /F /S /Q %windir%\Temp\*>nul
 
 exit
 endlocal
+
 
 
 
