@@ -1,5 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
+
 title Fynelium
 net session
 set el=!errorlevel!
@@ -11,22 +12,17 @@ echo Press any key to exit...
 pause>nul
 exit
 )
+
+cd C:\Windows\Temp\Fynelium-NT\
 set seperator=echo _____________________________________________________________________________________________________________________________________________________________________________________________
 set svcset="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disabled) ^& if !el!==2 (sc start "!svcnme!" ^& sc config "!svcnme!" start=auto)"
 set userask="echo Options: ^& echo X. Skip ^& echo 1. No ^& echo 2. Yes ^& choice /C 12X /N"
 color 07
-
-cls
-echo Hello %username%! I am not responsible for any data loss, malfunctioning or any kind of damage done to your device.
-echo YOU have chosen to do this modification. Save all your work before proceeding. Leaving your device idle when the process starts is recommended.
-%seperator%
-echo PRESS ANY KEY TO START
-pause>nul
 cls
 
 	echo Do you use a printer, fax or a virtual print service?
 	echo.
-	echo Service(s) Name: PrintNotify Soppler
+	echo Service(s) Name: PrintNotify Spooler
 	echo Manages print jobs sent from the computer to the printer or print server
 	echo It can store multiple print jobs in the print queue or buffer retrieved by the printer or print server
 	!userask!
@@ -56,6 +52,7 @@ cls
 
 	echo Do you use anything related to Xbox?
 	echo.
+	echo Service(s) Name: XblAuthManager GameSave
 	!userask!
 	set svcnme=XblAuthManager
 	!svcset!
@@ -63,8 +60,9 @@ cls
 	!svcset!
 	cls
 
-	echo Do you use Bluetooth? This even considers for Nearby Share
+	echo Do you use Bluetooth for anything? This even considers for Nearby Share
 	echo.
+	echo Service(s) Name: BluetoothUserService BTAGService bthserv
 	echo Stopping this service causes paired Bluetooth devices to fail to operate
 	echo It prevent new devices from being discovered or paired
 	echo Yet it can also serve as a safety measure from attacks like KNOB or BLUFFS
@@ -79,6 +77,7 @@ cls
 
 	echo Do you use remote desktop or remotely manage your device?
 	echo.
+	Service(s) Name: SessionEnv TermService UmRdpService RemoteRegistry
 	echo These services make remote control of your computer possible.
 	echo However, Microsoft Support could use this to fix issues.
 	echo Windows's Remote support won't work if you disable these services.
@@ -95,7 +94,7 @@ cls
 	!svcset!
 	cls
 
-	echo Name: Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Bluestacks, or any other virtualization, containerization or emulation software?
+	echo Name: Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?
 	echo.
 	!userask!
 	if !el!==1 (bcdedit /set hypervisorlaunchtype off)
@@ -105,7 +104,7 @@ cls
 echo The main process has started. Keep this window open and check back after every 10-15 minutes.
 echo For the time-being, avoid modifying your system files or installing or using software that does that.
 echo Do not do important work or programs that keep progress via save-files on your disk.
-echo Device will restart automatically within a 2 minutes once done.
+echo Device will restart automatically within a 2 minutes and show a warning once done.
 
 ::Trigger Tweaks OR Repairs
 sfc /scannow
@@ -114,6 +113,7 @@ wsreset.exe
 dism /Online /CheckHealth 
 dism /Online /ScanHealth
 dism /Online /Cleanup-Image /RestoreHealth
+
 net stop wuauserv>nul
 del /F /S /Q %windir%\SoftwareDistribution\Download\*>nul
 del /F /S /Q %tmp%\*>nul
@@ -125,6 +125,7 @@ ipconfig /release>nul
 ipconfig /renew>nul
 wuauclt.exe /updatenow>nul
 net start wuauserv>nul
+
 pnputil /remove-device /class "Mouse" /subtree
 pnputil /remove-device /class "Keyboard" /subtree
 pnputil /remove-device /class "HIDClass" /subtree
@@ -198,13 +199,11 @@ w32tm /config /syncfromflags:manual /manualpeerlist:"time.google.com time.window
 
 regedit /s registry.reg
 
-::Special Tweak
-::powercfg.exe -import "!cd!\powerplan.pow">nul
+:: Power plan. idk if this works, last tried it in 2022
+:: powercfg.exe -import "!cd!\powerplan.pow">nul
 
 exit
 endlocal
-
-
 
 
 
