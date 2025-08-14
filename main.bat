@@ -215,11 +215,13 @@ IF "%PROCESSOR_ARCHITECTURE%"=="ARM64" (
 ) ELSE (
     ECHO %PROCESSOR_ARCHITECTURE% is unsupported
 )
+curl -L "https://central.github.com/deployments/desktop/desktop/latest/win32?format=msi&env=beta" -o GitHubDesktopSetup.exe
 curl -o GoogleDriveSetup.exe https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe
 
 BOINCSetup.exe
 GoLangSetup.exe
 GoogleDriveSetup.exe
+GitHubDesktopSetup.exe
 
 echo After you set up everything, spam any key(s) 10 times to clean up and reboot...
 pause>nul
@@ -237,6 +239,7 @@ del /F /S /Q %windir%\Temp\*>nul
 
 exit
 endlocal
+
 
 
 
