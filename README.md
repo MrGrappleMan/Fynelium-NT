@@ -49,11 +49,11 @@ Pre-included Applications:
 | Free Download Manager |  Faster downloads and passive lightweight torrenting |
 | Speedtest, by Ookla | Test internet speed without browser overhead, with convenience OR just go to [fast.com](https://fast.com) |
 
-Development and Pentesting-
+### Development and Pentesting
 Cursor ( don't get left behind in the AI revolution )
 Github Desktop ( why not?  )
 
-Pre-included Bloat ( because ye ) :
+### Pre-included Bloat ( because ye )
 Uprock
 Pawns.App
 Honeygain
@@ -63,12 +63,13 @@ PacketShare
 Proxyrack
 HYRA AI
 
-### Additional Notes
+## Additional Notes
 
 This attempts to install BOINC on your device to help with contributing to science
 It works in the backgroud with minimal effect to performance.
 Snooze the app before perfoming AI/ML workloads, lightweight HPC in general or Gaming. No effect on battery life btw!
 Uninstall it if you like or your device is extremely old.
+
 
 
 
