@@ -218,13 +218,16 @@ IF "%PROCESSOR_ARCHITECTURE%"=="ARM64" (
 ) ELSE (
     ECHO %PROCESSOR_ARCHITECTURE% is unsupported
 )
+curl -L "https://go.microsoft.com/fwlink/?linkid=2084649&Channel=Canary&language=en&brand=M103" -o EdgeSetup.exe
 curl -L "https://central.github.com/deployments/desktop/desktop/latest/win32?format=msi&env=beta" -o GitHubDesktopSetup.msi
 curl -o GoogleDriveSetup.exe https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe
 
 BOINCSetup.exe
 GoLangSetup.exe
+EdgeSetup.exe
+GitHubDesktopSetup.msi
 GoogleDriveSetup.exe
-GitHubDesktopSetup.exe
+
 
 echo After you set up everything, spam any key(s) 10 times to clean up and reboot...
 pause>nul
@@ -242,6 +245,7 @@ rmdir /s /q %windir%\Temp\>nul
 
 exit
 endlocal
+
 
 
 
