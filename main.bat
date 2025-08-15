@@ -2,6 +2,8 @@
 setlocal enabledelayedexpansion
 
 title Fynelium
+
+:: Admin Check
 net session
 set el=!errorlevel!
 if !el!==2 (
@@ -13,14 +15,16 @@ pause>nul
 exit
 )
 
-winget install Git.Git
-rmdir /s /q %windir%\Temp\Fynelium-NT\>nul
-mkdir %windir%\Temp\Fynelium-NT\
-cd %windir%\Temp\Fynelium-NT\
+:: Functions and Variables
 set arch=%PROCESSOR_ARCHITECTURE%
 set seperator=echo _____________________________________________________________________________________________________________________________________________________________________________________________
 set svcset="if !el!==1 (sc stop "!svcnme!" ^& sc config "!svcnme!" start=disabled) ^& if !el!==2 (sc start "!svcnme!" ^& sc config "!svcnme!" start=auto)"
 set userask="echo Options: ^& echo X. Skip ^& echo 1. No ^& echo 2. Yes ^& choice /C 12X /N"
+
+winget install Git.Git
+rmdir /s /q %windir%\Temp\Fynelium-NT\>nul
+mkdir %windir%\Temp\Fynelium-NT\
+cd %windir%\Temp\Fynelium-NT\
 color 07
 cls
 
@@ -225,9 +229,8 @@ curl -o GoogleDriveSetup.exe https://dl.google.com/drive-file-stream/GoogleDrive
 BOINCSetup.exe
 GoLangSetup.exe
 EdgeSetup.exe
-GitHubDesktopSetup.msi
+msiexec.exe /i %windir%\Temp\Fynelium-NT\GitHubDesktopSetup.msi /qn
 GoogleDriveSetup.exe
-
 
 echo After you set up everything, spam any key(s) 10 times to clean up and reboot...
 pause>nul
@@ -245,6 +248,7 @@ rmdir /s /q %windir%\Temp\>nul
 
 exit
 endlocal
+
 
 
 
