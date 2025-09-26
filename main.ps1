@@ -1,4 +1,4 @@
-# IsAdmin?
+# Is executed as admin?
 $isAdmin = ([System.Security.Principal.WindowsPrincipal] [System.Security.Principal.WindowsIdentity]#GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]#Administrator)
 if (-not $isAdmin) {
     Write-Host "Re-run with admin rights" -ForegroundColor Red
@@ -7,7 +7,8 @@ if (-not $isAdmin) {
     exit
 }
 
-# Var, Func
+# Variabls, Functions
+$VerbosePreference = "Continue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
 $svcset = {
@@ -32,7 +33,7 @@ $userask = {
 # UserPrompts
 
 # Printers / Fax
-$sprtor
+Write-Host $sprtor
 Write-Host "Do you use a printer, fax or a virtual print service?"
 Write-Host ""
 $choice = & $userask
@@ -42,7 +43,7 @@ $choice = & $userask
 & $svcset "PrintWorkflowUserSvc"
 
 # Scanners / Cameras
-$sprtor
+Write-Host $sprtor
 Write-Host "Do you use image scanners, Android PTP or connect cameras?"
 Write-Host ""
 Write-Host "Waits until you press the button on your scanner and then manages the process of getting the image where it needs to go"
@@ -53,7 +54,7 @@ $choice = & $userask
 & $svcset "WiaRpc"
 
 # Xbox
-$sprtor
+Write-Host $sprtor
 Write-Host "Do you use anything related to Xbox?"
 Write-Host ""
 $choice = & $userask
@@ -61,7 +62,7 @@ $choice = & $userask
 & $svcset "GameSave"
 
 # Bluetooth
-$sprtor
+Write-Host $sprtor
 Write-Host "Do you use Bluetooth for anything in any form, even cases for Nearby Share or Phone Link?"
 Write-Host ""
 Write-Host "Stopping this service causes paired Bluetooth devices to fail to operate"
@@ -73,7 +74,7 @@ $choice = & $userask
 & $svcset "bthserv"
 
 # RemoteAccess
-$sprtor
+Write-Host $sprtor
 Write-Host "Do you use remote desktop or remotely manage your device?"
 Write-Host ""
 Write-Host "It makes remote control of your computer possible."
@@ -88,7 +89,7 @@ $choice = & $userask
 & $svcset "RemoteRegistry"
 
 # Virtualization
-$sprtor
+Write-Host $sprtor
 Write-Host "Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?"
 $choice = & $userask
 if ($choice -eq "1") {
@@ -96,9 +97,6 @@ if ($choice -eq "1") {
 } elseif ($choice -eq "2") {
     bcdedit /set hypervisorlaunchtype on
 }
-
-exit
-$sprtor
 
 # PowerCFG
 powercfg -h on
