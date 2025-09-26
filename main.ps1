@@ -8,11 +8,11 @@ if (-not $isAdmin) {
 }
 
 # Variabls, Functions
-$VerbosePreference = "Continue"
+$VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
 $svcset = {
-    param($svcName)
+    param($svcName, $choice)
     if ($choice -eq "1") {
         Stop-Service -Name $svcName -ErrorAction SilentlyContinue
         Set-Service -Name $svcName -StartupType Disabled
@@ -32,34 +32,14 @@ $userask = {
 
 # UserPrompts
 
-# Printers / Fax
-Write-Host $sprtor
-Write-Host "Do you use a printer, fax or a virtual print service?"
-Write-Host ""
-$choice = & $userask
-& $svcset "PrintNotify"
-& $svcset "Spooler"
-& $svcset "Fax"
-& $svcset "PrintWorkflowUserSvc"
-
-# Scanners / Cameras
-Write-Host $sprtor
-Write-Host "Do you use image scanners, Android PTP or connect cameras?"
-Write-Host ""
-Write-Host "Waits until you press the button on your scanner and then manages the process of getting the image where it needs to go"
-Write-Host "This also interferes communication with cameras and Android PTP that you connect directly to your computer"
-$choice = & $userask
-& $svcset "StiSvc"
-& $svcset "FrameServer"
-& $svcset "WiaRpc"
-
 # Xbox
 Write-Host $sprtor
 Write-Host "Do you use anything related to Xbox?"
 Write-Host ""
+Write-Host "Unnecesary services will be disabled if you do not use them"
 $choice = & $userask
-& $svcset "XblAuthManager"
-& $svcset "GameSave"
+& $svcset "XblAuthManager" $choice
+& $svcset "GameSave" $choice
 
 # Bluetooth
 Write-Host $sprtor
@@ -69,9 +49,9 @@ Write-Host "Stopping this service causes paired Bluetooth devices to fail to ope
 Write-Host "It prevent new devices from being discovered or paired"
 Write-Host "Yet it can also serve as a safety measure from attacks like KNOB or BLUFFS"
 $choice = & $userask
-& $svcset "BluetoothUserService"
-& $svcset "BTAGService"
-& $svcset "bthserv"
+& $svcset "BluetoothUserService" $choice
+& $svcset "BTAGService" $choice
+& $svcset "bthserv" $choice
 
 # RemoteAccess
 Write-Host $sprtor
@@ -83,19 +63,20 @@ Write-Host "Windows's Remote support won't work if you disable these services."
 Write-Host "Disabling these helps improve the security of your device in general"
 Write-Host "You may use Parsec or Moonlight without issues"
 $choice = & $userask
-& $svcset "SessionEnv"
-& $svcset "TermService"
-& $svcset "UmRdpService"
-& $svcset "RemoteRegistry"
+& $svcset "SessionEnv" $choice
+& $svcset "TermService" $choice
+& $svcset "UmRdpService" $choice
+& $svcset "RemoteRegistry" $choice
 
 # Virtualization
 Write-Host $sprtor
 Write-Host "Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?"
+
 $choice = & $userask
 if ($choice -eq "1") {
     bcdedit /set hypervisorlaunchtype off
 } elseif ($choice -eq "2") {
-    bcdedit /set hypervisorlaunchtype on
+    bcdedit /set hypervisorlaunchtype auto
 }
 
 # PowerCFG
@@ -116,7 +97,7 @@ Set-MMAgent -MaxOperationAPIFiles 8192
 bcdedit /set bootlog yes
 bcdedit /set bootmenupolicy Standard
 bcdedit /set bootstatuspolicy DisplayAllFailures
-bcdedit /set quietboot off
+bcdedit /set quietboot on
 bcdedit /set sos off
 #bcdedit /set nocrashautoreboot off
 bcdedit /set bootuxdisabled off
@@ -139,7 +120,6 @@ bcdedit /set nx Optin
 #bcdedit /set usephysicaldestination no
 #bcdedit /set tpmbootentropy default
 #bcdedit /set testsigning No
-#bcdedit /set hypervisorlaunchtype on
 
 # NTPOptions
 w32tm /register
