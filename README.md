@@ -1,4 +1,5 @@
-# Fynelium for Windows
+# [Fynelium for Windows]()
+![Last commit made to repository](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 
 ### 1. 🚀 Better performance
 1. Avoid virtual memory and enable RAM content compression
