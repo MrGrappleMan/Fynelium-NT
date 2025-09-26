@@ -1,0 +1,375 @@
+Windows Registry Editor Version 5.00
+
+; --------------------------------------------
+; UI Cosmetics
+; --------------------------------------------
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\Themes\Personalize]
+"AppsUseLightTheme"=dword:00000000
+"SystemUsesLightTheme"=dword:00000000
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"UserPreferencesMask"=hex:98,12,03,80,10,00,00,00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"EnableTransparency"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+"VisualFXSetting"=dword:00000003
+;0 = Auto set by Windows
+;1 = Best appearance
+;2 = Best performance
+;3 = Custom
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ControlAnimations]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\CursorShadow]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DragFullWindows]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DropShadow]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMAeroPeekEnabled]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMEnabled]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMSaveThumbnailEnabled]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewAlphaSelect]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewShadow]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\Themes]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ThumbnailsOrIcon]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation]
+"DefaultApplied"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"RotatingLockScreenOverlayEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAnimations"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"DisableLogonBackgroundImage"=dword:00000001
+"DisableAcrylicBackgroundOnLogon"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableFirstLogonAnimation"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"DisableSoftLanding"=dword:00000001
+
+; --------------------------------------------
+; UX Productivity
+; --------------------------------------------
+
+; No Shortcut To Start Sticky Keys
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+
+; No Shortcut To Start Toggle Keys
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Flags"="34"
+
+; No Shortcut To Start Filter Keys
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"Flags"="2"
+
+; Instantaneous Display of menus
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="0"
+"MinAnimate"="0"
+
+; Use it as an assistant
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsCopilot]
+"TurnOffWindowsCopilot"=dword:00000000
+
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"MouseHoverTime"="0"
+
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"MinAnimate"="0"
+
+; Correct cursor movements, with proper responsiveness
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed]
+"CursorSensitivity"=dword:00000064
+"CursorUpdateInterval"=dword:00000001
+"IRRemoteNavigationDelta"=dword:00000001
+
+; No Bandwidth reservation, and Accurate System clock
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Psched]
+"NonBestEffortLimit"=dword:00000000
+"TimerResolution"=dword:00000001
+
+; Use all these to your advantage
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowCopilotButton"=dword:00000001
+"AutoCheckSelect"=dword:00000001
+"UseCompactMode"=dword:00000001
+"HideFileExt"=dword:00000000
+"ShowPreviewHandlers"=dword:00000001
+"ShowSuperHidden"=dword:00000001
+"IconsOnly"=dword:00000000
+"ShowTaskViewButton"=dword:00000000
+"LastActiveClick"=dword:00000001
+"DisallowShaking"=dword:00000001
+
+; No restart during working time
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"SmartActiveHoursState"=dword:00000001
+
+; --------------------------------------------
+; Networking Options
+; --------------------------------------
+
+; Max connections
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER]
+"explorer.exe"=dword:00000255
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPER1_0SERVER]
+"explorer.exe"=dword:00000255
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"IRPStackSize"=dword:00000050
+"SizReqBuf"=dword:00017424
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"EnableICMPRedirect"=dword:00000001
+"EnablePMTUDiscovery"=dword:00000001
+"DefaultTTL"=dword:00000062
+"DisableTaskOffload"=dword:00000000
+"TCP1323Opts"=dword:00000001
+"MaxConnectionsPerServer"=dword:00000000
+"MaxFreeTcbs"=dword:00065536
+"MaxUserPort"=dword:0000fffe
+"GlobalMaxTcpWindowSize"=dword:000016d0
+"EnablePMTUBHDetect"=dword:00000000
+"SackOpts"=dword:00000000
+"TcpMaxDupAcks"=dword:00000002
+"TcpTimedWaitDelay"=dword:00000020
+"TcpWindowSize"=dword:000016d0
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"NetworkThrottlingIndex"=dword:ffffffff
+"AlwaysOn"=dword:00000001
+"NoLazyMode"=dword:00000001
+
+; --------------------------------------------
+; System Tweaks
+; --------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"LongPathsEnabled"=dword:00000001
+
+; Fast startup, the cooler initramfs
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"HiberbootEnabled"=dword:00000000
+
+; No startup delay. Parallize stuff unless order is required.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+
+; Memory Management
+
+;; Prefetch / Superfetch, preload frequently used parts of the filesystem into RAM, a form of readahead
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000003
+"EnableSuperfetch"=dword:00000003
+
+;; Clearing Pagefile at every shutdown wears down the drive.
+;; Prevent the kernel itself from being paged out.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"LargeSystemCache"=dword:00000001
+"IoPageLockLimit"=dword:00000000
+"DisablePagingExecutive"=dword:00000001
+"ClearPageFileAtShutdown"=dword:00000000
+"PagingFiles"=hex(7):3f,00,3a,00,5c,00,70,00,61,00,67,00,65,00,66,00,69,00,6c,\
+  00,65,00,2e,00,73,00,79,00,73,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000001
+
+; Enable Defrag / Trim for optimal disk health
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+
+; Post Processing Scheduling
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
+"Affinity"=dword:ffffffff
+"Background Only"="False"
+"BackgroundPriority"=dword:00000018
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000012
+"Priority"=dword:00000008
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+"Latency Sensitive"="True"
+
+; Gaming Scheduling
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
+"Affinity"=dword:ffffffff
+"Background Only"="False"
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000008
+"Priority"=dword:00000006
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+"Latency Sensitive"="True"
+
+; Audio Scheduling
+
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
+; "Affinity"=dword:00000007
+; "Background Only"="True"
+; "Clock Rate"=dword:00002710
+; "GPU Priority"=dword:00000008
+; "Priority"=dword:00000006
+; "Scheduling Category"="Medium"
+; "SFIO Priority"="Normal"
+
+; Prioritize apps over daemons
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"Win32PrioritySeparation"=dword:00000022
+
+; No reservation for daemons
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"SystemResponsiveness"=dword:00000000
+
+; --------------------------------------------
+; Telemetry, Updates, Self Maintenance
+; --------------------------------------------
+
+; Disable auto updating Maps. Just use your phone.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\Maps]
+"AutoUpdateEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
+"IsExpedited"=dword:00000000
+"AllowAutoWindowsUpdateDownloadOverMeteredNetwork"=dword:00000000
+
+; Delivery Optimization, peer to peer CDN for efficiency
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
+"DODownloadMode"=dword:00000003
+"DOMaxBackgroundDownloadBandwidth"=dword:00000000
+"DOMaxForegroundDownloadBandwidth"=dword:00000000
+
+; Telemetry
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000003
+"MaxTelemetryAllowed"=dword:00000003
+
+; Enhance Update Settings
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:00000000
+"ScheduledInstallDay"=dword:00000000
+"NoAutoRebootWithLoggedOnUsers"=dword:00000001
+"ScheduledInstallEveryWeek"=dword:00000001
+ --------------------------------------------
+; Debugging and SysAdmins
+; --------------------------------------------
+
+; Sudo, easily elevate processes
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Sudo]
+"Enabled"=dword:00000001
+
+; Dim the desktop on UAC trigger, use arrow keys to quick switch between yes or no without focusing on the prompt window
+; Brings user attention
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"PromptOnSecureDesktop"=dword:00000001
+
+; See advanced information if system crashes
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"DisplayParameters"=dword:00000001
+
+; No Verbose Startup Information
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
+"VerboseStatus"=dword:00000000
+
+; Take Ownership of a part of the filesystem
+
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\*\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
+
+
+
+
+
+
+
+
