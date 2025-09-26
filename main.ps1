@@ -9,7 +9,7 @@ if (-not $isAdmin) {
 
 # Var, Func
 $arch = $env:PROCESSOR_ARCHITECTURE
-$seperator = "_____________________________________________________________________________________________________________________________________________________________________________________________"
+$sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
 $svcset = {
     param($svcName)
     if ($choice -eq "1") {
@@ -32,7 +32,7 @@ $userask = {
 # UserPrompts
 
 # Printers / Fax
-Clear-Host
+$sprtor
 Write-Host "Do you use a printer, fax or a virtual print service?"
 Write-Host ""
 $choice = & $userask
@@ -42,7 +42,7 @@ $choice = & $userask
 & $svcset "PrintWorkflowUserSvc"
 
 # Scanners / Cameras
-Clear-Host
+$sprtor
 Write-Host "Do you use image scanners, Android PTP or connect cameras?"
 Write-Host ""
 Write-Host "Waits until you press the button on your scanner and then manages the process of getting the image where it needs to go"
@@ -53,7 +53,7 @@ $choice = & $userask
 & $svcset "WiaRpc"
 
 # Xbox
-Clear-Host
+$sprtor
 Write-Host "Do you use anything related to Xbox?"
 Write-Host ""
 $choice = & $userask
@@ -61,8 +61,8 @@ $choice = & $userask
 & $svcset "GameSave"
 
 # Bluetooth
-Clear-Host
-Write-Host "Do you use Bluetooth for anything in any form, even for Nearby Share?"
+$sprtor
+Write-Host "Do you use Bluetooth for anything in any form, even cases for Nearby Share or Phone Link?"
 Write-Host ""
 Write-Host "Stopping this service causes paired Bluetooth devices to fail to operate"
 Write-Host "It prevent new devices from being discovered or paired"
@@ -73,7 +73,7 @@ $choice = & $userask
 & $svcset "bthserv"
 
 # RemoteAccess
-Clear-Host
+$sprtor
 Write-Host "Do you use remote desktop or remotely manage your device?"
 Write-Host ""
 Write-Host "It makes remote control of your computer possible."
@@ -88,7 +88,7 @@ $choice = & $userask
 & $svcset "RemoteRegistry"
 
 # Virtualization
-Clear-Host
+$sprtor
 Write-Host "Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?"
 $choice = & $userask
 if ($choice -eq "1") {
@@ -98,7 +98,7 @@ if ($choice -eq "1") {
 }
 
 exit
-
+$sprtor
 
 # PowerCFG
 powercfg -h on
@@ -149,7 +149,8 @@ w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.c
 w32tm /resync
 
 # Registry
-regedit /s %windir%\Temp\Fynelium-NT\r.reg
+regedit /s %windir%\Temp\Fynelium-NT\registry\main.reg
+#regedit /s %windir%\Temp\Fynelium-NT\registry\unsafe.reg
 
 # Winget
 winget import --import-file winget.json --ignore-unavailable
