@@ -19,9 +19,7 @@ $services = @(
 foreach ($svcName in $services) {
     $service = Get-Service -Name $svcName -ErrorAction SilentlyContinue
     if ($service) {
-        Start-Service -Name $svcName -ErrorAction SilentlyContinue
         Set-Service -Name $svcName -StartupType Automatic -ErrorAction SilentlyContinue
-        Write-Host "Started and set $svcName to Automatic" -ForegroundColor Green
     } else {
         Write-Host "Service $svcName not found." -ForegroundColor Yellow
     }
