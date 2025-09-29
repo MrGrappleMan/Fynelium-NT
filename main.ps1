@@ -7,7 +7,7 @@ if (-not $isAdmin) {
     exit
 }
 
-# Variabls, Functions
+# Variables, Functions
 $VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
@@ -127,8 +127,7 @@ w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.c
 w32tm /resync
 
 # Registry
-regedit /s %windir%\Temp\Fynelium-NT\registry\main.reg
-#regedit /s %windir%\Temp\Fynelium-NT\registry\unsafe.reg
+regedit /s %windir%\Temp\Fynelium-NT\exports\registry.reg
 
 # Winget
 winget import --import-file winget.json --ignore-unavailable
