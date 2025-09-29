@@ -224,7 +224,8 @@ Windows Registry Editor Version 5.00
 "EnablePrefetcher"=dword:00000003
 "EnableSuperfetch"=dword:00000003
 
-;; Clearing Pagefile at every shutdown wears down the drive.
+;; Clearing Pagefile at every shutdown wears down the drive.
+
 ;; Prevent the kernel itself from being paged out.
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
@@ -321,7 +322,8 @@ Windows Registry Editor Version 5.00
 "NoAutoUpdate"=dword:00000000
 "ScheduledInstallDay"=dword:00000000
 "NoAutoRebootWithLoggedOnUsers"=dword:00000001
-"ScheduledInstallEveryWeek"=dword:00000001
+"ScheduledInstallEveryWeek"=dword:00000001
+
  --------------------------------------------
 ; Debugging and SysAdmins
 ; --------------------------------------------
