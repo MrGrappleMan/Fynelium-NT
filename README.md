@@ -1,3 +1,5 @@
+![Last Commit made to repository](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
+
 # Fynelium for Windows
 Suggested specs: Windows 11 with Beta insider channel or deeper
 
