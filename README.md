@@ -41,6 +41,7 @@ winget install --id Git.Git -e --source winget
 git clone https://github.com/MrGrappleMan/Fynelium-NT.git $Env:windir\\Temp\\Fynelium-NT\\
 cd "$Env:windir\\Temp\\Fynelium-NT\\"
 powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
+
 ```
 You will be prompted for an input. Type the letter "a" or ”A” and hit enter.
 ### [Advanced Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
