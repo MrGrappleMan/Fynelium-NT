@@ -45,5 +45,6 @@ cd "$Env:windir\\Temp\\Fynelium-NT\\"
 powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
 
 ```
-You will be prompted for an input. Type the letter "a" or ”A” and hit enter.
-### [Advanced Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
+You may be prompted for an input by powershell. In that case, type the letter "a" or ”A” and hit enter.
+
+### [Extra Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
