@@ -1,4 +1,4 @@
-# Is executed as admin?
+# Check if elevated to administrator
 $isAdmin = ([System.Security.Principal.WindowsPrincipal] [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Host "Re-run with admin rights" -ForegroundColor Red
@@ -7,7 +7,7 @@ if (-not $isAdmin) {
     exit
 }
 
-# Shell setup
+# ShellSetup
 $VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
