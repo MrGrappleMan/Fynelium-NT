@@ -1,6 +1,5 @@
 # Fynelium for Windows
-
-## Features
+Install now
 
 ### 1. 🚀 Better performance
 
