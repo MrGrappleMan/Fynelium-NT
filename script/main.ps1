@@ -132,5 +132,5 @@ w32tm /resync
 # Registry
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry.reg"
 # Winget
-cd $Env:windir\Temp\Fynelium-NT\export\
-winget import --import-file winget.json --ignore-unavailable
+cd "$Env:windir\Temp\Fynelium-NT\export\"
+winget import -i winget.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
