@@ -1,5 +1,3 @@
-@echo off
-
 sfc /scannow
 chkdsk /f /r
 wsreset.exe
