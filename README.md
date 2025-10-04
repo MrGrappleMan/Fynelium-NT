@@ -1,5 +1,5 @@
 # Fynelium for Windows
-Install now
+Suggested specs: Windows 11 with Beta insider channel or deeper
 
 ### 1. 🚀 Better performance
 
