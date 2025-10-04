@@ -9,14 +9,13 @@ Suggested specs: Windows 11 with Beta insider channel or deeper
 
 ### 2. ☯️ Productive environment
 
-1. File Explorer tweaks for better file handling
+1. File Explorer tweaks for advanced file handling
 2. Make UI responsive with priority over background processes
 3. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
 4. Updates interfere less with your experience
 5. Abstraction of unnecessary information
-6. Avoid suggestions
-7. Smooth scrolling
-8. UI Text anti-aliasing
+6. Avoid suggestions and advertisements
+7. Smooth scrolling and minor anti-aliasing
 
 ### 3. ♻️ Automatic Management of all sorts
 
