@@ -86,6 +86,7 @@ powercfg -h on
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
 # Services
+powersehll %windir%\Temp\Fynelium-NT\script\services.ps1
 
 # MMAgent
 Enable-MMAgent -ApplicationLaunchPrefetching
