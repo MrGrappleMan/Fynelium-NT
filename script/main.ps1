@@ -30,7 +30,7 @@ $userask = {
     return $choice
 }
 
-cd %windir%\Temp\Fynelium-NT\
+cd $Env:windir\Temp\Fynelium-NT\
 
 # UserPrompts
 
@@ -86,7 +86,7 @@ powercfg -h on
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
 # Services
-powersehll %windir%\Temp\Fynelium-NT\script\services.ps1
+powersehll $Env:windir\Temp\Fynelium-NT\script\services.ps1
 
 # MMAgent
 Enable-MMAgent -ApplicationLaunchPrefetching
@@ -130,7 +130,8 @@ w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.c
 w32tm /resync
 
 # Registry
-regedit /s %windir%\Temp\Fynelium-NT\export\registry.reg
+regedit /s $Env:windir\Temp\Fynelium-NT\export\registry.reg
 
 # Winget
+cd $Env:windir\Temp\Fynelium-NT\export\
 winget import --import-file winget.json --ignore-unavailable
