@@ -18,6 +18,11 @@
         {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
         {"PackageIdentifier": "Valve.Steam"},
         {"PackageIdentifier": "Valve.SteamCMD"}
+        {"PackageIdentifier": "Tailscale.Tailscale"},
+        {"PackageIdentifier": "spacedrive.Spacedrive"},
+        {"PackageIdentifier": "Giorgiotani.Peazip"},
+        {"PackageIdentifier": "Microsoft.WSL"},
+        {"PackageIdentifier": "NickJohn.EnergyStarX"},
       ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",
