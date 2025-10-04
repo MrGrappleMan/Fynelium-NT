@@ -30,7 +30,7 @@ $userask = {
     return $choice
 }
 
-cd $Env:windir\Temp\Fynelium-NT\
+cd "$Env:windir\\Temp\\Fynelium-NT\\"
 
 # UserPrompts
 
@@ -86,7 +86,7 @@ powercfg -h on
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
 # Services
-powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\services.ps1"
+powershell "$Env:windir\Temp\Fynelium-NT\script\services.ps1"
 
 # MMAgent
 Enable-MMAgent -ApplicationLaunchPrefetching
