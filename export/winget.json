@@ -2,27 +2,22 @@
   "$schema": "https://aka.ms/winget-packages.schema.2.0",
   "Sources": [
     {
+      "Name": "winget",
       "Packages": [
-        {"PackageIdentifier": "Discord.Discord.Canary"},
-        {"PackageIdentifier": "UCBerkeley.BOINC"},
-        {"PackageIdentifier": "LGUG2Z.komorebi"},
-        {"PackageIdentifier": "LGUG2Z.whkd"},
-        {"PackageIdentifier": "SoftDeluxe.FreeDownloadManager"},
-        {"PackageIdentifier": "Google.GoogleDrive"},
-        {"PackageIdentifier": "Microsoft.Edge.Canary"},
-        {"PackageIdentifier": "GoLang.Go"},
-        {"PackageIdentifier": "GitHub.GitHubDesktop.Beta"},
-        {"PackageIdentifier": "Microsoft.PowerShell.Preview"},
-        {"PackageIdentifier": "Microsoft.PCManager.Beta"},
-        {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
-        {"PackageIdentifier": "Valve.Steam"},
-        {"PackageIdentifier": "Valve.SteamCMD"}
-      ],
-      "SourceDetails": [
-        {
-          "Identifier": "winget",
-          "Name": "winget"
-        }
+        { "PackageIdentifier": "Discord.Discord.Canary" },
+        { "PackageIdentifier": "UCBerkeley.BOINC" },
+        { "PackageIdentifier": "LGUG2Z.komorebi" },
+        { "PackageIdentifier": "LGUG2Z.whkd" },
+        { "PackageIdentifier": "SoftDeluxe.FreeDownloadManager" },
+        { "PackageIdentifier": "Google.GoogleDrive" },
+        { "PackageIdentifier": "Microsoft.Edge.Canary" },
+        { "PackageIdentifier": "GoLang.Go" },
+        { "PackageIdentifier": "GitHub.GitHubDesktop.Beta" },
+        { "PackageIdentifier": "Microsoft.PowerShell.Preview" },
+        { "PackageIdentifier": "Microsoft.PCManager.Beta" },
+        { "PackageIdentifier": "Microsoft.WindowsPCHealthCheck" },
+        { "PackageIdentifier": "Valve.Steam" },
+        { "PackageIdentifier": "Valve.SteamCMD" }
       ]
     }
   ]
