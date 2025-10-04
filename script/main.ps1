@@ -29,8 +29,10 @@ $userask = {
     $choice = Read-Host "Enter choice (1, 2, X)"
     return $choice
 }
-
 cd "$Env:windir\\Temp\\Fynelium-NT\\"
+
+# FS-Copy
+robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
 
 # UserPrompts
 
