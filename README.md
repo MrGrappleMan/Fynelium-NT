@@ -38,7 +38,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
 Remove-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -Recurse -Force
 New-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -ItemType Directory -Force
 winget install --id Git.Git -e --source winget
-git clone <https://github.com/MrGrappleMan/Fynelium-NT.git> %windir%\\Temp\\Fynelium-NT\\
+git clone https://github.com/MrGrappleMan/Fynelium-NT.git %windir%\\Temp\\Fynelium-NT\\
 %windir%\\Temp\\Fynelium-NT\\script\\main.ps1
 ```
 You will be prompted for an input. Type the letter "a" or ”A” and hit enter.
