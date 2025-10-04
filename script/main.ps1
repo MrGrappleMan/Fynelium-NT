@@ -7,7 +7,7 @@ if (-not $isAdmin) {
     exit
 }
 
-# Variables, Functions
+# Shell setup
 $VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
@@ -29,6 +29,8 @@ $userask = {
     $choice = Read-Host "Enter choice (1, 2, X)"
     return $choice
 }
+
+cd %windir%\Temp\Fynelium-NT\
 
 # UserPrompts
 
@@ -127,7 +129,7 @@ w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.c
 w32tm /resync
 
 # Registry
-regedit /s %windir%\Temp\Fynelium-NT\exports\registry.reg
+regedit /s %windir%\Temp\Fynelium-NT\export\registry.reg
 
 # Winget
 winget import --import-file winget.json --ignore-unavailable
