@@ -23,6 +23,7 @@
         {"PackageIdentifier": "Giorgiotani.Peazip"},
         {"PackageIdentifier": "Microsoft.WSL"},
         {"PackageIdentifier": "NickJohn.EnergyStarX"},
+        {"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"},
       ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",
