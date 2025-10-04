@@ -17,7 +17,7 @@
         {"PackageIdentifier": "Microsoft.PCManager.Beta"},
         {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
         {"PackageIdentifier": "Valve.Steam"},
-        {"PackageIdentifier": "Valve.SteamCMD"}
+        {"PackageIdentifier": "Valve.SteamCMD"},
         {"PackageIdentifier": "Tailscale.Tailscale"},
         {"PackageIdentifier": "spacedrive.Spacedrive"},
         {"PackageIdentifier": "Giorgiotani.Peazip"},
