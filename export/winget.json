@@ -24,6 +24,11 @@
         {"PackageIdentifier": "Microsoft.WSL"},
         {"PackageIdentifier": "NickJohn.EnergyStarX"},
         {"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"},
+        {"PackageIdentifier": "Notion.Notion"},
+        {"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"},
+        {"PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"},
+        {"PackageIdentifier": "LizardByte.Sunshine"},
+        {"PackageIdentifier": "Docker.DockerCLI"},
       ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",
