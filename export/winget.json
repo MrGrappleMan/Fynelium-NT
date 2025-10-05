@@ -15,8 +15,6 @@
         {"PackageIdentifier": "GoLang.Go"},
         {"PackageIdentifier": "GitHub.GitHubDesktop.Beta"},
         {"PackageIdentifier": "Microsoft.PowerShell.Preview"},
-        //Freaky
-        
         {"PackageIdentifier": "Microsoft.PCManager.Beta"},
         {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
         {"PackageIdentifier": "Valve.Steam"},
@@ -31,7 +29,8 @@
         {"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"},
         {"PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"},
         {"PackageIdentifier": "LizardByte.Sunshine"},
-        {"PackageIdentifier": "Docker.DockerCLI"},
+        {"PackageIdentifier": "Docker.DockerCLI"}
+        
       ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",
