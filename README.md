@@ -31,7 +31,7 @@ This is for users who want to have a better Windows experience.
 
 ## Installation
 
-Search for Terminal, press Ctrl+Shift+Enter.
+Pin Terminal to taskbar, press Ctrl+Shift and click the pinned icon.
 Paste the text below into the newly launched window.
 
 ```
