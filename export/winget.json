@@ -4,6 +4,7 @@
   "Sources": [
     {
       "Packages": [
+        
         {"PackageIdentifier": "Discord.Discord.Canary"},
         {"PackageIdentifier": "UCBerkeley.BOINC"},
         {"PackageIdentifier": "LGUG2Z.komorebi"},
@@ -14,6 +15,8 @@
         {"PackageIdentifier": "GoLang.Go"},
         {"PackageIdentifier": "GitHub.GitHubDesktop.Beta"},
         {"PackageIdentifier": "Microsoft.PowerShell.Preview"},
+        //Freaky
+        
         {"PackageIdentifier": "Microsoft.PCManager.Beta"},
         {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
         {"PackageIdentifier": "Valve.Steam"},
