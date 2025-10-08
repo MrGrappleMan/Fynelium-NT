@@ -17,10 +17,11 @@ that this script tries to perform."
 
 1. File Explorer tweaks for advanced and convenient file handling
 2. Subtler animations
-4. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
-5. Updates interfere less with your experience
-6. Reduction of unnecessary information, suggestions and advertisements
-7. Smooth scrolling and minor anti-aliasing
+3. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
+4. Updates interfere less with your experience
+5. Reduction of unnecessary information, suggestions and advertisements
+6. Smooth scrolling and minor anti-aliasing
+7. Modded Bibata cursors
 
 ### 3. ♻️ Automated system maintenance and management
 
