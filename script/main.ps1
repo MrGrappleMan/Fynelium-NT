@@ -129,7 +129,6 @@ bcdedit /set nx Optin
 # NTPOptions
 w32tm /register
 w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com pool.ntp.org time.facebook.com time.apple.com time.aws.com" /reliable:YES /update
-w32tm /resync
 
 # Registry
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry.reg"
