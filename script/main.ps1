@@ -84,7 +84,7 @@ if ($choice -eq "1") {
 }
 
 # PowerCFG
-powercfg -h on
+powercfg -h on # For fast startup and getting back to working faster
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
 # Services
@@ -126,12 +126,18 @@ bcdedit /set nx Optin
 #bcdedit /set tpmbootentropy default
 #bcdedit /set testsigning No
 
-# NTPOptions
+# Time
 w32tm /register
 w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com pool.ntp.org time.facebook.com time.apple.com time.aws.com" /reliable:YES /update
 
+# Filesystem
+fsutil behavior set DisableDeleteNotify 0
+fsutil behavior set disablelastaccess 1 # Disables effectiveness of date modified
+fsutil behavior set memoryusage 2 # Allow more caching for better performance
+
 # Registry
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry.reg"
+
 # Winget
 cd "$Env:windir\Temp\Fynelium-NT\export\"
 winget import -i winget.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
