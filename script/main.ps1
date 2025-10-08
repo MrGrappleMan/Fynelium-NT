@@ -131,9 +131,10 @@ w32tm /register
 w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com pool.ntp.org time.facebook.com time.apple.com time.aws.com" /reliable:YES /update
 
 # Filesystem
-fsutil behavior set DisableDeleteNotify 0
-fsutil behavior set disablelastaccess 1 # Disables effectiveness of date modified
-fsutil behavior set memoryusage 2 # Allow more caching for better performance
+fsutil behavior set DisableDeleteNotify 0 # Allow drive to be trimmed for longetivity
+fsutil behavior set disablelastaccess 1 # Prevents Windows from logging when a file was last modified, reduce disk writes and overhead
+fsutil behavior set memoryusage 2 # Allow more caching
+fsutil behavior set disable8dot3 1 # Disables old filename fallback creation, reducing overhead
 
 # Registry
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry.reg"
