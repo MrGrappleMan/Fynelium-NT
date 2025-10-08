@@ -155,7 +155,7 @@ Windows Registry Editor Version 5.00
 "UseCompactMode"=dword:00000001
 "HideFileExt"=dword:00000000
 "ShowPreviewHandlers"=dword:00000001
-"ShowSuperHidden"=dword:00000001
+"ShowSuperHidden"=dword:00000000
 "IconsOnly"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
 "LastActiveClick"=dword:00000001
@@ -231,8 +231,7 @@ Windows Registry Editor Version 5.00
 "EnableSuperfetch"=dword:00000003
 
 ;; Clearing Pagefile at every shutdown wears down the drive.
-
-;; Prevent the kernel itself from being paged out.
+;; Prevent the system itself from being paged out to the drive.
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "LargeSystemCache"=dword:00000001
@@ -372,6 +371,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
