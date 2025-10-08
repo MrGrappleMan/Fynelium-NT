@@ -1,13 +1,17 @@
 ![Last Commit made to repository](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 
 # Fynelium for Windows
-Suggested specs: Windows 11 with Beta insider channel or deeper
+Suggested actions and system specifications
+Windows 11 with Beta insider channel or deeper
 
-### 1. 🚀 Better performance
+"I am not liable for any damage caused to your device by following this guide. Proceed at your own risk, and always back up your data before attempting any modifications
+that this script tries to perform."
+
+### 1. 🚀 Better efficiency and performance
 
 1. Enable RAM Compression
 2. Foreground application priority over background services
-3. Exclusive Tweaks for Better Performance
+4. Network optimizations for greater throughput and reduced latency
 
 ### 2. ☯️ Productive environment
 
@@ -47,3 +51,7 @@ You may be prompted for an input by powershell incase if it is the first time yo
 In that case, type letter "a" and enter.
 
 ### [Extra Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
+
+
+***The above mentioned tweaks are not guaranteed to work 100% of the time due to hardware diversity, the greediness of your ISP or other factors.
+It tries its best to optimize Windows
