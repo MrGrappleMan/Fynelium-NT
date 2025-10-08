@@ -1,5 +1,3 @@
-
-# Refresh, reload, repair
 sfc /scannow
 chkdsk /f /r
 wsreset.exe
@@ -15,5 +13,4 @@ ipconfig /flushdns
 ipconfig /registerdns
 netsh winsock reset
 netsh ip reset
-
-# Resetting of actual data
+Start-MpWDOScan
