@@ -14,3 +14,8 @@ ipconfig /registerdns
 netsh winsock reset
 netsh ip reset
 Start-MpWDOScan
+winget upgrade --all
+
+Remove-Item -Path $env:windir\Temp -Recurse -Force
+Remove-Item -Path $env:windir\Prefetch -Recurse -Force
+Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force
