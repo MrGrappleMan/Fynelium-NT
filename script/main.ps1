@@ -99,7 +99,7 @@ Enable-MMAgent -PageCombining
 Set-MMAgent -MaxOperationAPIFiles 8192
 
 # BCDEdit
-bcdedit /set bootlog yes
+bcdedit /set bootlog no
 bcdedit /set bootmenupolicy Standard
 bcdedit /set bootstatuspolicy DisplayAllFailures
 bcdedit /set quietboot on
