@@ -82,14 +82,18 @@ Windows Registry Editor Version 5.00
 "TaskbarAnimations"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
-"DisableLogonBackgroundImage"=dword:00000001
-"DisableAcrylicBackgroundOnLogon"=dword:00000001
+"DisableLogonBackgroundImage"=dword:00000000
+"DisableAcrylicBackgroundOnLogon"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
 
+; Terrible if you need to add multiple users in your PC or domain
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "EnableFirstLogonAnimation"=dword:00000000
+
+; Prevent recommendations
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "DisableSoftLanding"=dword:00000001
@@ -143,7 +147,7 @@ Windows Registry Editor Version 5.00
 "NonBestEffortLimit"=dword:00000000
 "TimerResolution"=dword:00000001
 
-; Use all these to your advantage
+; Advanced File explorer capabilities
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "ShowCopilotButton"=dword:00000001
@@ -157,7 +161,7 @@ Windows Registry Editor Version 5.00
 "LastActiveClick"=dword:00000001
 "DisallowShaking"=dword:00000001
 
-; No restart during working time
+; No restart based update interruption during work times
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "SmartActiveHoursState"=dword:00000001
@@ -166,7 +170,7 @@ Windows Registry Editor Version 5.00
 ; Networking Options
 ; --------------------------------------
 
-; Max connections
+; Max connections imo theres no need for a limit in the first place
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER]
 "explorer.exe"=dword:00000255
@@ -194,6 +198,8 @@ Windows Registry Editor Version 5.00
 "TcpTimedWaitDelay"=dword:00000020
 "TcpWindowSize"=dword:000016d0
 
+# No network throttling
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "NetworkThrottlingIndex"=dword:ffffffff
 "AlwaysOn"=dword:00000001
@@ -206,7 +212,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
 
-; Fast startup, the cooler initramfs
+; Fast startup, the cooler and more direct edition of initramfs
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "HiberbootEnabled"=dword:00000000
@@ -218,7 +224,7 @@ Windows Registry Editor Version 5.00
 
 ; Memory Management
 
-;; Prefetch / Superfetch, preload frequently used parts of the filesystem into RAM, a form of readahead
+;; Prefetch / Superfetch, preload frequently used parts of the filesystem into RAM, for readahead
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
 "EnablePrefetcher"=dword:00000003
@@ -280,7 +286,7 @@ Windows Registry Editor Version 5.00
 ; "Scheduling Category"="Medium"
 ; "SFIO Priority"="Normal"
 
-; Prioritize apps over daemons
+; Prioritize foreground applications over background tasks
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "Win32PrioritySeparation"=dword:00000022
@@ -310,7 +316,7 @@ Windows Registry Editor Version 5.00
 "DOMaxBackgroundDownloadBandwidth"=dword:00000000
 "DOMaxForegroundDownloadBandwidth"=dword:00000000
 
-; Telemetry
+; Expanded Telemetry
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
 "AllowTelemetry"=dword:00000003
@@ -334,7 +340,7 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000001
 
 ; Dim the desktop on UAC trigger, use arrow keys to quick switch between yes or no without focusing on the prompt window
-; Brings user attention
+; Brings user attention to the prompt
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "PromptOnSecureDesktop"=dword:00000001
@@ -366,6 +372,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
