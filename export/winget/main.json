@@ -14,17 +14,13 @@
         {"PackageIdentifier": "Microsoft.Edge.Canary"},
         {"PackageIdentifier": "Microsoft.PCManager.Beta"},
         {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
-        {"PackageIdentifier": "Valve.Steam"},
-        {"PackageIdentifier": "Valve.SteamCMD"},
         {"PackageIdentifier": "Tailscale.Tailscale"},
         {"PackageIdentifier": "spacedrive.Spacedrive"},
         {"PackageIdentifier": "Giorgiotani.Peazip"},
         {"PackageIdentifier": "Microsoft.WSL"},
         {"PackageIdentifier": "NickJohn.EnergyStarX"},
-        {"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"},
         {"PackageIdentifier": "Notion.Notion"},
         {"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"},
-        {"PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"},
         {"PackageIdentifier": "LizardByte.Sunshine"},
         {"PackageIdentifier": "Docker.DockerCLI"}
         
