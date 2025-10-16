@@ -5,7 +5,6 @@
     {
       "Packages": [
         
-        {"PackageIdentifier": "Discord.Discord.Canary"},
         {"PackageIdentifier": "UCBerkeley.BOINC"},
         {"PackageIdentifier": "LGUG2Z.komorebi"},
         {"PackageIdentifier": "LGUG2Z.whkd"},
