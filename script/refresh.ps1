@@ -15,10 +15,8 @@ ipconfig /flushdns
 ipconfig /registerdns
 netsh winsock reset # Should remove later
 netsh ip reset
-winget upgrade --all # Helps with updating system packages
 
 Remove-Item -Path $env:windir\Temp -Recurse -Force
 Remove-Item -Path $env:windir\Prefetch -Recurse -Force
-Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force
 
 Start-MpWDOScan # Restarts the device for Defender offline scan
