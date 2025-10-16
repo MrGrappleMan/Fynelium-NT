@@ -212,10 +212,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
 
-; Fast startup, the cooler and more direct edition of initramfs
+; Fast startup, completely precaches the instance of the OS
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
-"HiberbootEnabled"=dword:00000000
+"HiberbootEnabled"=dword:00000001
 
 ; No startup delay. Parallize stuff unless order is required.
 
@@ -224,7 +224,8 @@ Windows Registry Editor Version 5.00
 
 ; Memory Management
 
-;; Prefetch / Superfetch, preload frequently used parts of the filesystem into RAM, for readahead
+;; Prefetch / Superfetch, preload frequently used parts of the filesystem into RAM for readahead
+;; Dont worry this gets cleared out automatically once the program requests for more RAM to the OS
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
 "EnablePrefetcher"=dword:00000003
@@ -232,6 +233,7 @@ Windows Registry Editor Version 5.00
 
 ;; Clearing Pagefile at every shutdown wears down the drive.
 ;; Prevent the system itself from being paged out to the drive.
+;; Although a recessive technology, pagefiles prevent OOM errors and sometimes programs just expect it to be there
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "LargeSystemCache"=dword:00000001
@@ -371,6 +373,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
