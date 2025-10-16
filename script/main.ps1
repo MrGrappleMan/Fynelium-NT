@@ -37,7 +37,9 @@ robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
 # UserPrompts
 
 # Xbox
-Write-Host $sprtor
+Clear-Host
+$sprtor
+Write-Host ""
 Write-Host "Do you use anything related to Xbox?"
 Write-Host ""
 Write-Host "Unnecesary services will be disabled if you do not use them"
@@ -46,7 +48,9 @@ $choice = & $userask
 & $svcset "GameSave" $choice
 
 # Bluetooth
-Write-Host $sprtor
+Clear-Host
+$sprtor
+Write-Host ""
 Write-Host "Do you use Bluetooth for anything in any form, even cases for Nearby Share or Phone Link?"
 Write-Host ""
 Write-Host "Stopping this service causes paired Bluetooth devices to fail to operate"
@@ -58,7 +62,9 @@ $choice = & $userask
 & $svcset "bthserv" $choice
 
 # RemoteAccess
-Write-Host $sprtor
+Clear-Host
+$sprtor
+Write-Host ""
 Write-Host "Do you use remote desktop or remotely manage your device?"
 Write-Host ""
 Write-Host "It makes remote control of your computer possible."
@@ -73,7 +79,9 @@ $choice = & $userask
 & $svcset "RemoteRegistry" $choice
 
 # Virtualization
-Write-Host $sprtor
+Clear-Host
+$sprtor
+Write-Host ""
 Write-Host "Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?"
 
 $choice = & $userask
@@ -84,7 +92,7 @@ if ($choice -eq "1") {
 }
 
 # PowerCFG
-powercfg -h on # For fast startup and getting back to working faster from where you left off
+powercfg -h on # For fast startup and getting back to working faster from where you left off. Fast startup serves as a form of cache.
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
 # Services
@@ -99,13 +107,13 @@ Enable-MMAgent -PageCombining
 Set-MMAgent -MaxOperationAPIFiles 8192
 
 # BCDEdit
-bcdedit /set bootlog no
+bcdedit /set bootlog no # Only for debugging
 bcdedit /set bootmenupolicy Standard
 bcdedit /set bootstatuspolicy DisplayAllFailures
-bcdedit /set quietboot on
+bcdedit /set quietboot on 
 bcdedit /set sos off
 #bcdedit /set nocrashautoreboot off
-bcdedit /set bootuxdisabled off
+bcdedit /set bootuxdisabled off # Keeps windows boot experience
 #bcdedit /set maxproc yes
 bcdedit /set disabledynamictick no
 #bcdedit /set usefirmwarepcisettings no
@@ -126,8 +134,9 @@ bcdedit /set nx Optin
 #bcdedit /set tpmbootentropy default
 #bcdedit /set testsigning No
 
-# slmgr ato
+# undecided
 slmgr /ato
+Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force
 
 # Time
 w32tm /register
@@ -143,5 +152,6 @@ fsutil behavior set disable8dot3 1 # Disables old filename fallback creation, re
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\main.reg"
 
 # Winget
+winget upgrade --all # Updating system packages
 cd "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\"
 winget import -i main.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
