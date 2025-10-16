@@ -84,7 +84,7 @@ if ($choice -eq "1") {
 }
 
 # PowerCFG
-powercfg -h on # For fast startup and getting back to working faster
+powercfg -h on # For fast startup and getting back to working faster from where you left off
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
 # Services
@@ -93,7 +93,7 @@ powershell "$Env:windir\Temp\Fynelium-NT\script\services.ps1"
 # MMAgent
 Enable-MMAgent -ApplicationLaunchPrefetching
 Enable-MMAgent -ApplicationPreLaunch
-Enable-MMAgent -MemoryCompression
+Enable-MMAgent -MemoryCompression # Like ZRAM
 Enable-MMAgent -OperationAPI
 Enable-MMAgent -PageCombining
 Set-MMAgent -MaxOperationAPIFiles 8192
@@ -126,6 +126,9 @@ bcdedit /set nx Optin
 #bcdedit /set tpmbootentropy default
 #bcdedit /set testsigning No
 
+# slmgr ato
+slmgr /ato
+
 # Time
 w32tm /register
 w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com pool.ntp.org time.facebook.com time.apple.com time.aws.com" /reliable:YES /update
@@ -137,8 +140,8 @@ fsutil behavior set memoryusage 2 # Allow more caching
 fsutil behavior set disable8dot3 1 # Disables old filename fallback creation, reducing overhead
 
 # Registry
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\main.reg"
 
 # Winget
-cd "$Env:windir\Temp\Fynelium-NT\export\"
-winget import -i winget.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+cd "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\"
+winget import -i main.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
