@@ -12,16 +12,18 @@ Though it is highly unlikely that anything goes wrong. Respond to the questions 
 1. Enable RAM Compression
 2. Foreground application priority over background services
 3. Network optimizations for greater throughput and reduced latency
+4. EnergyStarX with the EcoQoS API for throttling background applications
 
 ### 2. ☯️ Productive environment
 
 1. File Explorer tweaks for advanced and convenient file handling
-2. Subtler animations
-3. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
-4. Updates interfere less with your experience
-5. Reduction of unnecessary information, suggestions and advertisements
-6. Smooth scrolling and minor anti-aliasing
-7. Modded Bibata cursors
+2. The all new Spacedrive
+3. Subtler animations
+4. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
+5. Updates interfere less with your experience
+6. Reduction of unnecessary information, suggestions and advertisements
+7. Smooth scrolling and minor anti-aliasing
+8. Modded Bibata cursors
 *. Optional tweaks for potato PCs
 
 ### 3. ♻️ Automated system maintenance and management
@@ -37,7 +39,7 @@ Though it is highly unlikely that anything goes wrong. Respond to the questions 
 Be sure to be connect to the internet and have administrator permissions
 Pin Terminal to taskbar, hold Ctrl+Shift and click the app. Use the Terminal UWP app, not powershell directly. It needs to have tabs.
 You will get a prompt, click yes
-Paste the text below into the newly launched window, assuming your shell is powershell. I recommend copying it with the button in the top right corner.
+Paste the text below into the newly launched window, assuming your shell is powershell. Copy it with the button in the top right corner.
 
 ```
 cd "$Env:windir\\Temp\\"
