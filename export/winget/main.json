@@ -6,9 +6,6 @@
       "Packages": [
         
         {"PackageIdentifier": "UCBerkeley.BOINC"},
-        {"PackageIdentifier": "LGUG2Z.komorebi"},
-        {"PackageIdentifier": "LGUG2Z.whkd"},
-        {"PackageIdentifier": "CharlesMilette.TranslucentTB"},
         {"PackageIdentifier": "SoftDeluxe.FreeDownloadManager"},
         {"PackageIdentifier": "Google.GoogleDrive"},
         {"PackageIdentifier": "Microsoft.Edge.Canary"},
