@@ -11,23 +11,21 @@
 3. Network optimizations for greater throughput and reduced latency
 4. EnergyStarX with the EcoQoS API for throttling background applications
 5. Free Download Manager for faster downloads and torrenting
+6. Tweaks made to services, BCDedit, MMAgents and Registry
 
 ### 2. ☯️ A beautifully productive environment
 
-1. File Explorer tweaks for advanced and convenient file handling
-2. The all new Spacedrive for modern file management
-3. Subtler animations to not slow you down, yet keep the expe
-4. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
-5. Updates interfere less with your experience
-6. Reduction of unnecessary information, suggestions and advertisements
-7. Smooth scrolling and anti-aliasing of text
-8. Custom Bibata cursors
-*. Optional tweaks for potato PCs
+1. File Explorer tweaks for advanced and convenient file handling, try Spacedrive
+2. Subtler animations to not slow you down, yet keep the navigation experience good
+3. Customized rice, won't reveal much here. Install it to see it for yourself
+4. Updates interfere less with your experience
+5. Reduction of unnecessary information, suggestions and advertisements
+6. Smooth scrolling and anti-aliasing of text
 
 ### 3. ♻️ Automated system maintenance and management
 
 1. Updates and drivers handled automatically
-2. Drivers are handled as per modern algorithms
+2. Installs additional drivers, that you may find useful
 3. Windows' engine handles UEFI setup utility settings for itself for optimal performance
 4. Drive trimming for longer drive lifespan and better speed
 5. Advanced Telemetry to help accelerate Windows development
