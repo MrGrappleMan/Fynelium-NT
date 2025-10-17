@@ -7,13 +7,62 @@ if (-not $isAdmin) {
     exit
 }
 
+# For winget, Windows Store, Windows updates, msix and appx installs. In a nutshell, package management
+$updates = @(
+    "UsoSvc",
+    "wuauserv",
+    "WaaSMedicSvc",
+    "InstallService",
+    "DoSvc"
+)
+
+# Reporting, data collection, analytics of various types
+$telemetry = @(
+    "DiagTrack",
+    "wisvc"
+)
+
+# For handling data, drive management, backups, file management, indexing
+$filesystem = @(
+    "WSearch",
+    "SysMain",
+    "UnistoreSvc",
+    "UserDataSvc"
+)
+
+# NTP, timezones
+$time = @(
+    "tzautoupdate",
+    "W32Time"
+)
+
+# Proper establishment of connections
+$networking = @(
+    "NetTcpPortSharing",
+    "Dnscache",
+    "WlanSvc",
+    "dot3svc",
+    "WebClient"
+)
+
+# Generic, uncategorized
 $services = @(
-    "SensrSvc", "SensorService", "NetTcpPortSharing", "wisvc", "WpnUserService",
-    "WpnService", "UserDataSvc", "UnistoreSvc", "UevAgentService", "UsoSvc",
-    "InstallService", "DiagTrack", "tzautoupdate", "BITS", "DoSvc", "wuauserv",
-    "WaaSMedicSvc", "Dnscache", "svsvc", "Winmgmt", "whesvc", "WebClient",
-    "W32Time", "WlanSvc", "dot3svc", "SysMain", "WSearch", "PrintNotify",
-    "Spooler", "Fax", "PrintWorkflowUserSvc", "StiSvc", "FrameServer", "WiaRpc"
+    "SensrSvc",
+    "SensorService",
+    "WpnUserService",
+    "WpnService",
+    "UevAgentService",
+    "BITS",
+    "svsvc",
+    "Winmgmt",
+    "whesvc",
+    "PrintNotify",
+    "Spooler",
+    "Fax",
+    "PrintWorkflowUserSvc",
+    "StiSvc",
+    "FrameServer",
+    "WiaRpc"
 )
 
 foreach ($svcName in $services) {
