@@ -1,10 +1,8 @@
 ![Last Commit made to repository](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 
 # Fynelium for Windows
-Suggested requirements
-An activated copy of Windows 11, still works on 10.
-8GB RAM
-Use the "Release Preview" insider channel or the other builds as you prefer
+
+## What it has to offer
 
 ### 1. 🚀 Better efficiency and performance
 
@@ -34,10 +32,17 @@ Use the "Release Preview" insider channel or the other builds as you prefer
 5. Advanced Telemetry to help accelerate Windows development
 
 ## Installation
+### Suggestions
+An activated copy of Windows 11, still works on 10.
+8GB RAM
+Use the "Release Preview" insider channel or the other builds as you prefer
 
-Be sure to be connect to the internet and have administrator permissions
-Pin Terminal to taskbar, hold Ctrl+Shift and click the app. Use the Terminal UWP app, not powershell directly. It needs to have tabs.
-You will get a prompt, click yes
+### Requirements
+Administrator permissions
+Internet access, preferrably uninterupted
+
+Search for "Terminal", press Ctrl+Shift+Enter to launch in elevated mode. Use the Terminal UWP app, which has tabs.
+You will get a UAC prompt, click yes
 Paste the text below into the newly launched window, assuming your shell is powershell. Copy it with the button in the top right corner.
 
 ```
@@ -59,6 +64,9 @@ cd "$Env:windir\\Temp\\Fynelium-NT\\"
 powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
 
 ```
+Now you should have started the execution of the script.
+The first phase asks for manual interaction, and then it begins to perform common optimizations unattended.
+Even though interaction will not be required later, you should still monitor it. See any error? Some are expected to occur
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
 
