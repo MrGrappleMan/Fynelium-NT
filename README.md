@@ -2,7 +2,7 @@
 
 # Fynelium for Windows
 
-## What it has to offer
+## What does have to offer?
 
 ### 1. 🚀 Better efficiency and performance
 
@@ -10,17 +10,18 @@
 2. Foreground application priority over background services
 3. Network optimizations for greater throughput and reduced latency
 4. EnergyStarX with the EcoQoS API for throttling background applications
+5. Free Download Manager for faster downloads and torrenting
 
-### 2. ☯️ Productive environment
+### 2. ☯️ A beautifully productive environment
 
 1. File Explorer tweaks for advanced and convenient file handling
-2. The all new Spacedrive
-3. Subtler animations
+2. The all new Spacedrive for modern file management
+3. Subtler animations to not slow you down
 4. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
 5. Updates interfere less with your experience
 6. Reduction of unnecessary information, suggestions and advertisements
 7. Smooth scrolling and minor anti-aliasing
-8. Modded Bibata cursors
+8. Custom Bibata cursors
 *. Optional tweaks for potato PCs
 
 ### 3. ♻️ Automated system maintenance and management
@@ -32,14 +33,14 @@
 5. Advanced Telemetry to help accelerate Windows development
 
 ## Installation
+### Requirements
+Administrator permissions
+Internet access, preferrably uninterupted
+
 ### Suggestions
 An activated copy of Windows 11, still works on 10.
 8GB RAM
 Use the "Release Preview" insider channel or the other builds as you prefer
-
-### Requirements
-Administrator permissions
-Internet access, preferrably uninterupted
 
 Search for "Terminal", press Ctrl+Shift+Enter to launch in elevated mode. Use the Terminal UWP app, which has tabs.
 You will get a UAC prompt, click yes
@@ -65,8 +66,8 @@ powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
 
 ```
 Now you should have started the execution of the script.
-The first phase asks for manual interaction, and then it begins to perform common optimizations unattended.
-Even though interaction will not be required later, you should still monitor it. See any error? Some are expected to occur
+The first phase asks for manual interaction, and then it begins to perform common optimizations in an unattended manner.
+Even though interaction will not be required later, you should still monitor its actions. Getting errors? Some are expected to occur.
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
 
@@ -81,5 +82,7 @@ While the likelihood of critical issues is low, results may vary depending on yo
 
 By using or referencing any part of this repository, you acknowledge that you understand and accept these conditions.
 
-The above mentioned tweaks are not guaranteed to work 100% of the time due to hardware diversity, your ISP running its servers on potatoes Microsoft or other factors.
-It tries its best to optimize Windows
+The tweaks are not guaranteed to work 100% of the time due to hardware diversity, your ISP running its servers on toasters, Microsoft or other factors.
+It tries its best to optimize Windows.
+
+There may be parts of this script that utilizes applications which have unethical intents, but only ethical parts are utilized.
