@@ -16,11 +16,11 @@
 
 1. File Explorer tweaks for advanced and convenient file handling
 2. The all new Spacedrive for modern file management
-3. Subtler animations to not slow you down
+3. Subtler animations to not slow you down, yet keep the expe
 4. [Komorebi rice 🍉](https://lgug2z.github.io/komorebi/)
 5. Updates interfere less with your experience
 6. Reduction of unnecessary information, suggestions and advertisements
-7. Smooth scrolling and minor anti-aliasing
+7. Smooth scrolling and anti-aliasing of text
 8. Custom Bibata cursors
 *. Optional tweaks for potato PCs
 
@@ -41,6 +41,7 @@ Internet access, preferrably uninterupted
 An activated copy of Windows 11, still works on 10.
 8GB RAM
 Use the "Release Preview" insider channel or the other builds as you prefer
+Remove Edge and use Edge Canary
 
 Search for "Terminal", press Ctrl+Shift+Enter to launch in elevated mode. Use the Terminal UWP app, which has tabs.
 You will get a UAC prompt, click yes
@@ -85,4 +86,5 @@ By using or referencing any part of this repository, you acknowledge that you un
 The tweaks are not guaranteed to work 100% of the time due to hardware diversity, your ISP running its servers on toasters, Microsoft or other factors.
 It tries its best to optimize Windows.
 
-There may be parts of this script that utilizes applications which have unethical intents, but only ethical parts are utilized.
+There may be parts of this script that utilizes externally sourced applications which -MAY- have unethical intents, but only ethical parts are utilized.
+Some may launch a GUI, the user is best suggested to only follow the instructions are per the script
