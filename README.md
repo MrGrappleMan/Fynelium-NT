@@ -1,11 +1,10 @@
 ![Last Commit made to repository](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 
 # Fynelium for Windows
-11 or 10
-
-"I am not liable for any damage caused to your device by following this guide.
-Proceed at your own risk, and always back up your data before attempting any modifications that this script tries to perform.
-Though it is highly unlikely that anything goes wrong. Respond to the questions asked with the truth to make tweaks as per requirements"
+Suggested requirements
+An activated copy of Windows 11, still works on 10.
+8GB RAM
+Use the "Release Preview" insider channel or the other builds as you prefer
 
 ### 1. 🚀 Better efficiency and performance
 
@@ -63,5 +62,16 @@ powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
 
-***The above mentioned tweaks are not guaranteed to work 100% of the time due to hardware diversity, the greediness of your ISP or Microsoft or other factors.
+## Legal
+
+This repository and its contents are provided as-is without any warranty of any kind.
+I am not liable for any direct, indirect, or consequential damage to your system, data, or hardware arising from the use of this guide or its scripts.
+
+Proceed entirely at your own risk. Always back up your data and review the scripts before executing them.
+
+While the likelihood of critical issues is low, results may vary depending on your environment and configuration.
+
+By using or referencing any part of this repository, you acknowledge that you understand and accept these conditions.
+
+The above mentioned tweaks are not guaranteed to work 100% of the time due to hardware diversity, your ISP running its servers on potatoes Microsoft or other factors.
 It tries its best to optimize Windows
