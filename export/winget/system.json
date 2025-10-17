@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "CreationDate": "2025-10-04T22:14:29.114-00:00",
+  "Sources": [
+    {
+      "Packages": [
+        
+        {"PackageIdentifier": "Microsoft.PCManager.Beta"},
+        {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
+        {"PackageIdentifier": "NickJohn.EnergyStarX"},
+        
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ],
+  "WinGetVersion": "1.12.240-preview"
+}
