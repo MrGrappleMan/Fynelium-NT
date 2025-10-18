@@ -1,0 +1,40 @@
+
+
+; --------------------------------------------
+; Networking and Internet
+; --------------------------------------
+
+; Max connections
+; Theres no need for a limit
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER]
+"explorer.exe"=dword:00000255
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPER1_0SERVER]
+"explorer.exe"=dword:00000255
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"IRPStackSize"=dword:00000050
+"SizReqBuf"=dword:00017424
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"EnableICMPRedirect"=dword:00000001
+"EnablePMTUDiscovery"=dword:00000001
+"DefaultTTL"=dword:00000062
+"DisableTaskOffload"=dword:00000000
+"TCP1323Opts"=dword:00000001
+"MaxConnectionsPerServer"=dword:00000000
+"MaxFreeTcbs"=dword:00065536
+"MaxUserPort"=dword:0000fffe
+"GlobalMaxTcpWindowSize"=dword:000016d0
+"EnablePMTUBHDetect"=dword:00000000
+"SackOpts"=dword:00000000
+"TcpMaxDupAcks"=dword:00000002
+"TcpTimedWaitDelay"=dword:00000020
+"TcpWindowSize"=dword:000016d0
+
+; No throttling
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"NetworkThrottlingIndex"=dword:ffffffff
+"AlwaysOn"=dword:00000001
+"NoLazyMode"=dword:00000001
