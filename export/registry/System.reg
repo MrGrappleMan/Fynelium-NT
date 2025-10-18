@@ -1,0 +1,93 @@
+
+
+; --------------------------------------------
+; System Tweaks
+; --------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"LongPathsEnabled"=dword:00000001
+
+; Fast startup, completely precaches the instance of the OS
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"HiberbootEnabled"=dword:00000001
+
+; No startup delay. Parallize stuff unless order is required.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+
+; Memory Management
+
+;; Prefetch / Superfetch, preload frequently used parts of the filesystem into RAM for readahead
+;; Dont worry this gets cleared out automatically once the program requests for more RAM to the OS
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000003
+"EnableSuperfetch"=dword:00000003
+
+;; Clearing Pagefile at every shutdown wears down the drive.
+;; Prevent the system itself from being paged out to the drive.
+;; Although a recessive technology, pagefiles prevent OOM errors and sometimes programs just expect it to be there
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"LargeSystemCache"=dword:00000001
+"IoPageLockLimit"=dword:00000000
+"DisablePagingExecutive"=dword:00000001
+"ClearPageFileAtShutdown"=dword:00000000
+"PagingFiles"=hex(7):3f,00,3a,00,5c,00,70,00,61,00,67,00,65,00,66,00,69,00,6c,\
+  00,65,00,2e,00,73,00,79,00,73,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000001
+
+; Enable Defrag / Trim for optimal disk health
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+
+; Post Processing Scheduling
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
+"Affinity"=dword:ffffffff
+"Background Only"="False"
+"BackgroundPriority"=dword:00000018
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000012
+"Priority"=dword:00000008
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+"Latency Sensitive"="True"
+
+; Gaming Scheduling
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
+"Affinity"=dword:ffffffff
+"Background Only"="False"
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000008
+"Priority"=dword:00000006
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+"Latency Sensitive"="True"
+
+; Audio Scheduling
+
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
+; "Affinity"=dword:00000007
+; "Background Only"="True"
+; "Clock Rate"=dword:00002710
+; "GPU Priority"=dword:00000008
+; "Priority"=dword:00000006
+; "Scheduling Category"="Medium"
+; "SFIO Priority"="Normal"
+
+; Prioritize foreground applications over background tasks
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"Win32PrioritySeparation"=dword:00000022
+
+; No reservation for daemons
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"SystemResponsiveness"=dword:00000000
