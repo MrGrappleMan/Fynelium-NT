@@ -1,10 +1,48 @@
 ### This is the core of the project, that you launch to start the tweaking project when you have fulfilled the prerequisites
 ### of getting Git installed, cloning the repo and this script being launched as an admin
 
+# Shell Setup - Variables and Functions
+$VerbosePreference = "SilentlyContinue"
+$arch = $env:PROCESSOR_ARCHITECTURE
+$sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
+$toptui = {
+        Clear-Host
+        $sprtor
+        Write-Host " _______  __   __  __    _  _______  ___      ___   __   __  __   __         ------------------";
+        Write-Host "|       ||  | |  ||  |  | ||       ||   |    |   | |  | |  ||  |_|  |        -        -       -";
+        Write-Host "|    ___||  |_|  ||   |_| ||    ___||   |    |   | |  | |  ||       |        -        -       -";
+        Write-Host "|   |___ |       ||       ||   |___ |   |    |   | |  |_|  ||       |        ---------- -------";
+        Write-Host "|    ___||_     _||  _    ||    ___||   |___ |   | |       ||       |        -        -        ";
+        Write-Host "|   |      |   |  | | |   ||   |___ |       ||   | |       || ||_|| |        -        -        ";
+        Write-Host "|___|      |___|  |_|  |__||_______||_______||___| |_______||_|   |_|        ------------------";
+        Write-Host
+        Write-Host "Home: https://github.com/MrGrappleMan/Fynelium-NT/ ";
+        $sprtor
+}
+$svcset = {
+    param($svcName, $choice)
+    if ($choice -eq "0") {
+        Stop-Service -Name $svcName -ErrorAction Continue
+        Set-Service -Name $svcName -StartupType Disabled
+    } elseif ($choice -eq "1") {
+        Start-Service -Name $svcName -ErrorAction Continue
+        Set-Service -Name $svcName -StartupType Automatic
+    }
+}
+$userask = {
+    Write-Host "Options:"
+    Write-Host "X. Skip"
+    Write-Host "0. No"
+    Write-Host "1. Yes"
+    $choice = Read-Host "Input: "
+    return $choice
+}
+$isAdmin = ([System.Security.Principal.WindowsPrincipal] [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
+cd "$Env:windir\\Temp\\Fynelium-NT\\"
+
 # Has administrator permissions?
 # 1 - Go ahead, execute the rest of the script
 # 0 - Make the script elevate itself
-$isAdmin = ([System.Security.Principal.WindowsPrincipal] [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Host "This script needs adminstrator right to function properly" -ForegroundColor Red
     Write-Host "Attempting to self-elevate, by re running through a new instance..."
@@ -13,39 +51,13 @@ if (-not $isAdmin) {
     exit
 }
 
-# Shell Setup - Variables and Functions
-$VerbosePreference = "SilentlyContinue"
-$arch = $env:PROCESSOR_ARCHITECTURE
-$sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
-$svcset = {
-    param($svcName, $choice)
-    if ($choice -eq "1") {
-        Stop-Service -Name $svcName -ErrorAction SilentlyContinue
-        Set-Service -Name $svcName -StartupType Disabled
-    } elseif ($choice -eq "2") {
-        Start-Service -Name $svcName -ErrorAction SilentlyContinue
-        Set-Service -Name $svcName -StartupType Automatic
-    }
-}
-$userask = {
-    Write-Host "Options:"
-    Write-Host "X. Skip"
-    Write-Host "1. No"
-    Write-Host "2. Yes"
-    $choice = Read-Host "Enter choice (1, 2, X)"
-    return $choice
-}
-cd "$Env:windir\\Temp\\Fynelium-NT\\"
-
-# FS-Copy
+# Filesystem - Copy over configurations
 robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
 
-# UserPrompts
+## User Prompts
 
 # Xbox
-Clear-Host
-$sprtor
-Write-Host ""
+$toptui
 Write-Host "Do you use anything related to Xbox?"
 Write-Host ""
 Write-Host "Unnecesary services will be disabled if you do not use them"
@@ -54,9 +66,7 @@ $choice = & $userask
 & $svcset "GameSave" $choice
 
 # Bluetooth
-Clear-Host
-$sprtor
-Write-Host ""
+$toptui
 Write-Host "Do you use Bluetooth for anything in any form, even cases for Nearby Share or Phone Link?"
 Write-Host ""
 Write-Host "Stopping this service causes paired Bluetooth devices to fail to operate"
@@ -68,9 +78,7 @@ $choice = & $userask
 & $svcset "bthserv" $choice
 
 # RemoteAccess
-Clear-Host
-$sprtor
-Write-Host ""
+$toptui
 Write-Host "Do you use remote desktop or remotely manage your device?"
 Write-Host ""
 Write-Host "It makes remote control of your computer possible."
@@ -85,9 +93,7 @@ $choice = & $userask
 & $svcset "RemoteRegistry" $choice
 
 # Virtualization
-Clear-Host
-$sprtor
-Write-Host ""
+$toptui
 Write-Host "Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?"
 
 $choice = & $userask
@@ -97,14 +103,14 @@ if ($choice -eq "1") {
     bcdedit /set hypervisorlaunchtype auto
 }
 
-# PowerCFG
+# Powercfg
 powercfg -h on # For fast startup and getting back to working faster from where you left off. Fast startup serves as a form of cache.
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
 # Services
 powershell "$Env:windir\Temp\Fynelium-NT\script\services.ps1"
 
-# MMAgent
+# MMAgent ( Memory Management Agent )
 Enable-MMAgent -ApplicationLaunchPrefetching
 Enable-MMAgent -ApplicationPreLaunch
 Enable-MMAgent -MemoryCompression # Like ZRAM
