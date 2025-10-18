@@ -1,4 +1,8 @@
+Windows Registry Editor Version 5.00
 
+; --------------------------------------------
+; Telemtry, data collection, analytics
+; --------------------------------------------
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
 "AllowTelemetry"=dword:00000003
