@@ -1,0 +1,5 @@
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000003
+"MaxTelemetryAllowed"=dword:00000003
