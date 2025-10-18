@@ -1,8 +1,8 @@
-
+Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
 ; Networking and Internet
-; --------------------------------------
+; --------------------------------------------
 
 ; Max connections
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER]
