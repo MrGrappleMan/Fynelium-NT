@@ -20,12 +20,6 @@ Windows Registry Editor Version 5.00
 "DOMaxBackgroundDownloadBandwidth"=dword:00000000
 "DOMaxForegroundDownloadBandwidth"=dword:00000000
 
-; Expanded Telemetry
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
-"AllowTelemetry"=dword:00000003
-"MaxTelemetryAllowed"=dword:00000003
-
 ; Enhance Update Settings
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
@@ -76,6 +70,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
