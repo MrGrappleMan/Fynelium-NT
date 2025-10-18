@@ -1,13 +1,19 @@
-# Check if elevated to administrator
+### This is the core of the project, that you launch to start the tweaking project when you have fulfilled the prerequisites
+### of getting Git installed, cloning the repo and this script being launched as an admin
+
+# Has administrator permissions?
+# 1 - Go ahead, execute the rest of the script
+# 0 - Make the script elevate itself
 $isAdmin = ([System.Security.Principal.WindowsPrincipal] [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
-    Write-Host "Re-run with admin rights" -ForegroundColor Red
-    Write-Host "Press Enter to exit"
-    Read-Host
+    Write-Host "This script needs adminstrator right to function properly" -ForegroundColor Red
+    Write-Host "Attempting to self-elevate, by re running through a new instance..."
+    Start-Sleep -s 3
+    
     exit
 }
 
-# ShellSetup
+# Shell Setup - Variables and Functions
 $VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
