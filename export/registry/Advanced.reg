@@ -1,35 +1,7 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; Telemetry, Updates, Self Maintenance
-; --------------------------------------------
-
-; Disable auto updating Maps. Just use your phone.
-
-[HKEY_LOCAL_MACHINE\SYSTEM\Maps]
-"AutoUpdateEnabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
-"IsExpedited"=dword:00000000
-"AllowAutoWindowsUpdateDownloadOverMeteredNetwork"=dword:00000000
-
-; Delivery Optimization, peer to peer CDN for efficiency
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
-"DODownloadMode"=dword:00000003
-"DOMaxBackgroundDownloadBandwidth"=dword:00000000
-"DOMaxForegroundDownloadBandwidth"=dword:00000000
-
-; Enhance Update Settings
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
-"NoAutoUpdate"=dword:00000000
-"ScheduledInstallDay"=dword:00000000
-"NoAutoRebootWithLoggedOnUsers"=dword:00000001
-"ScheduledInstallEveryWeek"=dword:00000001
-
- --------------------------------------------
-; Debugging and SysAdmins
+; For Debugging, SysAdmins and Power Users
 ; --------------------------------------------
 
 ; Sudo, easily elevate processes
@@ -70,6 +42,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
