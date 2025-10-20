@@ -2,7 +2,7 @@ Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
 ; User eXperience, makes what you interact with to be comforting and appealing to use
-; Except that you device is a potato by today's standards, so we disable all this
+; Except that you only care about performance
 ; --------------------------------------------
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
@@ -17,10 +17,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:00000002
-;0 = Auto set by Windows
-;1 = Best appearance
-;2 = Best performance
-;3 = Custom
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
 "DefaultApplied"=dword:00000001
