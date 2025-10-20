@@ -4,9 +4,11 @@
   "Sources": [
     {
       "Packages": [
+        
         {"PackageIdentifier": "SoftDeluxe.FreeDownloadManager"},
         {"PackageIdentifier": "Microsoft.Edge.Canary"},
         {"PackageIdentifier": "Tailscale.Tailscale"},
+        
        ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",
