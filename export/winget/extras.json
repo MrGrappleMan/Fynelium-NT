@@ -6,11 +6,9 @@
       "Packages": [
         
         {"PackageIdentifier": "UCBerkeley.BOINC"},
-        {"PackageIdentifier": "Microsoft.WSL"},
         {"PackageIdentifier": "Notion.Notion"},
         {"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"},
-        {"PackageIdentifier": "LizardByte.Sunshine"},
-        {"PackageIdentifier": "Docker.DockerCLI"}
+        {"PackageIdentifier": "LizardByte.Sunshine"}
         
       ],
       "SourceDetails": {
