@@ -6,9 +6,6 @@
       "Packages": [
         
         {"PackageIdentifier": "UCBerkeley.BOINC"},
-        {"PackageIdentifier": "SoftDeluxe.FreeDownloadManager"},
-        {"PackageIdentifier": "Microsoft.Edge.Canary"},
-        {"PackageIdentifier": "Tailscale.Tailscale"},
         {"PackageIdentifier": "Microsoft.WSL"},
         {"PackageIdentifier": "Notion.Notion"},
         {"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"},
