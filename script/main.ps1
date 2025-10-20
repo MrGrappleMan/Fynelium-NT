@@ -38,7 +38,7 @@ $userask = {
     return $choice
 }
 $isAdmin = ([System.Security.Principal.WindowsPrincipal] [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
-cd "$Env:windir\\Temp\\Fynelium-NT\\"
+Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
 
 # Has administrator permissions?
 # 1 - Go ahead, execute the rest of the script
@@ -47,7 +47,7 @@ if (-not $isAdmin) {
     Write-Host "This script needs adminstrator right to function properly" -ForegroundColor Red
     Write-Host "Attempting to self-elevate, by re running through a new instance..."
     Start-Sleep -s 3
-    
+    Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
     exit
 }
 
@@ -165,5 +165,5 @@ regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\main.reg"
 
 # Winget
 winget upgrade --all # Updating system packages
-cd "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\"
+Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\"
 winget import -i main.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
