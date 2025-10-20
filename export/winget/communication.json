@@ -4,8 +4,8 @@
   "Sources": [
     {
       "Packages": [
-	
-	{"PackageIdentifier": "Discord.Discord.Canary"},
+		  
+		{"PackageIdentifier": "Discord.Discord.Canary"}
 	
        ],
       "SourceDetails": {
