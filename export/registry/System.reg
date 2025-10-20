@@ -24,7 +24,7 @@ Windows Registry Editor Version 5.00
 "EnablePrefetcher"=dword:00000003
 "EnableSuperfetch"=dword:00000003
 
-; Clearing Pagefile at every shutdown wears down the drive.
+; Clearing pagefile at every shutdown wears down the drive, plus some things are "cached" in it. Re creating it every time takes time as well as system resources
 ; Allow unnecessary parts of the kernel to be paged out.
 ; Pagefiles prevent OOM errors, allow for flexible RAM usage requiremnts and some programs expect it to exist
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
@@ -45,7 +45,7 @@ Windows Registry Editor Version 5.00
 
 ; Post Processing Scheduling
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
-"Affinity"=dword:ffffffff
+"Affinity"=dword:00000000
 "Background Only"="False"
 "BackgroundPriority"=dword:00000018
 "Clock Rate"=dword:00002710
@@ -55,9 +55,9 @@ Windows Registry Editor Version 5.00
 "SFIO Priority"="High"
 "Latency Sensitive"="False"
 
-; Games Sched
+; Games Scheduling
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
-"Affinity"=dword:ffffffff
+"Affinity"=dword:00000000
 "Background Only"="False"
 "Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008
@@ -66,10 +66,10 @@ Windows Registry Editor Version 5.00
 "SFIO Priority"="High"
 "Latency Sensitive"="True"
 
-; Audio Sched
-; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
-; "Affinity"=dword:00000007
-; "Background Only"="True"
+; Audio Scheduling
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
+"Affinity"=dword:00000000
+"Background Only"="False"
 ; "Clock Rate"=dword:00002710
 ; "GPU Priority"=dword:00000008
 ; "Priority"=dword:00000006
