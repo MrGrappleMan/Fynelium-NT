@@ -5,11 +5,12 @@
     {
       "Packages": [
 	
-	{"PackageIdentifier": "GoLang.Go"},
+		{"PackageIdentifier": "GoLang.Go"},
         {"PackageIdentifier": "GitHub.GitHubDesktop.Beta"},
         {"PackageIdentifier": "Microsoft.PowerShell.Preview"},
         {"PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"},
         {"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"},
+        {"PackageIdentifier": "Docker.DockerCLI"}
         
        ],
       "SourceDetails": {
