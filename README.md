@@ -46,7 +46,7 @@ You will get a UAC prompt, click yes.
 Paste the text below into the newly launched window, assuming your shell is powershell. Copy it with the button in the top right corner.
 
 ```
-cd "$Env:windir\\Temp\\"
+Set-Location "$Env:windir\\Temp\\"
 Remove-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -Recurse -Force
 New-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -ItemType Directory -Force
 winget install --id Git.Git -e --source winget
@@ -59,7 +59,7 @@ Now open a new tab in terminal and paste this. The reason being that you need a 
 
 ```
 git clone https://github.com/MrGrappleMan/Fynelium-NT.git $Env:windir\\Temp\\Fynelium-NT\\
-cd "$Env:windir\\Temp\\Fynelium-NT\\"
+Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
 Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Unrestricted -File `"$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1`"" -Verb RunAs
 
 ```
