@@ -8,6 +8,7 @@
         {"PackageIdentifier": "SoftDeluxe.FreeDownloadManager"},
         {"PackageIdentifier": "Microsoft.Edge.Canary"},
         {"PackageIdentifier": "Tailscale.Tailscale"},
+        {"PackageIdentifier": "LizardByte.Sunshine"}
         
        ],
       "SourceDetails": {
