@@ -6,6 +6,7 @@
       "Packages": [
         
         {"PackageIdentifier": "SoftDeluxe.FreeDownloadManager"},
+        {"PackageIdentifier": "TorProject.TorBrowser"},
         {"PackageIdentifier": "Microsoft.Edge.Canary"},
         {"PackageIdentifier": "Tailscale.Tailscale"},
         {"PackageIdentifier": "LizardByte.Sunshine"}
