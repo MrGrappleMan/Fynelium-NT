@@ -50,6 +50,7 @@ Set-Location "$Env:windir\\Temp\\"
 Remove-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -Recurse -Force
 New-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -ItemType Directory -Force
 winget install --id Git.Git -e --source winget
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
 
 ```
 You may be prompted for an input by powershell incase if it is the first time you are running a powershell script on Windows.
