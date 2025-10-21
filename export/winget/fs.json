@@ -8,6 +8,7 @@
         {"PackageIdentifier": "Google.GoogleDrive"},
         {"PackageIdentifier": "spacedrive.Spacedrive"},
         {"PackageIdentifier": "Giorgiotani.Peazip"},
+        {"PackageIdentifier": "AdrienAllard.FileConverter"}
         
       ],
       "SourceDetails": {
