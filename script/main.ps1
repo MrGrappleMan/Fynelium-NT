@@ -161,12 +161,13 @@ slmgr /ato # Forces a Windows activation check
 Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force # Removes old Windows installs
 
 # Registry
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\Network.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\PowerUsr.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\System.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\Telemetry.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\UI.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\UX.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\Update.reg"
 
 # Winget
 winget upgrade --all # Upgrade
