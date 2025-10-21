@@ -12,7 +12,10 @@
         {"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"},
 		{"PackageIdentifier": "Microsoft.WSL"},
         {"PackageIdentifier": "Docker.DockerCLI"},
-		{"PackageIdentifier": "Docker.DockerDesktop"}
+		{"PackageIdentifier": "Docker.DockerDesktop"},
+		{"PackageIdentifier": "Ollama.Ollama"},
+		{"PackageIdentifier": "Rustlang.Rustup"},
+		{"PackageIdentifier": "Rustlang.Rust.MSVC"}
         
        ],
       "SourceDetails": {
