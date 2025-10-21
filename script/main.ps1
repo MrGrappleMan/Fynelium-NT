@@ -184,3 +184,4 @@ winget import -i social.json --ignore-unavailable --ignore-versions --accept-pac
 winget import -i system.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
 
 # Restart, finalize
+Restart-Computer -Force
