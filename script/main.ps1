@@ -11,12 +11,13 @@ $toptui = {
         Write-Host " _______  __   __  __    _  _______  ___      ___   __   __  __   __         ------------------";
         Write-Host "|       ||  | |  ||  |  | ||       ||   |    |   | |  | |  ||  |_|  |        -        -       -";
         Write-Host "|    ___||  |_|  ||   |_| ||    ___||   |    |   | |  | |  ||       |        -        -       -";
-        Write-Host "|   |___ |       ||       ||   |___ |   |    |   | |  |_|  ||       |        ---------- -------";
-        Write-Host "|    ___||_     _||  _    ||    ___||   |___ |   | |       ||       |        -        -        ";
-        Write-Host "|   |      |   |  | | |   ||   |___ |       ||   | |       || ||_|| |        -        -        ";
+        Write-Host "|   |___ |       ||       ||   |___ |   |    |   | |  |_|  ||       |        ------------------";
+        Write-Host "|    ___||_     _||  _    ||    ___||   |___ |   | |       ||       |        -        -       -";
+        Write-Host "|   |      |   |  | | |   ||   |___ |       ||   | |       || ||_|| |        -        -       -";
         Write-Host "|___|      |___|  |_|  |__||_______||_______||___| |_______||_|   |_|        ------------------";
+        Write-Host "For Windows NT";
         Write-Host
-        Write-Host "Home: https://github.com/MrGrappleMan/Fynelium-NT/ ";
+        Write-Host " Home: https://github.com/MrGrappleMan/Fynelium-NT/ ";
         & $sprtor
 }
 $svcset = {
