@@ -7,8 +7,8 @@ if (-not $isAdmin) {
     exit
 }
 
-# For winget, Windows Store, Windows updates, msix and appx installs. In a nutshell, package management
 $updates = @(
+    "A",
     "UsoSvc",
     "wuauserv",
     "WaaSMedicSvc",
@@ -16,28 +16,28 @@ $updates = @(
     "DoSvc"
 )
 
-# Reporting, data collection, analytics of various types
 $telemetry = @(
+    "B",
     "DiagTrack",
     "wisvc"
 )
 
-# For handling data, drive management, backups, file management, indexing
 $filesystem = @(
+    "B",
     "WSearch",
     "SysMain",
     "UnistoreSvc",
     "UserDataSvc"
 )
 
-# NTP, timezones
 $time = @(
+    "A",
     "tzautoupdate",
     "W32Time"
 )
 
-# Proper establishment of connections
 $networking = @(
+    "A",
     "NetTcpPortSharing",
     "Dnscache",
     "WlanSvc",
@@ -45,8 +45,8 @@ $networking = @(
     "WebClient"
 )
 
-# Generic, uncategorized
 $services = @(
+    "B",
     "SensrSvc",
     "SensorService",
     "WpnUserService",
@@ -65,11 +65,27 @@ $services = @(
     "WiaRpc"
 )
 
-foreach ($svcName in $services) {
-    $service = Get-Service -Name $svcName -ErrorAction SilentlyContinue
-    if ($service) {
-        Set-Service -Name $svcName -StartupType Automatic -ErrorAction SilentlyContinue
-    } else {
-        Write-Host "Service $svcName not found." -ForegroundColor Yellow
+# Define service lists with A (Automatic) or B (Automatic Delayed Start) as the first element
+# Function to process a list of lists and set service startup types
+function Set-ServiceStartup {
+    param($serviceLists)
+    foreach ($list in $serviceLists) {
+        if ($list.Count -lt 2) { continue } # Skip empty or invalid lists
+        $startupType = if ($list[0] -eq "A") { "Automatic" } elseif ($list[0] -eq "B") { "AutomaticDelayedStart" } else { continue }
+        foreach ($svcName in $list[1..($list.Count-1)]) {
+            $svc = Get-Service -Name $svcName -ErrorAction SilentlyContinue
+            if ($svc) {
+                Set-Service -Name $svcName -StartupType $startupType -ErrorAction SilentlyContinue
+                Start-Service -Name $svcName -ErrorAction SilentlyContinue
+                Write-Host "$svcName set to $startupType and started." -ForegroundColor Green
+            } else {
+                Write-Host "$svcName non-existent." -ForegroundColor Yellow
+            }
+        }
     }
 }
+
+# Process all service lists
+Write-Host "Configuring services..." -ForegroundColor Cyan
+Set-ServiceStartup -serviceLists @($updates, $telemetry, $filesystem, $time, $networking, $services)
+Write-Host "Service configuration complete." -ForegroundColor Cyan
