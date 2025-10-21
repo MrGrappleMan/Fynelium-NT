@@ -7,6 +7,7 @@ if (-not $isAdmin) {
     exit
 }
 
+# For winget, Windows Store, Windows updates, msix and appx installs. In a nutshell, package management
 $updates = @(
     "A",
     "UsoSvc",
@@ -16,12 +17,14 @@ $updates = @(
     "DoSvc"
 )
 
+# Reporting, data collection, analytics of various types
 $telemetry = @(
     "B",
     "DiagTrack",
     "wisvc"
 )
 
+# For handling data, drive management, backups, file management, indexing
 $filesystem = @(
     "B",
     "WSearch",
@@ -30,12 +33,14 @@ $filesystem = @(
     "UserDataSvc"
 )
 
+# NTP, timezones, system clocks
 $time = @(
     "A",
     "tzautoupdate",
     "W32Time"
 )
 
+# Proper establishment of local, internal and internet connections
 $networking = @(
     "A",
     "NetTcpPortSharing",
@@ -45,7 +50,8 @@ $networking = @(
     "WebClient"
 )
 
-$services = @(
+# Uncategorized
+$uncateg = @(
     "B",
     "SensrSvc",
     "SensorService",
@@ -87,5 +93,5 @@ function Set-ServiceStartup {
 
 # Process all service lists
 Write-Host "Configuring services..." -ForegroundColor Cyan
-Set-ServiceStartup -serviceLists @($updates, $telemetry, $filesystem, $time, $networking, $services)
+Set-ServiceStartup -serviceLists @($updates, $telemetry, $filesystem, $time, $networking, $uncateg)
 Write-Host "Service configuration complete." -ForegroundColor Cyan
