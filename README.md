@@ -47,7 +47,6 @@ Paste the text below into the newly launched window, assuming your shell is powe
 
 ```
 cd "$Env:windir\\Temp\\"
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
 Remove-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -Recurse -Force
 New-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -ItemType Directory -Force
 winget install --id Git.Git -e --source winget
@@ -61,7 +60,7 @@ Now open a new tab in terminal and paste this. The reason being that you need a 
 ```
 git clone https://github.com/MrGrappleMan/Fynelium-NT.git $Env:windir\\Temp\\Fynelium-NT\\
 cd "$Env:windir\\Temp\\Fynelium-NT\\"
-powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
+Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Unrestricted -File `"$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1`"" -Verb RunAs
 
 ```
 Now you should have started the execution of the script.
