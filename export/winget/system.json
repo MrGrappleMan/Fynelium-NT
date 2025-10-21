@@ -8,6 +8,7 @@
         {"PackageIdentifier": "Microsoft.PCManager.Beta"},
         {"PackageIdentifier": "Microsoft.WindowsPCHealthCheck"},
         {"PackageIdentifier": "NickJohn.EnergyStarX"},
+        {"PackageIdentifier": "UCBerkeley.BOINC"}
         
       ],
       "SourceDetails": {
