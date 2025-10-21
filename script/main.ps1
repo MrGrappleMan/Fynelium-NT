@@ -161,7 +161,24 @@ slmgr /ato # Forces a Windows activation check
 Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force # Removes old Windows installs
 
 # Registry
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
+regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\.reg"
 
 # Winget
+winget upgrade --all # Upgrade
+Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\"
+winget import -i dev.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i fs.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i game.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i media.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i network.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i productive.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i rice.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i social.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+winget import -i system.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
 
 # Restart, finalize
