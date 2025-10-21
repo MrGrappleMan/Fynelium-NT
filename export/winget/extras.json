@@ -5,10 +5,7 @@
     {
       "Packages": [
         
-        {"PackageIdentifier": "UCBerkeley.BOINC"},
-        {"PackageIdentifier": "Notion.Notion"},
-        {"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"},
-        {"PackageIdentifier": "LizardByte.Sunshine"}
+        {"PackageIdentifier": "UCBerkeley.BOINC"}
         
       ],
       "SourceDetails": {
