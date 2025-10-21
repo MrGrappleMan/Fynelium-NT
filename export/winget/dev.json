@@ -11,7 +11,8 @@
         {"PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"},
         {"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"},
 		{"PackageIdentifier": "Microsoft.WSL"},
-        {"PackageIdentifier": "Docker.DockerCLI"}
+        {"PackageIdentifier": "Docker.DockerCLI"},
+		{"PackageIdentifier": "Docker.DockerDesktop"}
         
        ],
       "SourceDetails": {
