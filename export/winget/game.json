@@ -4,8 +4,8 @@
   "Sources": [
     {
       "Packages": [
-	
-	{"PackageIdentifier": "Valve.Steam"},
+		
+		{"PackageIdentifier": "Valve.Steam"},
         {"PackageIdentifier": "Valve.SteamCMD"},
         
        ],
