@@ -19,14 +19,14 @@ $updates = @(
 
 # Reporting, data collection, analytics of various types
 $telemetry = @(
-    "B",
+    "A",
     "DiagTrack",
     "wisvc"
 )
 
 # For handling data, drive management, backups, file management, indexing
 $filesystem = @(
-    "B",
+    "A",
     "WSearch",
     "SysMain",
     "UnistoreSvc",
@@ -52,7 +52,7 @@ $networking = @(
 
 # Uncategorized
 $uncategorized = @(
-    "B",
+    "A",
     "SensrSvc",
     "SensorService",
     "WpnUserService",
