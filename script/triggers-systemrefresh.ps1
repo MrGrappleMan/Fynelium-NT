@@ -1,4 +1,5 @@
 # Serves as a form of shotgun debugging without resetting your system
+# Avoid running this
 
 # Runs System File Checker to scan and repair corrupted system files
 sfc /scannow
