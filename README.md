@@ -7,42 +7,42 @@
 ### 1. 🚀 Better efficiency and performance
 
 1. Enable RAM Compression
-2. Foreground application priority over background services
-3. Network optimizations for greater throughput and reduced latency
-4. EnergyStarX with the EcoQoS API for throttling background applications
-5. Free Download Manager for faster downloads and torrenting
-6. Tweaks made to services, BCDedit, MMAgents and Registry
+2. Foreground application priority over background services.
+3. Network optimizations for greater throughput and reduced latency.
+4. EnergyStarX with the EcoQoS API for throttling background applications.
+5. Free Download Manager for faster downloads and torrenting.
+6. Tweaks made to services, BCDedit, MMAgents and Registry.
 
 ### 2. ☯️ A beautifully productive environment
 
-1. File Explorer tweaks for advanced and convenient file handling, try Spacedrive
-2. Subtler animations to not slow you down, yet keep the navigation experience good
-3. Customized rice, won't reveal much here. Install it to see it for yourself
-4. Updates interfere less with your experience
-5. Reduction of unnecessary information, suggestions and advertisements
-6. Smooth scrolling and anti-aliasing of text
+1. File Explorer tweaks for advanced and convenient file handling, try Spacedrive.
+2. Subtler animations to not slow you down, yet keep the navigation experience good.
+3. Customized rice, won't reveal much here. Install it to see it for yourself.
+4. Updates interfere less with your experience.
+5. Reduction of unnecessary information, suggestions and advertisements.
+6. Smooth scrolling and anti-aliasing of text.
 
 ### 3. ♻️ Automated system maintenance and management
 
-1. Updates and drivers handled automatically
-2. Installs additional drivers, that you may find useful
-3. Windows' engine handles UEFI setup utility settings for itself for optimal performance
-4. Drive trimming for longer drive lifespan and better speed
-5. Advanced Telemetry to help accelerate Windows development
+1. Updates and drivers handled automatically.
+2. Installs additional drivers, that you may find useful.
+3. Windows' engine handles UEFI setup utility settings for itself for optimal performance.
+4. Drive trimming for longer drive lifespan and better speed.
+5. Advanced Telemetry to help accelerate Windows development.
 
 ## Installation
 ### Requirements
-Administrator permissions
-Internet access, preferrably uninterupted
+Administrator permissions.
+Internet access, preferrably uninterupted.
 
 ### Suggestions
 An activated copy of Windows 11, still works on 10.
-8GB RAM
-Use the "Release Preview" insider channel or the other builds as you prefer
-Remove Edge and use Edge Canary
+8GB RAM.
+Use the "Beta" insider channel or the other builds as you prefer.
+Remove Edge by some other community made script and use Edge Canary.
 
-Search for "Terminal", press Ctrl+Shift+Enter to launch in elevated mode. Use the Terminal UWP app, which has tabs.
-You will get a UAC prompt, click yes
+Search for "Terminal", press Ctrl+Shift+Enter to launch with admin rights. Use the Terminal UWP app, which has tabs.
+You will get a UAC prompt, click yes.
 Paste the text below into the newly launched window, assuming your shell is powershell. Copy it with the button in the top right corner.
 
 ```
