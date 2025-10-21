@@ -6,7 +6,7 @@
       "Packages": [
 		
 		{"PackageIdentifier": "Valve.Steam"},
-        {"PackageIdentifier": "Valve.SteamCMD"},
+        {"PackageIdentifier": "Valve.SteamCMD"}
         
        ],
       "SourceDetails": {
