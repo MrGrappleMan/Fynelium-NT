@@ -60,7 +60,7 @@ Now open a new tab in terminal and paste this. The reason being that you need a 
 ```
 git clone https://github.com/MrGrappleMan/Fynelium-NT.git $Env:windir\\Temp\\Fynelium-NT\\
 Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
-Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Unrestricted -File `"$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1`"" -Verb RunAs
+powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
 
 ```
 Now you should have started the execution of the script.
