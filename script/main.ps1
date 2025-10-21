@@ -118,7 +118,7 @@ Enable-MMAgent -OperationAPI
 Enable-MMAgent -PageCombining
 Set-MMAgent -MaxOperationAPIFiles 8192
 
-# BCDEdit
+# BCDEdit ( Boot Configuration Data Editor )
 bcdedit /set bootlog no # Only for debugging
 bcdedit /set bootmenupolicy Standard
 bcdedit /set bootstatuspolicy DisplayAllFailures
@@ -146,24 +146,22 @@ bcdedit /set nx Optin
 #bcdedit /set tpmbootentropy default
 #bcdedit /set testsigning No
 
-# undecided
-slmgr /ato
-Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force
-
 # Time
 w32tm /register
 w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com pool.ntp.org time.facebook.com time.apple.com time.aws.com" /reliable:YES /update
 
 # Filesystem
-fsutil behavior set DisableDeleteNotify 0 # Allow drive to be trimmed for longetivity
-fsutil behavior set disablelastaccess 1 # Prevents Windows from logging when a file was last modified, reduce disk writes and overhead
-fsutil behavior set memoryusage 2 # Allow more caching
-fsutil behavior set disable8dot3 1 # Disables old filename fallback creation, reducing overhead
+fsutil behavior set DisableDeleteNotify 0 # Allow drive trimming for health and performance
+fsutil behavior set disablelastaccess 1 # No logging when a file was last edited, less disk writes and overhead
+fsutil behavior set memoryusage 2 # More caching
+fsutil behavior set disable8dot3 1 # No old filename fallback, less overhead
+
+# Mixed-Undecided
+slmgr /ato # Forces a Windows activation check
+Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force # Removes old Windows installs
 
 # Registry
-regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\main.reg"
 
 # Winget
-winget upgrade --all # Updating system packages
-Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\"
-winget import -i main.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
+
+# Restart, finalize
