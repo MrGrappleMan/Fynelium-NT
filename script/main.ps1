@@ -44,10 +44,10 @@ Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
 # 1 - Go ahead, execute the rest of the script
 # 0 - Make the script elevate itself
 if (-not $isAdmin) {
-    Write-Host "This script needs adminstrator right to function properly" -ForegroundColor Red
+    Write-Host "This script needs adminstrator rights to function properly" -ForegroundColor Red
     Write-Host "Attempting to self-elevate, by re running through a new instance..."
     Start-Sleep -s 3
-    Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1`"" -Verb RunAs
     exit
 }
 
