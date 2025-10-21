@@ -51,7 +51,7 @@ $networking = @(
 )
 
 # Uncategorized
-$uncateg = @(
+$uncategorized = @(
     "B",
     "SensrSvc",
     "SensorService",
@@ -77,13 +77,24 @@ function Set-ServiceStartup {
     param($serviceLists)
     foreach ($list in $serviceLists) {
         if ($list.Count -lt 2) { continue } # Skip empty or invalid lists
-        $startupType = if ($list[0] -eq "A") { "Automatic" } elseif ($list[0] -eq "B") { "AutomaticDelayedStart" } else { continue }
+        $startupType = $list[0]
+        if ($startupType -notin @("A", "B")) { continue } # Skip invalid startup types
         foreach ($svcName in $list[1..($list.Count-1)]) {
             $svc = Get-Service -Name $svcName -ErrorAction SilentlyContinue
             if ($svc) {
-                Set-Service -Name $svcName -StartupType $startupType -ErrorAction SilentlyContinue
+                if ($startupType -eq "A") {
+                    Set-Service -Name $svcName -StartupType Automatic -ErrorAction SilentlyContinue
+                    Write-Host "$svcName set to Automatic" -ForegroundColor Green
+                } elseif ($startupType -eq "B") {
+                    & sc.exe config $svcName start= delayed-auto | Out-Null
+                    if ($LASTEXITCODE -eq 0) {
+                        Write-Host "$svcName set to Automatic (Delayed Start)" -ForegroundColor Green
+                    } else {
+                        Write-Host "Failed to set $svcName to Automatic (Delayed Start)" -ForegroundColor Red
+                    }
+                }
                 Start-Service -Name $svcName -ErrorAction SilentlyContinue
-                Write-Host "$svcName set to $startupType and started." -ForegroundColor Green
+                Write-Host "$svcName started." -ForegroundColor Green
             } else {
                 Write-Host "$svcName non-existent." -ForegroundColor Yellow
             }
@@ -93,5 +104,5 @@ function Set-ServiceStartup {
 
 # Process all service lists
 Write-Host "Configuring services..." -ForegroundColor Cyan
-Set-ServiceStartup -serviceLists @($updates, $telemetry, $filesystem, $time, $networking, $uncateg)
+Set-ServiceStartup -serviceLists @($updates, $telemetry, $filesystem, $time, $networking, $uncategorized)
 Write-Host "Service configuration complete." -ForegroundColor Cyan
