@@ -5,7 +5,10 @@
     {
       "Packages": [
 		  
-		{"PackageIdentifier": "Discord.Discord.Canary"}
+		{"PackageIdentifier": "Discord.Discord.Canary"},
+		{"PackageIdentifier": "9NBDXK71NK08"},
+		{"PackageIdentifier": "Telegram.TelegramDesktop.Beta"},
+		{"PackageIdentifier": "9NBLGGH5L9XT"},
 	
        ],
       "SourceDetails": {
