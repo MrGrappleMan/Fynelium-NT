@@ -4,10 +4,10 @@
 # Shell Setup - Variables and Functions
 $VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
-$sprtor = "_____________________________________________________________________________________________________________________________________________________________________________________________"
+$sprtor = { Write-Host "_____________________________________________________________________________________________________________________________________________________________________________________________" }
 $toptui = {
         Clear-Host
-        $sprtor
+        & $sprtor
         Write-Host " _______  __   __  __    _  _______  ___      ___   __   __  __   __         ------------------";
         Write-Host "|       ||  | |  ||  |  | ||       ||   |    |   | |  | |  ||  |_|  |        -        -       -";
         Write-Host "|    ___||  |_|  ||   |_| ||    ___||   |    |   | |  | |  ||       |        -        -       -";
@@ -17,7 +17,7 @@ $toptui = {
         Write-Host "|___|      |___|  |_|  |__||_______||_______||___| |_______||_|   |_|        ------------------";
         Write-Host
         Write-Host "Home: https://github.com/MrGrappleMan/Fynelium-NT/ ";
-        $sprtor
+        & $sprtor
 }
 $svcset = {
     param($svcName, $choice)
@@ -57,7 +57,7 @@ robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
 ## User Prompts
 
 # Xbox
-$toptui
+& $toptui
 Write-Host "Do you use anything related to Xbox?"
 Write-Host ""
 Write-Host "Unnecesary services will be disabled if you do not use them"
@@ -66,7 +66,7 @@ $choice = & $userask
 & $svcset "GameSave" $choice
 
 # Bluetooth
-$toptui
+& $toptui
 Write-Host "Do you use Bluetooth for anything in any form, even cases for Nearby Share or Phone Link?"
 Write-Host ""
 Write-Host "Stopping this service causes paired Bluetooth devices to fail to operate"
@@ -78,7 +78,7 @@ $choice = & $userask
 & $svcset "bthserv" $choice
 
 # RemoteAccess
-$toptui
+& $toptui
 Write-Host "Do you use remote desktop or remotely manage your device?"
 Write-Host ""
 Write-Host "It makes remote control of your computer possible."
@@ -93,7 +93,7 @@ $choice = & $userask
 & $svcset "RemoteRegistry" $choice
 
 # Virtualization
-$toptui
+& $toptui
 Write-Host "Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?"
 
 $choice = & $userask
