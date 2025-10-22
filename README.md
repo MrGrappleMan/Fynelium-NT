@@ -2,33 +2,30 @@
 
 # Fynelium for Windows
 
-## What does have to offer?
+### 🚀 Greater System Efficiency
 
-### 1. 🚀 Better efficiency and performance
+🧠 RAM Compression — keeps things smooth when multitasking.
+⚙️ Foreground Boost — gives priority to apps you’re actually using.
+🌐 Network Turbo — better throughput, lower latency.
+🌱 EnergyStarX + EcoQoS — smartly throttles background stuff to save power.
+📥 Free Download Manager — faster downloads & torrent support.
+🔧 System Tweaks — optimized services, BCD, MMAgents, and registry settings for extra punch.
 
-1. Enable RAM Compression
-2. Foreground application priority over background services.
-3. Network optimizations for greater throughput and reduced latency.
-4. EnergyStarX with the EcoQoS API for throttling background applications.
-5. Free Download Manager for faster downloads and torrenting.
-6. Tweaks made to services, BCDedit, MMAgents and Registry.
+### ☯️ A Beautifully Productive Environment
 
-### 2. ☯️ A beautifully productive environment
+🗂️ Explorer Upgrades — smarter file handling; try Spacedrive for next-gen management.
+🎞️ Refined Animations — subtle, smooth, and never in your way.
+🎨 Custom Rice — pre-tuned visuals & UI polish (no spoilers 👀).
+🔄 Seamless Updates — updates happen quietly,  disruption.
+🚫 Decluttered Experience — no ads, no nags, no useless suggestions.
+🖱️ Smooth Scrolling + Anti-Aliasing — crisp visuals and fluid navigation.
 
-1. File Explorer tweaks for advanced and convenient file handling, try Spacedrive.
-2. Subtler animations to not slow you down, yet keep the navigation experience good.
-3. Customized rice, won't reveal much here. Install it to see it for yourself.
-4. Updates interfere less with your experience.
-5. Reduction of unnecessary information, suggestions and advertisements.
-6. Smooth scrolling and anti-aliasing of text.
-
-### 3. ♻️ Automated system maintenance and management
-
-1. Updates and drivers handled automatically.
-2. Installs additional drivers, that you may find useful.
-3. Windows' engine handles UEFI setup utility settings for itself for optimal performance.
-4. Drive trimming for longer drive lifespan and better speed.
-5. Advanced Telemetry to help accelerate Windows development.
+### ♻️ Automated Maintenance & Management
+🔄 Auto Updates + Drivers — installs & maintains what you need, hands-free.
+🧩 Extra Drivers — adds optional utilities for better hardware support.
+🧬 UEFI Smart Config — system optimizes BIOS/UEFI settings by itself.
+💽 Drive Trimming — boosts SSD lifespan & read/write speed.
+📊 Advanced Telemetry — contributes to faster Windows evolution.
 
 ## Installation
 ### Requirements
