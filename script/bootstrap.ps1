@@ -12,11 +12,22 @@ $path = "$env:windir\Temp\Fynelium-NT\"
 if (Test-Path $path) { Remove-Item $path -Recurse -Force }
 New-Item -Path $path -ItemType Directory -Force | Out-Null
 
-# Ensure Git is available
+# Ensure Git is present
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 	Write-Host "Installing Git via winget..." -ForegroundColor Cyan
 	winget install --id Git.Git -e --source winget
-	Start-Sleep -Seconds 5
+	Write-Host "Git installation completed. Refreshing environment variables..." -ForegroundColor Yellow
+
+	# Refresh environment variables (PATH)
+	$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" +
+	             [System.Environment]::GetEnvironmentVariable("Path", "User")
+
+	# Double-check Git availability after refresh
+	if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+		Write-Host "Restarting PowerShell to load Git into PATH..." -ForegroundColor Cyan
+		Start-Process "powershell" -ArgumentList "-ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+		exit
+	}
 }
 
 # Clone repo & execute main script
