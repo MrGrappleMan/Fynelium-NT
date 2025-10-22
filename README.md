@@ -21,26 +21,35 @@
 🖱️ Smooth Scrolling + Anti-Aliasing — crisp visuals and fluid navigation
 
 ### ♻️ Automated Maintenance & Management
+
 🔄 Auto Updates + Drivers — installs & maintains what you need, hands-free \
 🧩 Extra Drivers — adds optional utilities for better hardware support \
 🧬 UEFI Smart Config — system optimizes BIOS/UEFI settings by itself \
 💽 Drive Trimming — boosts SSD lifespan & read/write speed \
-📊 Advanced Telemetry — contributes to faster Windows evolution \
+📊 Advanced Telemetry — contributes to faster Windows evolution
 
-## Installation
-### Requirements
-Administrator permissions.
-Internet access, preferrably uninterupted.
+## ⚙️ Installation
 
-### Suggestions
-An activated copy of Windows 11, still works on 10.
-8GB RAM.
-Use the "Beta" insider channel or the other builds as you prefer.
-Remove Edge by some other community made script and use Edge Canary.
+### 🧩 Requirements
 
-Search for "Terminal", press Ctrl+Shift+Enter to launch with admin rights. Use the Terminal UWP app, which has tabs.
-You will get a UAC prompt, click yes.
-Paste the text below into the newly launched window, assuming your shell is powershell. Copy it with the button in the top right corner.
+🧑‍💻 Administrator permissions \
+🌐 Stable internet connection
+
+### 💡 Suggestions
+
+✅ Use Windows 10/11 (Activated) — Insider builds preferred for best results \
+🦊 Replace default Edge: Run a trusted removal script and install Edge Canary — this ensures all apps open links in your browser of choice
+
+### 🪟 Step-by-Step Installation
+
+1️⃣ Open an elevated PowerShell
+
+Press ⊞ Win → type “Terminal” → Ctrl + Shift + Enter \
+Approve the UAC prompt by clicking Yes
+
+2️⃣ Prepare the environment
+
+Copy & paste the following into the new PowerShell window
 
 ```
 Set-Location "$Env:windir\\Temp\\"
@@ -50,10 +59,11 @@ winget install --id Git.Git -e --source winget
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
 
 ```
-You may be prompted for an input by powershell incase if it is the first time you are running a powershell script on Windows.
-In that case, type letter "a" and enter.
+🛈 If prompted for permission (first-time PowerShell use), type A and press Enter.
 
-Now open a new tab in terminal and paste this. The reason being that you need a new instance of powershell to recognize Git has been installed.
+3️⃣ Clone & run the setup
+
+Once Git is installed, open a new Terminal tab (so PowerShell refreshes its environment) and run:
 
 ```
 git clone https://github.com/MrGrappleMan/Fynelium-NT.git $Env:windir\\Temp\\Fynelium-NT\\
@@ -61,9 +71,12 @@ Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
 powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
 
 ```
-Now you should have started the execution of the script.
-The first phase asks for manual interaction, and then it begins to perform common optimizations in an unattended manner.
-Even though interaction will not be required later, you should still monitor its actions. Getting errors? Some are expected to occur.
+⚡ What happens Next?
+
+🧠 The first phase requires minimal manual input — just confirm a few things.
+🛠️ After that, the script runs unattended to optimize system performance.
+⚠️ Some harmless errors may appear — these are expected.
+👀 Keep an eye on progress to ensure smooth execution.
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
 
