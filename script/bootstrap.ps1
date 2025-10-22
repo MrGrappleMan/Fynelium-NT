@@ -2,8 +2,7 @@
 
 # Ensure admin rights
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-	Write-Host "Please run this script as Administrator." -ForegroundColor Red
-  Read-Host
+	powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/bootstrap.ps1 | iex
 	exit
 }
 
