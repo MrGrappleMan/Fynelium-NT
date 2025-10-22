@@ -159,9 +159,11 @@ fsutil behavior set disable8dot3 1 # No old filename fallback, less overhead
 
 # Mixed-Undecided
 slmgr /ato # Forces a Windows activation check
-Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force # Removes old Windows installs
+# takeown /r /a /d y /f $env:SystemDrive\Windows.old # Takes permissions before deleting old Windows, risky
+Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force # Removes old Windows data
 
 # Registry
+Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\" # Sets the directory to where all registry exports are stored
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\Network.reg"
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\PowerUsr.reg"
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\System.reg"
@@ -172,7 +174,7 @@ regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\Update.reg"
 
 # Winget
 winget upgrade --all # Upgrade
-Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\"
+Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\" # Sets the directory to where all jsons are stored
 winget import -i dev.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
 winget import -i fs.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
 winget import -i game.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
