@@ -1,25 +1,27 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; User eXperience, makes what you interact with to be comforting and appealing to use
+; ✨ User eXperience, makes what you interact with to be comforting and appealing to use
 ; --------------------------------------------
 
-; Dark Theme, this is opinionated
+; 🌃 Dark Theme, this is opinionated
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "AppsUseLightTheme"=dword:00000000
 "SystemUsesLightTheme"=dword:00000000
 
+; 🖊️ Custom theme
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "UserPreferencesMask"=hex:98,12,03,80,10,00,00,00
 
+; 🔍 Transparency - Looks better, worth the tradeoff, gives your system a feel of liveliness
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
-"EnableTransparency"=dword:00000000
+"EnableTransparency"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:00000003
 ; 0 = Automatic
-; 1 = Appearance
-; 2 = Performance
+; 1 = Appearance, Fine for 2025
+; 2 = Performance, you will have like 0-10 milliseconds gained when interacting with Windows like opening stuff, not worth the Win 95 appearance in the big 25
 ; 3 = Custom
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
@@ -79,26 +81,23 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "RotatingLockScreenOverlayEnabled"=dword:00000000
 
+; 🌊 Taskbar Animations
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"TaskbarAnimations"=dword:00000000
+"TaskbarAnimations"=dword:00000001
 
-; We dont want the login screen to be lifeless
+; 🔐 Login screen
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
 "DisableLogonBackgroundImage"=dword:00000000
 "DisableAcrylicBackgroundOnLogon"=dword:00000000
 
-; Use the Windows key and start typing to search
+; 🔍 Search - Use the Windows key and start typing to search. Keeps taskbar clean
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
 
-; Bad when adding new users. Does nothing except for evoking a feeling that the system is getting ready. 
+; 😴 Bad when adding new users. Does nothing except for evoking a feeling that the system is getting ready. 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "EnableFirstLogonAnimation"=dword:00000000
 
-; No recommendations
+; 🔕 No recommendations
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "DisableSoftLanding"=dword:00000001
-
-; Interesting
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"RotatingLockScreenOverlayEnabled"=dword:00000000
