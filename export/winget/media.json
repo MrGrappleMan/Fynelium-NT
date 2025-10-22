@@ -5,7 +5,10 @@
     {
       "Packages": [
 		    
-		    {"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"}
+		{"PackageIdentifier": "OBSProject.OBSStudio.Pre-release"},
+		{"PackageIdentifier": "KDE.Krita"},
+		{"PackageIdentifier": "KDE.KritaShellExtension"},
+		{"PackageIdentifier": "Inkscape.Inkscape"}
         
        ],
       "SourceDetails": {
