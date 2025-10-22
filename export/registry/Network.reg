@@ -1,10 +1,10 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; Networking and Internet
+; 🌐 Networking and Internet
 ; --------------------------------------------
 
-; Max connections
+; 📈 Max connections
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER]
 "explorer.exe"=dword:00000255
 
@@ -31,13 +31,13 @@ Windows Registry Editor Version 5.00
 "TcpTimedWaitDelay"=dword:00000020
 "TcpWindowSize"=dword:000016d0
 
-; No throttling
+; 🔓 No throttling
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "NetworkThrottlingIndex"=dword:ffffffff
 "AlwaysOn"=dword:00000001
 "NoLazyMode"=dword:00000001
 
-; Delivery Optimization, peer to peer CDN for efficiency and fast
+; ➰ Delivery Optimization, peer to peer CDN for efficiency and fast
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
 "DODownloadMode"=dword:00000003
 "DOMaxBackgroundDownloadBandwidth"=dword:00000000
