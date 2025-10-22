@@ -4,12 +4,12 @@
 
 ### 🚀 Greater System Efficiency
 
-🧠 RAM Compression — keeps things smooth when multitasking
-⚙️ Foreground Boost — gives priority to apps you’re actually using
-🌐 Network Turbo — better throughput, lower latency
-🌱 EnergyStarX + EcoQoS — smartly throttles background stuff to save power
-📥 Free Download Manager — faster downloads & torrent support
-🔧 System Tweaks — optimized services, BCD, MMAgents, and registry settings for extra punch
+🧠 RAM Compression — keeps things smooth when multitasking\
+⚙️ Foreground Boost — gives priority to apps you’re actually using\
+🌐 Network Turbo — better throughput, lower latency\
+🌱 EnergyStarX + EcoQoS — smartly throttles background stuff to save power\
+📥 Free Download Manager — faster downloads & torrent support\
+🔧 System Tweaks — optimized services, BCD, MMAgents, and registry settings for extra punch\
 
 ### ☯️ A Beautifully Productive Environment
 
