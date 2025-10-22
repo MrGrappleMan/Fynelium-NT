@@ -1,31 +1,30 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; For Debugging, SysAdmins and Power Users
+; 🧑‍💻 For Debugging, SysAdmins and Power Users
 ; --------------------------------------------
 
-; Sudo, easily elevate processes
+; 🐧 Sudo, easily elevate processes
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Sudo]
 "Enabled"=dword:00000001
 
-; Dim the desktop on UAC trigger, use arrow keys to quick switch y/n without focusing on the prompt window
-; Warns user
+; ⚠️ Dim the desktop on UAC trigger, use arrow keys to quick switch y/n without focusing on the prompt window Warns user
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "PromptOnSecureDesktop"=dword:00000001
 
-; See advanced information if system crashes
+; 💥 See advanced information if system crashes
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
 "DisplayParameters"=dword:00000001
 
-; No Verbose Startup Info
+; 〰️ No Verbose Startup Info
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "VerboseStatus"=dword:00000000
 
-; Take Ownership of a part of the FS
+; 📛 Take Ownership of a part of the FS
 
 [HKEY_CLASSES_ROOT\*\shell\runas]
 @="Take Ownership"
@@ -42,6 +41,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
 @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
 "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
 
 
 
