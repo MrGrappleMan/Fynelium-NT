@@ -1,10 +1,10 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; System and Updates
+; 🔁 Updates
 ; --------------------------------------------
 
-; No auto update maps. Just use your phone.
+; 📍 No auto update maps. Just use your phone.
 [HKEY_LOCAL_MACHINE\SYSTEM\Maps]
 "AutoUpdateEnabled"=dword:00000000
 
@@ -12,7 +12,7 @@ Windows Registry Editor Version 5.00
 "IsExpedited"=dword:00000000
 "AllowAutoWindowsUpdateDownloadOverMeteredNetwork"=dword:00000000
 
-; Enhance Update Settings
+; ⏫ Enhance Update Settings
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "NoAutoUpdate"=dword:00000000
 "ScheduledInstallDay"=dword:00000000
