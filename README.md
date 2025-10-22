@@ -15,7 +15,7 @@
 
 🗂️ Explorer Upgrades — smarter file handling; try Spacedrive for next-gen management! \
 🎞️ Refined Animations — subtle, smooth, and never in your way \
-🎨 Custom Rice — pre-tuned visuals & UI polish (no spoilers 👀) \
+🎨 Custom Rice — pre-tuned visuals & UI polish ( Komorei, TranslucentTB and Rainmeter 👀) \
 🔄 Seamless Updates — updates happen quietly,  disruption \
 🚫 Decluttered Experience — no ads, no nags, no useless suggestions \
 🖱️ Smooth Scrolling + Anti-Aliasing — crisp visuals and fluid navigation
@@ -37,46 +37,27 @@
 
 ### 💡 Suggestions
 
+⚡ A PC powerful - it performs tweaks, but also tries to beautify your experience \
 ✅ Use Windows 10/11 (Activated) — Insider builds preferred for best results \
 🦊 Replace default Edge: Run a trusted removal script and install Edge Canary — this ensures all apps open links in your browser of choice
 
-### 🪟 Step-by-Step Installation
+### ⛩️ Installation
 
-1️⃣ Open an elevated PowerShell
-
-Press ⊞ Win → type “Terminal” → Ctrl + Shift + Enter \
-Approve the UAC prompt by clicking Yes
-
-2️⃣ Prepare the environment
-
-Copy & paste the following into the new PowerShell window
+Press 🪟 Win + R \
+Paste this:
 
 ```
-Set-Location "$Env:windir\\Temp\\"
-Remove-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -Recurse -Force
-New-Item -Path "$env:windir\\Temp\\Fynelium-NT\\" -ItemType Directory -Force
-winget install --id Git.Git -e --source winget
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
+powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/bootstrap.ps1 | iex
 
 ```
-🛈 If prompted for permission (first-time PowerShell use), type A and press Enter.
+Press Ctrl + Shift + Enter
 
-3️⃣ Clone & run the setup
+⚡ What happens next?
 
-Once Git is installed, open a new Terminal tab (so PowerShell refreshes its environment) and run:
-
-```
-git clone https://github.com/MrGrappleMan/Fynelium-NT.git $Env:windir\\Temp\\Fynelium-NT\\
-Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
-powershell "$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1"
-
-```
-⚡ What happens Next?
-
-🧠 The first phase requires minimal manual input — just confirm a few things.
-🛠️ After that, the script runs unattended to optimize system performance.
-⚠️ Some harmless errors may appear — these are expected.
-👀 Keep an eye on progress to ensure smooth execution.
+🧠 The first phase requires minimal manual input — just confirm a few things
+🛠️ After that, it tells about running unattended to optimize system performance 
+⚠️ Some harmless errors may appear — these are expected
+👀 Keep an eye on progress to ensure smooth execution
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
 
