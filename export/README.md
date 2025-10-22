@@ -1,5 +1,5 @@
 # Exported configurations
-They are declarative in nature, where they are simply specified, and the system enforces them on their own...usually
+They are declarative in nature, where they are simply specified and sent, and the system does actions automatically \
 Kept in a list-style format
 
 ## Registry - *.reg files
