@@ -54,10 +54,10 @@ Press Ctrl + Shift + Enter
 
 ⚡ What happens next?
 
-🧠 The first phase requires minimal manual input — just confirm a few things
-🛠️ After that, it tells about running unattended to optimize system performance 
-⚠️ Some harmless errors may appear — these are expected
-👀 Keep an eye on progress to ensure smooth execution
+🧠 The first phase requires minimal manual input — just confirm a few things \
+🛠️ After that, it optimize system performance unattended - leave it idle \
+⚠️ Some harmless errors may appear — these are expected \
+👀 Keep an eye on it, even if I guarantee you it is safe
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
 
