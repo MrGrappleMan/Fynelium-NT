@@ -14,29 +14,29 @@
 
 ### 🚀 Greater System _Efficiency_
 
-🧠 RAM Compression — keeps things smooth when multitasking \
-⚙️ Foreground Boost — gives priority to apps you’re actually using \
-🌐 Network Turbo — better throughput, lower latency \
-🌱 EnergyStarX + EcoQoS — smartly throttles background stuff to save power \
-📥 Free Download Manager — faster downloads & torrent support \
-🔧 System Tweaks — optimized services, BCD, MMAgents, and registry settings for extra punch
+	🧠 RAM Compression — keeps things smooth when multitasking \
+	⚙️ Foreground Boost — gives priority to apps you’re actually using \
+	🌐 Network Turbo — better throughput, lower latency \
+	🌱 EnergyStarX + EcoQoS — smartly throttles background stuff to save power \
+	📥 Free Download Manager — faster downloads & torrent support \
+	🔧 System Tweaks — optimized services, BCD, MMAgents, and registry settings for extra punch
 
 ### ☯️ A Beautifully _Productive_ Environment
 
-🗂️ Explorer Upgrades — smarter file handling; try Spacedrive for next-gen management! \
-🎞️ Refined Animations — subtle, smooth, and never in your way \
-🎨 Custom Rice — pre-tuned visuals & UI polish ( Komorei, TranslucentTB and Rainmeter 👀) \
-🔄 Seamless Updates — updates happen quietly,  disruption \
-🚫 Decluttered Experience — no ads, no nags, no useless suggestions \
-🖱️ Smooth Scrolling + Anti-Aliasing — crisp visuals and fluid navigation
+	🗂️ Explorer Upgrades — smarter file handling; try Spacedrive for next-gen management! \
+	🎞️ Refined Animations — subtle, smooth, and never in your way \
+	🎨 Custom Rice — pre-tuned visuals & UI polish ( Komorei, TranslucentTB and Rainmeter 👀) \
+	🔄 Seamless Updates — updates happen quietly,  disruption \
+	🚫 Decluttered Experience — no ads, no nags, no useless suggestions \
+	🖱️ Smooth Scrolling + Anti-Aliasing — crisp visuals and fluid navigation
 
 ### ♻️ Automated _Maintenance_ & Management
 
-🔄 Auto Updates + Drivers — installs & maintains what you need, hands-free \
-🧩 Extra Drivers — adds optional utilities for better hardware support \
-🧬 UEFI Smart Config — system optimizes BIOS/UEFI settings by itself \
-💽 Drive Trimming — boosts SSD lifespan & read/write speed \
-📊 Advanced Telemetry — contributes to faster Windows evolution
+	🔄 Auto Updates + Drivers — installs & maintains what you need, hands-free \
+	🧩 Extra Drivers — adds optional utilities for better hardware support \
+	🧬 UEFI Smart Config — system optimizes BIOS/UEFI settings by itself \
+	💽 Drive Trimming — boosts SSD lifespan & read/write speed \
+	📊 Advanced Telemetry — contributes to faster Windows evolution
 
 ## ⚙️ Installation
 
