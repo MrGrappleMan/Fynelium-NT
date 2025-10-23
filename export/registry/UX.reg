@@ -13,7 +13,7 @@ Windows Registry Editor Version 5.00
 ; 🫗 Disable screensavers
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "UserPreferencesMask"=hex:98,12,03,80,10,00,00,00
-"ScreenSaveActive"=dword:000000010
+"ScreenSaveActive"=dword:00000000
 "ScreenSaverIsSecure"=dword:00000000
 "ScreenSaveTimeOut"=dword:00000000
 
