@@ -10,8 +10,12 @@ Windows Registry Editor Version 5.00
 "SystemUsesLightTheme"=dword:00000000
 
 ; 🖊️ Custom selections
+; 🫗 Disable screensavers
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "UserPreferencesMask"=hex:98,12,03,80,10,00,00,00
+"ScreenSaveActive"=dword:000000010
+"ScreenSaverIsSecure"=dword:00000000
+"ScreenSaveTimeOut"=dword:00000000
 
 ; 🔍 Transparency - Looks better - gives your system a feel of liveliness
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
@@ -20,7 +24,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:00000000
 ; 0 = Automatic - best choice overall
-; 1 = Appearance - good enough
+; 1 = Appearance - good enough, but can be unoptimal
 ; 2 = Performance - not worth the ancient appearance, provides almost no actual performance boost
 ; 3 = Custom
 
