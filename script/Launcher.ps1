@@ -1,17 +1,17 @@
-# bootstrap.ps1 — One-line installer for Fynelium-NT
+# Launcher.ps1 — Preparation for procedure
 
 # Ensure admin rights
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-	powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/bootstrap.ps1 | iex
+	powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/Launcher.ps1 | iex
 	exit
 }
 
-# Create temp directory
+# Create storage directory
 $path = "$env:windir\Temp\Fynelium-NT\"
 if (Test-Path $path) { Remove-Item $path -Recurse -Force }
 New-Item -Path $path -ItemType Directory -Force | Out-Null
 
-# Ensure Git is present
+# Git presence
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 	Write-Host "Installing Git via winget..." -ForegroundColor Cyan
 	winget install --id Git.Git -e --source winget
