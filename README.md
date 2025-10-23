@@ -1,8 +1,11 @@
-![Last Commit made to repository](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
-
 # Fynelium for Windows
+![License](https://img.shields.io/github/license/MrGrappleMan/Fynelium-NT?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/MrGrappleMan/Fynelium-NT?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/MrGrappleMan/Fynelium-NT?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 
-### 🚀 Greater System Efficiency
+### 🚀 Greater System _Efficiency_
 
 🧠 RAM Compression — keeps things smooth when multitasking \
 ⚙️ Foreground Boost — gives priority to apps you’re actually using \
@@ -11,7 +14,7 @@
 📥 Free Download Manager — faster downloads & torrent support \
 🔧 System Tweaks — optimized services, BCD, MMAgents, and registry settings for extra punch
 
-### ☯️ A Beautifully Productive Environment
+### ☯️ A Beautifully _Productive_ Environment
 
 🗂️ Explorer Upgrades — smarter file handling; try Spacedrive for next-gen management! \
 🎞️ Refined Animations — subtle, smooth, and never in your way \
@@ -20,7 +23,7 @@
 🚫 Decluttered Experience — no ads, no nags, no useless suggestions \
 🖱️ Smooth Scrolling + Anti-Aliasing — crisp visuals and fluid navigation
 
-### ♻️ Automated Maintenance & Management
+### ♻️ Automated _Maintenance_ & Management
 
 🔄 Auto Updates + Drivers — installs & maintains what you need, hands-free \
 🧩 Extra Drivers — adds optional utilities for better hardware support \
@@ -50,7 +53,7 @@ Paste this:
 powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/bootstrap.ps1 | iex
 
 ```
-Press Ctrl + Shift + Enter
+Press `Ctrl` + `Shift` + `Enter`
 
 ⚡ What happens next?
 
