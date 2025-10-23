@@ -1,9 +1,16 @@
-# Fynelium for Windows
+<div align="center">
+
+# 🌌 Fynelium for Windows
+
 ![License](https://img.shields.io/github/license/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 ![Contributors](https://img.shields.io/github/contributors/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/MrGrappleMan/Fynelium-NT?style=for-the-badge)
 ![Forks](https://img.shields.io/github/forks/MrGrappleMan/Fynelium-NT?style=for-the-badge)
+
+**✨ Optimize. Beautify. Automate. Effortlessly. ✨**
+
+</div>
 
 ### 🚀 Greater System _Efficiency_
 
