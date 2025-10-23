@@ -43,8 +43,7 @@ $svcset = {
 $userask = {
 	Write-Host ""
 	Write-Host "Options:"
-	Write-Host "[X] Skip  |  [0] No  |  [1] Yes"
-	Write-Host "(Auto-skip in 5 seconds...)" -ForegroundColor Yellow
+	Write-Host "[Y] Yes | [N] No"
 
 	$timeout = 5
 	$stopwatch = [Diagnostics.Stopwatch]::StartNew()
@@ -56,12 +55,9 @@ $userask = {
 			switch ($key) {
 				"Y" { $choice = "1"; break }
 				"N" { $choice = "0"; break }
-				"X" { $choice = "X"; break }
-				"NumPad1" { $choice = "1"; break }
-				"NumPad0" { $choice = "0"; break }
 			}
 		}
-		Start-Sleep -Milliseconds 100
+		Start-Sleep -Milliseconds 10
 	}
 
 	$stopwatch.Stop()
@@ -81,9 +77,6 @@ if (-not $isAdmin) {
     Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1`"" -Verb RunAs
     exit
 }
-
-# ⏩ Filesystem - Copy over configurations
-robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
 
 ## 👋 User Prompts
 
@@ -140,3 +133,5 @@ Write-Host "You may now leave your device idle and let the process complete unin
 Write-Host "After it has completed, it should automatically restart your device"
 Start-Sleep -s 10
 & $toptui
+
+Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$path\script\main.ps1`"" -Verb RunAs
