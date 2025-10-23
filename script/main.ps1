@@ -1,7 +1,7 @@
 ### This is the core of the project, that you launch to start the tweaking project when you have fulfilled the prerequisites
 ### of getting Git installed, cloning the repo and this script being launched as an admin
 
-# Shell Setup - Variables and Functions
+# 📦 Shell Setup - Variables and Functions
 $VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = { Write-Host "_____________________________________________________________________________________________________________________________________________________________________________________________" }
@@ -52,10 +52,10 @@ if (-not $isAdmin) {
     exit
 }
 
-# Filesystem - Copy over configurations
+# ⏩ Filesystem - Copy over configurations
 robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
 
-## User Prompts
+## 👋 User Prompts
 
 # Xbox
 & $toptui
@@ -104,14 +104,22 @@ if ($choice -eq "1") {
     bcdedit /set hypervisorlaunchtype auto
 }
 
-# Powercfg
-powercfg -h on # For fast startup and getting back to working faster from where you left off. Fast startup serves as a form of cache.
+# 🔋 Power Configuration ( PowerCfg ) - Energy efficiency
+powercfg /H ON # For fast startup and getting back to working faster from where you left off
+powercfg /Change monitor-timeout-ac 3 # Turn screen off after 3 min while charging
+powercfg /Change monitor-timeout-dc 3 # Turn screen off after 3 min on battery
+powercfg /Change disk-timeout-ac 1 # Turns drive off after 1 min while charging. If the device is a NAS or a file or disk recovery station dealing w/ HDDs, set this to 0.
+powercfg /Change disk-timeout-dc 1 # Turns drive off after 1 min while on battery. Assuming you use SSDs, this will save you A LOT of energy, despite SSDs aready being efficient.
+powercfg /Change standby-timeout-ac 0 # Never sleep while charging
+powercfg /Change standby-timeout-dc 5 # Sleep after 5 min on battery
+powercfg /Change hibernate-timeout-ac 0 # Never hibernate while charging
+powercfg /Change hibernate-timeout-dc 15 # Hibernate after 15 min on battery
 ##powercfg.exe -import "!cd!\powerplan.pow">nul
 
-# Services
+# 😈 Services
 powershell "$Env:windir\Temp\Fynelium-NT\script\services.ps1"
 
-# MMAgent ( Memory Management Agent )
+# 📒 Memory Management Agent ( MMAgent )
 Enable-MMAgent -ApplicationLaunchPrefetching
 Enable-MMAgent -ApplicationPreLaunch
 Enable-MMAgent -MemoryCompression # Like ZRAM
@@ -119,7 +127,7 @@ Enable-MMAgent -OperationAPI
 Enable-MMAgent -PageCombining
 Set-MMAgent -MaxOperationAPIFiles 8192
 
-# BCDEdit ( Boot Configuration Data Editor )
+# 🌱 Boot Configuration Data Editor ( BCDEdit )
 bcdedit /set bootlog no # Only for debugging
 bcdedit /set bootmenupolicy Standard
 bcdedit /set bootstatuspolicy DisplayAllFailures
@@ -147,22 +155,22 @@ bcdedit /set nx Optin
 #bcdedit /set tpmbootentropy default
 #bcdedit /set testsigning No
 
-# Time
+# ⏱️ Time Win32 
 w32tm /register
 w32tm /config /syncfromflags:all /manualpeerlist:"time.google.com time.windows.com time.cloudflare.com pool.ntp.org time.facebook.com time.apple.com time.aws.com" /reliable:YES /update
 
-# Filesystem
+# 🗄️ Filesystem Utility ( FSUtil)
 fsutil behavior set DisableDeleteNotify 0 # Allow drive trimming for health and performance
 fsutil behavior set disablelastaccess 1 # No logging when a file was last edited, less disk writes and overhead
 fsutil behavior set memoryusage 2 # More caching
 fsutil behavior set disable8dot3 1 # No old filename fallback, less overhead
 
-# Mixed-Undecided
+# 🤔 Mixed-Undecided
 slmgr /ato # Forces a Windows activation check
 # takeown /r /a /d y /f $env:SystemDrive\Windows.old # Takes permissions before deleting old Windows, risky
 Remove-Item -Path $env:SystemDrive\Windows.old -Recurse -Force # Removes old Windows data
 
-# Registry
+# 🧾 Registry ( regedit )
 Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\" # Sets the directory to where all registry exports are stored
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\Network.reg"
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\PowerUsr.reg"
@@ -172,7 +180,7 @@ regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\UI.reg"
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\UX.reg"
 regedit /s "$Env:windir\\Temp\\Fynelium-NT\\export\\registry\\Update.reg"
 
-# Winget
+# 🏪 Winget
 winget upgrade --all # Upgrade
 Set-Location "$Env:windir\\Temp\\Fynelium-NT\\export\\winget\\" # Sets the directory to where all jsons are stored
 winget import -i dev.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
@@ -185,5 +193,5 @@ winget import -i rice.json --ignore-unavailable --ignore-versions --accept-packa
 winget import -i social.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
 winget import -i system.json --ignore-unavailable --ignore-versions --accept-package-agreements --accept-source-agreements
 
-# Restart, finalize
+# ✅ Restart, to finalize
 Restart-Computer -Force
