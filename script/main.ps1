@@ -104,6 +104,13 @@ if ($choice -eq "1") {
     bcdedit /set hypervisorlaunchtype auto
 }
 
+### --- AUTOMATED --- ###
+& $toptui
+Write-Host "You may now leave your device idle and let the process complete uninterrupted"
+Write-Host "After it has completed, it should automatically restart your device"
+Start-Sleep -s 10
+& $toptui
+
 # 🔋 Power Configuration ( PowerCfg ) - Energy efficiency
 powercfg /H ON # For fast startup and getting back to working faster from where you left off
 powercfg /Change monitor-timeout-ac 3 # Turn screen off after 3 min while charging
