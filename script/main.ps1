@@ -23,22 +23,50 @@ $toptui = {
         & $sprtor
 }
 $svcset = {
-    param($svcName, $choice)
-    if ($choice -eq "0") {
-        Stop-Service -Name $svcName -ErrorAction Continue
-        Set-Service -Name $svcName -StartupType Disabled
-    } elseif ($choice -eq "1") {
-        Start-Service -Name $svcName -ErrorAction Continue
-        Set-Service -Name $svcName -StartupType Automatic
-    }
+	param($svcName, $choice)
+	switch ($choice) {
+		"0" {
+			Write-Host "→ Disabling and stopping service: $svcName"
+			Stop-Service -Name $svcName -ErrorAction Continue
+			Set-Service -Name $svcName -StartupType Disabled
+		}
+		"1" {
+			Write-Host "→ Enabling and starting service: $svcName"
+			Start-Service -Name $svcName -ErrorAction Continue
+			Set-Service -Name $svcName -StartupType Automatic
+		}
+		default {
+			Write-Host "→ Skipping: $svcName"
+		}
+	}
 }
 $userask = {
-    Write-Host "Options:"
-    Write-Host "X. Skip"
-    Write-Host "0. No"
-    Write-Host "1. Yes"
-    $choice = Read-Host "Input: "
-    return $choice
+	Write-Host ""
+	Write-Host "Options:"
+	Write-Host "[X] Skip  |  [0] No  |  [1] Yes"
+	Write-Host "(Auto-skip in 5 seconds...)" -ForegroundColor Yellow
+
+	$timeout = 5
+	$stopwatch = [Diagnostics.Stopwatch]::StartNew()
+	$choice = "X"  # default if timeout
+
+	while ($stopwatch.Elapsed.TotalSeconds -lt $timeout) {
+		if ([Console]::KeyAvailable) {
+			$key = [Console]::ReadKey($true).Key
+			switch ($key) {
+				"Y" { $choice = "1"; break }
+				"N" { $choice = "0"; break }
+				"X" { $choice = "X"; break }
+				"NumPad1" { $choice = "1"; break }
+				"NumPad0" { $choice = "0"; break }
+			}
+		}
+		Start-Sleep -Milliseconds 100
+	}
+
+	$stopwatch.Stop()
+	Write-Host "→ Selected: $choice"
+	return $choice
 }
 $isAdmin = ([System.Security.Principal.WindowsPrincipal] [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
@@ -49,7 +77,7 @@ Set-Location "$Env:windir\\Temp\\Fynelium-NT\\"
 if (-not $isAdmin) {
     Write-Host "This script needs adminstrator rights to function properly" -ForegroundColor Red
     Write-Host "Attempting to self-elevate, by re running through a new instance..."
-    Start-Sleep -s 3
+    Start-Sleep -s 1
     Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$Env:windir\\Temp\\Fynelium-NT\\script\\main.ps1`"" -Verb RunAs
     exit
 }
