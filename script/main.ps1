@@ -2,6 +2,8 @@
 ### of getting Git installed, cloning the repo and this script being launched as an admin
 
 # 📦 Shell Setup - Variables and Functions
+Add-Type -AssemblyName PresentationCore
+$mediaPlayer = New-Object System.Windows.Media.MediaPlayer
 $VerbosePreference = "SilentlyContinue"
 $arch = $env:PROCESSOR_ARCHITECTURE
 $sprtor = { Write-Host "_____________________________________________________________________________________________________________________________________________________________________________________________" }
