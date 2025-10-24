@@ -57,7 +57,7 @@ Press 🪟 Win + R \
 Paste this:
 
 ```
-powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/bootstrap.ps1 | iex
+wt.exe powershell.exe irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/Launcher.ps1 | iex
 
 ```
 Press `Ctrl` + `Shift` + `Enter`
@@ -70,7 +70,6 @@ Press `Ctrl` + `Shift` + `Enter`
 👀 Keep an eye on it, even if I guarantee you it is safe
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
-
 ## Legal
 
 This repository and its contents are provided as-is without any warranty of any kind.
