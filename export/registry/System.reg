@@ -8,6 +8,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
 
+; 🕵️ Force System driver update detect, also for Bazzite's B-tree File System detection
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
+"UpgradedSystem"=dword:00000001
+
 ; 👟 Fast startup, precaches the OS
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "HiberbootEnabled"=dword:00000001
