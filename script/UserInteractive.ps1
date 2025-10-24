@@ -1,5 +1,4 @@
-### This is the core of the project, that you launch to start the tweaking project when you have fulfilled the prerequisites
-### of getting Git installed, cloning the repo and this script being launched as an admin
+# 👋 User Prompts - Sends out requests to the user, asking for prompts to perform actions accordingly
 
 # 📦 Shell Setup - Variables and Functions
 Add-Type -AssemblyName PresentationCore
