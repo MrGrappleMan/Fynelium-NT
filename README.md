@@ -37,8 +37,11 @@
 🧬 UEFI Smart Config — system optimizes BIOS/UEFI settings by itself \
 💽 Drive Trimming — boosts SSD lifespan & read/write speed \
 📊 Advanced Telemetry — contributes to faster Windows evolution
+<div align="center">
+  
+## ⚙️ Installation 🔽
 
-## ⚙️ Installation
+</div>
 
 ### 🧩 Requirements
 
@@ -47,9 +50,9 @@
 
 ### 💡 Suggestions
 
-⚡ A PC powerful - it performs tweaks, but also tries to beautify your experience \
-✅ Use Windows 10/11 (Activated) — Insider builds preferred for best results \
-🦊 Replace default Edge: Run a trusted removal script and install Edge Canary — this ensures all apps open links in your browser of choice
+⚡ A powerful device - it performs tweaks, but also tries to beautify your experience, yet maintains efficiency \
+✅ Use Windows 11/10 (Activated) — Insider builds preferred for better results - 10 ~may~ have issues and sorry, I won't be checking for them 😞 \
+🦊 Replace inbult Edge: Run a trustworthy removal script and install Edge Canary insider or anything else — this ensures all apps open links in your browser of choice
 
 ### ⛩️ Installation
 
@@ -62,16 +65,22 @@ wt.exe powershell.exe irm https://raw.githubusercontent.com/MrGrappleMan/Fyneliu
 ```
 Press `Ctrl` + `Shift` + `Enter`
 
-⚡ What happens next?
+🤔 What happens next?
 
-🧠 The first phase requires minimal manual input — just confirm a few things \
+🫵 Just confirm a few things - it understands your use cases and will apply tweaks as per required \
 🛠️ After that, it optimize system performance unattended - leave it idle \
 ⚠️ Some harmless errors may appear — these are expected \
-👀 Keep an eye on it, even if I guarantee you it is safe
+👋 Once execution is complete, the device will restart - thank you for runnig this
 
 ### [More Documentation](https://www.notion.so/Windows-27642d161cf980b395c2fbbd1d1f70ae?source=copy_link)
-## Legal
+👀 Always verify, never assume — even when it’s to be guaranteed safe. The code’s open if you’d like to see how it works
+🤗 Always encourage users to align towards open and unified development
 
+<div align="center">
+
+## ⚖️ Legal
+
+</div>
 This repository and its contents are provided as-is without any warranty of any kind.
 I am not liable for any direct, indirect, or consequential damage to your system, data, or hardware arising from the use of this guide or its scripts.
 
