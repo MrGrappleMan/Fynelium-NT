@@ -50,6 +50,7 @@
 
 ### 💡 Suggestions
 
+🐧 Try the twin repository Fynelium for Bazzite \
 ⚡ A powerful device - it performs tweaks, but also tries to beautify your experience, yet maintains efficiency \
 ✅ Use Windows 11/10 (Activated) — Insider builds preferred for better results - 10 ~may~ have issues and sorry, I won't be checking for them 😞 \
 🦊 Replace inbult Edge: Run a trustworthy removal script and install Edge Canary insider or anything else — this ensures all apps open links in your browser of choice
