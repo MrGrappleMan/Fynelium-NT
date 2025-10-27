@@ -2,7 +2,10 @@
 
 # ⚜️ Ensure admin rights
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-	powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/Launcher.ps1 | iex
+	Write-Host "Not running as administrator, please try again with Ctrl + Shift + Enter"
+	Start-Sleep -Seconds 3
+	# powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/Launcher.ps1 | iex
+	# Want to implement self elevation method here, ofcourse respecting user choice
 	exit
 }
 
@@ -35,5 +38,5 @@ git clone https://github.com/MrGrappleMan/Fynelium-NT.git $path
 # ⏩ Filesystem - Copy over configurations
 robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
 
-# ▶️ Execute main script
+# 🖐️ User Interactive
 Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$path\script\UserInteractive.ps1`"" -Verb RunAs
