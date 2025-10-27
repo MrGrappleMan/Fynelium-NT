@@ -1,7 +1,8 @@
 # 🔱 Automated Handler
-#	→ Executes each script in the Automated folder for automatically performing the tweaking process
-# → Scripts that require zero user interaction, or can be forced to do so, go in here
-#	→ Waits for completion, verifies, and reboots the system
+# → Executes each script in the Automated folder for automatically performing the tweaking process
+# → Scripts that require zero user interaction, or can be made to be so, go in there
+# → They are launched in parallel, hidden and elevated
+# → Waits for completion of all with PID verification
 
 $basePath = "C:\Windows\Temp\Fynelium-NT\script\Automated\"
 $logFile  = "$basePath\master_log.txt"
@@ -81,8 +82,3 @@ if ($failed.Count -gt 0) {
 	Write-Host "✅ All scripts completed successfully!"
 	"[$(Get-Date)] All scripts completed successfully." | Out-File $logFile -Append
 }
-
-# --- 5️⃣ Reboot confirmation ---
-Write-Host "`n🔁 Rebooting in 10 seconds..."
-Start-Sleep -Seconds 10
-Restart-Computer -Force
