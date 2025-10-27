@@ -16,22 +16,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
 "Flags"="2"
 
-; 🫧 Instantly open menus
-[HKEY_CURRENT_USER\Control Panel\Desktop]
-"MenuShowDelay"="0"
-"MinAnimate"="0"
-
 ; 📎 Enable Copilot
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsCopilot]
 "TurnOffWindowsCopilot"=dword:00000000
-
-; ☁️ Instant mouse hover actions
-[HKEY_CURRENT_USER\Control Panel\Mouse]
-"MouseHoverTime"="0"
-
-; Ⓜ️ Instant minimize maximize
-[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
-"MinAnimate"="0"
 
 ; 🖱️ Correct cursor movements, with proper responsiveness
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed]
@@ -57,6 +44,6 @@ Windows Registry Editor Version 5.00
 "LastActiveClick"=dword:00000001
 "DisallowShaking"=dword:00000001
 
-; 🫡 No restart based updates during usage times, which is auto decided
+; 🫡 Respect work times - no restart based updates during usage times, auto decided
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "SmartActiveHoursState"=dword:00000001
