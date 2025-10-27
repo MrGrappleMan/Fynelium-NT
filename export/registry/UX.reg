@@ -9,15 +9,31 @@ Windows Registry Editor Version 5.00
 "AppsUseLightTheme"=dword:00000000
 "SystemUsesLightTheme"=dword:00000000
 
+; ☁️ Mouse hover actions
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"MouseHoverTime"="0"
+
+; Ⓜ️ Window metrics
+; Faster minimize-maximize
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"MinAnimate"="1"
+
+; 🖥️ Desktop preferences - contains most settings you'll notice to have an effect
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="100"
+"MinAnimate"="1"
+"FontSmoothing"="2"
+"FontSmoothingType"=dword:00000002
+
 ; 🖊️ Custom selections
-; 🫗 Disable screensavers - they consume extra computational resources
+; 🫗 Disable screensavers - they consume a lot more extra computational resources
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "UserPreferencesMask"=hex:9e,1e,07,80,12,00,00,00
 "ScreenSaveActive"=dword:00000000
 "ScreenSaverIsSecure"=dword:00000000
 "ScreenSaveTimeOut"=dword:00000000
 
-; 🔍 Transparency - Looks better - gives your system a feel of liveliness
+; 🔍 Transparency - Looks better and gives your system a feel of liveliness
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000001
 
