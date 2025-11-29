@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; ✨ User eXperience, makes what you interact with to be comforting and appealing to use
+; ✨ User eXperience, makes what you interact with to be comforting and appealing to use - But you won't notice it in daily usage
 ; --------------------------------------------
 
 ; 🌃 Dark Theme, this is opinionated
@@ -33,12 +33,12 @@ Windows Registry Editor Version 5.00
 "ScreenSaverIsSecure"=dword:00000000
 "ScreenSaveTimeOut"=dword:00000000
 
-; 🔍 Transparency - Looks better and gives your system a feel of liveliness
+; 🔍🚫 Transparency - Looks better and gives your system a feel of liveliness
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
-"EnableTransparency"=dword:00000001
+"EnableTransparency"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
-"VisualFXSetting"=dword:00000000
+"VisualFXSetting"=dword:00000003
 ; 0 = Automatic - best choice overall
 ; 1 = Appearance - good enough, but can be unoptimal
 ; 2 = Performance - not worth the ancient appearance, provides almost no actual performance boost
@@ -101,16 +101,16 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "RotatingLockScreenOverlayEnabled"=dword:00000000
 
-; 🌊 Taskbar Animations
+; 🌊🚫 No Taskbar Animations
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"TaskbarAnimations"=dword:00000001
+"TaskbarAnimations"=dword:00000000
 
 ; 🔐 Login screen
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
 "DisableLogonBackgroundImage"=dword:00000000
-"DisableAcrylicBackgroundOnLogon"=dword:00000000
+"DisableAcrylicBackgroundOnLogon"=dword:00000001
 
-; 🔍 Search - Use the Windows key and start typing to search. Keeps taskbar clean
+; 🔍 Search - Use the SUPER key and start typing to search. Keeps taskbar clean
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
 
