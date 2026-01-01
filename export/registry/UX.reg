@@ -4,7 +4,7 @@ Windows Registry Editor Version 5.00
 ; ✨ User eXperience, makes what you interact with to be comforting and appealing to use - But you won't notice it in daily usage
 ; --------------------------------------------
 
-; 🌃 Dark Theme, this is opinionated
+; 🌃 Dark Theme - saves battery
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "AppsUseLightTheme"=dword:00000000
 "SystemUsesLightTheme"=dword:00000000
@@ -33,15 +33,15 @@ Windows Registry Editor Version 5.00
 "ScreenSaverIsSecure"=dword:00000000
 "ScreenSaveTimeOut"=dword:00000000
 
-; 🔍🚫 Transparency - Looks better and gives your system a feel of liveliness
+; 🔍🚫 Transparency - Looks better and gives your system a feel of liveliness - off for performance
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:00000003
-; 0 = Automatic - best choice overall
+; 0 = Automatic - fine
 ; 1 = Appearance - good enough, but can be unoptimal
-; 2 = Performance - not worth the ancient appearance, provides almost no actual performance boost
+; 2 = Performance - not worth the old appearance, provides almost no actual performance boost
 ; 3 = Custom
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
@@ -101,7 +101,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "RotatingLockScreenOverlayEnabled"=dword:00000000
 
-; 🌊🚫 No Taskbar Animations
+; 🌊🚫 No Taskbar Animations - faster navigation
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "TaskbarAnimations"=dword:00000000
 
@@ -110,11 +110,11 @@ Windows Registry Editor Version 5.00
 "DisableLogonBackgroundImage"=dword:00000000
 "DisableAcrylicBackgroundOnLogon"=dword:00000001
 
-; 🔍 Search - Use the SUPER key and start typing to search. Keeps taskbar clean
+; 🔍 Search - Use the SUPER key and start typing to search - keeps taskbar clean and searching faster
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
 
-; 😴 Bad when adding new users. Does nothing except for evoking a feeling that the system is getting ready. 
+; 😴 First user login greeting - bad when adding new users and does nothing 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "EnableFirstLogonAnimation"=dword:00000000
 
