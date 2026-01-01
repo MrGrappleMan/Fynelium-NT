@@ -1,7 +1,8 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; ✨ User eXperience, makes what you interact with to be comforting and appealing to use - But you won't notice it in daily usage
+; ✨ User eXperience, makes what you interact with to be comforting and appealing to use
+; you won't notice it in daily usage, so it is tuned for clarity, easy to use interface 
 ; --------------------------------------------
 
 ; 🌃 Dark Theme - saves battery
@@ -26,14 +27,14 @@ Windows Registry Editor Version 5.00
 "FontSmoothingType"=dword:00000002
 
 ; 🖊️ Custom selections
-; 🫗 Disable screensavers - they consume a lot more extra computational resources
+; 🫗 Disable screensavers - they consume extra computational resources and energy
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "UserPreferencesMask"=hex:9e,1e,07,80,12,00,00,00
 "ScreenSaveActive"=dword:00000000
 "ScreenSaverIsSecure"=dword:00000000
 "ScreenSaveTimeOut"=dword:00000000
 
-; 🔍🚫 Transparency - Looks better and gives your system a feel of liveliness - off for performance
+; 🔍🚫 Transparency - Looks better and gives your system a feel of liveliness - off for performance and visual clarity
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
 
@@ -41,8 +42,8 @@ Windows Registry Editor Version 5.00
 "VisualFXSetting"=dword:00000003
 ; 0 = Automatic - fine
 ; 1 = Appearance - good enough, but can be unoptimal
-; 2 = Performance - not worth the old appearance, provides almost no actual performance boost
-; 3 = Custom
+; 2 = Performance - not worth the old appearance and text w/o anti aliasing, provides a performance boost at a cost of some usabilty
+; 3 = Custom - Choose a good mix, remove the intrusive components
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
 "DefaultApplied"=dword:00000001
@@ -114,7 +115,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
 
-; 😴 First user login greeting - bad when adding new users and does nothing 
+; 😴 First user login greeting - bad when adding new users and does nothing
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "EnableFirstLogonAnimation"=dword:00000000
 
