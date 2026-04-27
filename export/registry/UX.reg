@@ -5,7 +5,7 @@ Windows Registry Editor Version 5.00
 ; you won't notice it in daily usage, so it is tuned for clarity, easy to use interface 
 ; --------------------------------------------
 
-; 🌃 Dark Theme - saves battery
+; 🌃 Dark Theme - save energy
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "AppsUseLightTheme"=dword:00000000
 "SystemUsesLightTheme"=dword:00000000
@@ -34,15 +34,15 @@ Windows Registry Editor Version 5.00
 "ScreenSaverIsSecure"=dword:00000000
 "ScreenSaveTimeOut"=dword:00000000
 
-; 🔍🚫 Transparency - Looks better and gives your system a feel of liveliness - off for performance and visual clarity
+; 🔍 Transparency - off for performance and visual clarity
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:00000003
-; 0 = Automatic - fine
-; 1 = Appearance - good enough, but can be unoptimal
-; 2 = Performance - not worth the old appearance and text w/o anti aliasing, provides a performance boost at a cost of some usabilty
+; 0 = Automatic - acceptable
+; 1 = Appearance - looks good, unoptimal
+; 2 = Performance - degrades usability
 ; 3 = Custom - Choose a good mix, remove the intrusive components
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
@@ -111,7 +111,7 @@ Windows Registry Editor Version 5.00
 "DisableLogonBackgroundImage"=dword:00000000
 "DisableAcrylicBackgroundOnLogon"=dword:00000001
 
-; 🔍 Search - Use the SUPER key and start typing to search - keeps taskbar clean and searching faster
+; 🔍 No Search - Use the SUPER key and start typing to search - keeps taskbar clean and searching faster
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
 

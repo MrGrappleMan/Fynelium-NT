@@ -1,13 +1,13 @@
-# Serves as a form of shotgun debugging without resetting your system
-# Avoid running this
+# A last ditch system repair script, avoid running this unless necessary
+# Else you might waste time and resources
 
-# Runs System File Checker to scan and repair corrupted system files
+# Maintain system files integrity
 sfc /scannow
 
 # Checks disk for errors and attempts to fix file system errors (/f) and bad sectors (/r)
 chkdsk /f /r
 
-# Resets the Windows Store cache to fix issues with the Microsoft Store
+# Reset Windows Store cache
 wsreset.exe
 
 # Checks the health of the Windows Component Store for corruption
@@ -19,8 +19,8 @@ dism /Online /ScanHealth
 # Repairs the Windows Component Store by restoring corrupted files from an online source
 dism /Online /Cleanup-Image /RestoreHealth
 
-# Forces the system to resynchronize the time with the Network Time Protocol (NTP) server and rediscover time sources
-w32tm /resync /rediscover # NTP refresh
+# Resync with NTP servers and rediscover time sources
+w32tm /resync /rediscover
 
 # Releases the current IPv4 address assigned to the system
 ipconfig /release

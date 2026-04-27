@@ -1,4 +1,4 @@
-# Launcher.ps1 — Preparation for procedure
+# Preparation for procedure
 
 # ⚜️ Ensure admin rights
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
@@ -36,7 +36,7 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 git clone https://github.com/MrGrappleMan/Fynelium-NT.git $path
 
 # ⏩ Filesystem - Copy over configurations
-robocopy $Env:windir\\Temp\\Fynelium-NT\\FSRoot "C:\" /E
+robocopy $Env:windir\\Temp\\\\fsroot "C:\" /E
 
 # 🖐️ User Interactive
-Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$path\script\UserInteractive.ps1`"" -Verb RunAs
+Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$path\script\main.ps1`"" -Verb RunAs

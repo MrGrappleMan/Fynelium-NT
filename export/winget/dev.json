@@ -4,20 +4,17 @@
   "Sources": [
     {
       "Packages": [
-	
-		{"PackageIdentifier": "GoLang.Go"},
+        {"PackageIdentifier": "GoLang.Go"},
         {"PackageIdentifier": "GitHub.GitHubDesktop.Beta"},
         {"PackageIdentifier": "Microsoft.PowerShell.Preview"},
-        {"PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"},
+        {"PackageIdentifier": "ZedIndustries.Zed.Preview"},
         {"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"},
-		{"PackageIdentifier": "Microsoft.WSL"},
-        {"PackageIdentifier": "Docker.DockerCLI"},
-		{"PackageIdentifier": "Docker.DockerDesktop"},
-		{"PackageIdentifier": "Ollama.Ollama"},
-		{"PackageIdentifier": "Rustlang.Rustup"},
-		{"PackageIdentifier": "Rustlang.Rust.MSVC"}
-        
-       ],
+        {"PackageIdentifier": "Microsoft.WSL"},
+        {"PackageIdentifier": "RedHat.Podman-Desktop"},
+        {"PackageIdentifier": "Ollama.Ollama"},
+        {"PackageIdentifier": "Rustlang.Rustup"},
+        {"PackageIdentifier": "Rustlang.Rust.MSVC"}
+      ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",
         "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",

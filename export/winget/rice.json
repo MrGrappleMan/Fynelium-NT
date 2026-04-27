@@ -6,8 +6,7 @@
       "Packages": [
         
         {"PackageIdentifier": "LGUG2Z.komorebi"},
-        {"PackageIdentifier": "LGUG2Z.whkd"},
-        {"PackageIdentifier": "CharlesMilette.TranslucentTB"}
+        {"PackageIdentifier": "LGUG2Z.whkd"}
         
       ],
       "SourceDetails": {
