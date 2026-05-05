@@ -8,11 +8,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
 
-; 🕵️ Disable old system driver update checks - secure
+; 🕵️ Only load drivers signed by modern WHQL implementation
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
 "UpgradedSystem"=dword:00000000
 
-; 👟 Fast startup, precaches the OS - you are better off leaving your device on s2idle
+; 👟 Fast startup, precaches the OS, but you are better off leaving your device on s2idle
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "HiberbootEnabled"=dword:00000001
 
@@ -30,7 +30,7 @@ Windows Registry Editor Version 5.00
 
 ; 😫 Clearing pagefile at every shutdown wears down the drive, plus some things are "cached" in it. Re creating it every time takes time as well as system resources
 ; 🚛 Allow unnecessary parts of the kernel to be paged out.
-; 👍 Pagefiles prevent OOM errors, allow for flexible RAM usage requirements, efficient utilization of memory and some programs expect it to exist
+; 👍 Pagefiles prevent OOM errors in case of sudden memory pressure and some programs expect it to exist, it is a necessary fallback not a direct replacement
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "LargeSystemCache"=dword:00000001
 "IoPageLockLimit"=dword:00000000
@@ -80,9 +80,19 @@ Windows Registry Editor Version 5.00
 ; "Scheduling Category"="Medium"
 ; "SFIO Priority"="Normal"
 
-; 😶‍🌫️ Prioritize foreground > background
+; 😶‍🌫️ Prioritize foreground over background
+; 1:1 or No Foreground boost, Fixed length / Long quantum:-
+; Low overhead, High throughput, deterministic tasks, best for server workloads and batch processing
+; "Win32PrioritySeparation"=dword:00000024
+;
+; 3:1 or High Foreground boost, Variable length / Short quantum: -
+; Granular resource allocation, Low latency, unpredictable and dynamic workloads, best for workstations and interactive tasks
+; "Win32PrioritySeparation"=dword:00000038
+;
+; The two above present exact opposite end extremes for situations, you may mix them experimentally
+; Default is set to Case 2
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
-"Win32PrioritySeparation"=dword:00000022
+"Win32PrioritySeparation"=dword:00000038
 
 ; 🏁 No reservation for backgroud processes - less biased/no QoS
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]

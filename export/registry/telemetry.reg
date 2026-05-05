@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+; --------------------------------------------
+; 📰 Telemetry, data collection, analytics
+; --------------------------------------------
+
+; Big brother is watching you
+; I would have enabled telemetry to its fullest if Microsoft was trustworthy
+; and Windows was open source
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+; "AllowTelemetry"=dword:00000003
+; "MaxTelemetryAllowed"=dword:00000003

@@ -4,13 +4,13 @@
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
 	Write-Host "Not running as administrator, please try again with Ctrl + Shift + Enter"
 	Start-Sleep -Seconds 3
-	# powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/script/Launcher.ps1 | iex
+	# powershell irm https://raw.githubusercontent.com/MrGrappleMan/Fynelium-NT/main/start.ps1 | iex
 	# Want to implement self elevation method here, ofcourse respecting user choice
 	exit
 }
 
 # 📂 Create storage directory
-$path = "$env:windir\Temp\Fynelium-NT\"
+$path = "$env:windir\Temp\Wintrix"
 if (Test-Path $path) { Remove-Item $path -Recurse -Force }
 New-Item -Path $path -ItemType Directory -Force | Out-Null
 
@@ -33,10 +33,10 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 }
 
 # 🦠 Clone Repo
-git clone https://github.com/MrGrappleMan/Fynelium-NT.git $path
+git clone https://github.com/MrGrappleMan/Wintrix.git $path
 
-# ⏩ Filesystem - Copy over configurations
-robocopy $Env:windir\\Temp\\\\fsroot "C:\" /E
+# ⏩ Copy over files
+robocopy $Env:windir\\Temp\\Wintrix\\fsroot "C:\" /E
 
 # 🖐️ User Interactive
 Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$path\script\main.ps1`"" -Verb RunAs

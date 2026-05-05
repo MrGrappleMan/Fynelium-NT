@@ -1,8 +1,7 @@
 Windows Registry Editor Version 5.00
 
 ; --------------------------------------------
-; ✨ User eXperience, makes what you interact with to be comforting and appealing to use
-; you won't notice it in daily usage, so it is tuned for clarity, easy to use interface 
+; ✨ User experience - tuned for clarity and an easy to use interface
 ; --------------------------------------------
 
 ; 🌃 Dark Theme - save energy
@@ -102,7 +101,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "RotatingLockScreenOverlayEnabled"=dword:00000000
 
-; 🌊🚫 No Taskbar Animations - faster navigation
+; 🌊 No Taskbar Animations - faster navigation
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "TaskbarAnimations"=dword:00000000
 
@@ -111,11 +110,11 @@ Windows Registry Editor Version 5.00
 "DisableLogonBackgroundImage"=dword:00000000
 "DisableAcrylicBackgroundOnLogon"=dword:00000001
 
-; 🔍 No Search - Use the SUPER key and start typing to search - keeps taskbar clean and searching faster
+; 🔍 No Search in taskbar - Use the SUPER key and start typing to search faster
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
 
-; 😴 First user login greeting - bad when adding new users and does nothing
+; 😴 First logon greeting, wastes time
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System]
 "EnableFirstLogonAnimation"=dword:00000000
 

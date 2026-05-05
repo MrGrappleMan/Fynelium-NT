@@ -88,19 +88,7 @@ $choice = & $userask
 & $svcset "XblAuthManager" $choice
 & $svcset "GameSave" $choice
 
-# Bluetooth
-& $toptui
-Write-Host "Do you use Bluetooth for anything in any form, even cases for Nearby Share or Phone Link?"
-Write-Host ""
-Write-Host "Stopping this service causes paired Bluetooth devices to fail to operate"
-Write-Host "It prevent new devices from being discovered or paired"
-Write-Host "Yet it can also serve as a safety measure from attacks like KNOB or BLUFFS"
-$choice = & $userask
-& $svcset "BluetoothUserService" $choice
-& $svcset "BTAGService" $choice
-& $svcset "bthserv" $choice
-
-# RemoteAccess
+# Remote Access
 & $toptui
 Write-Host "Do you use remote desktop or remotely manage your device?"
 Write-Host ""
@@ -114,17 +102,6 @@ $choice = & $userask
 & $svcset "TermService" $choice
 & $svcset "UmRdpService" $choice
 & $svcset "RemoteRegistry" $choice
-
-# Virtualization
-& $toptui
-Write-Host "Do you use Docker, VirtualBox, Hyper-V, WSL, VMware, Android emulator, or any other virtualization, containerization or emulation software?"
-
-$choice = & $userask
-if ($choice -eq "1") {
-    bcdedit /set hypervisorlaunchtype off
-} elseif ($choice -eq "2") {
-    bcdedit /set hypervisorlaunchtype auto
-}
 
 ### --- AUTOMATED --- ###
 & $toptui

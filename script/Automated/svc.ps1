@@ -9,7 +9,7 @@ if (-not $isAdmin) {
     exit
 }
 
-# For winget, Windows Store, Windows updates, msix and appx installs. In a nutshell, package management
+# Required for the package management and updates stack for Windows
 $updates = @(
     "A",
     "UsoSvc",
@@ -19,12 +19,12 @@ $updates = @(
     "DoSvc"
 )
 
-# Reporting, data collection, analytics of various types
-$telemetry = @(
-    "A",
-    "DiagTrack",
-    "wisvc"
-)
+# Microsoft telemetry
+#$telemetry = @(
+#    "A",
+#    "DiagTrack",
+#    "wisvc"
+#)
 
 # For handling data, drive management, backups, file management, indexing
 $filesystem = @(
@@ -35,14 +35,14 @@ $filesystem = @(
     "UserDataSvc"
 )
 
-# NTP, timezones, system clocks
+# System time
 $time = @(
     "A",
     "tzautoupdate",
     "W32Time"
 )
 
-# Proper establishment of local, internal and internet connections
+# Local, internal and internet connections
 $networking = @(
     "A",
     "NetTcpPortSharing",
@@ -51,6 +51,10 @@ $networking = @(
     "dot3svc",
     "WebClient"
 )
+
+& $svcset "BluetoothUserService" $choice
+& $svcset "BTAGService" $choice
+& $svcset "bthserv" $choice
 
 # Uncategorized
 $uncategorized = @(

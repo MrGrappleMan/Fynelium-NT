@@ -18,3 +18,9 @@ Windows Registry Editor Version 5.00
 "ScheduledInstallDay"=dword:00000000
 "NoAutoRebootWithLoggedOnUsers"=dword:00000001
 "ScheduledInstallEveryWeek"=dword:00000001
+
+; ➰ Delivery Optimization, help yourself and others get updates and content fast
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
+"DODownloadMode"=dword:00000003
+"DOMaxBackgroundDownloadBandwidth"=dword:00000000
+"DOMaxForegroundDownloadBandwidth"=dword:00000000

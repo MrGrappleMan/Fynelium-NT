@@ -6,7 +6,8 @@
       "Packages": [
         
         {"PackageIdentifier": "LGUG2Z.komorebi"},
-        {"PackageIdentifier": "LGUG2Z.whkd"}
+        {"PackageIdentifier": "LGUG2Z.whkd"},
+        {"PackageIdentifier": "Raycast.Raycast"}
         
       ],
       "SourceDetails": {

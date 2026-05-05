@@ -25,3 +25,4 @@ bcdedit /set nx Optin
 #bcdedit /set usephysicaldestination no
 #bcdedit /set tpmbootentropy default
 #bcdedit /set testsigning No
+bcdedit /set hypervisorlaunchtype auto
